@@ -1,5 +1,6 @@
 "General config
 set nocompatible
+set shell=/bin/bash
 filetype off
 syntax on
 set relativenumber
@@ -7,7 +8,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-
+set wildignore+=*/node_modules/*,*/bower_components/*,*/dist/*,*/tmp/*
 call vundle#begin() 
 
 "Default
@@ -18,9 +19,11 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'Lokaltog/powerline',{'rtp': 'powerline/bindings/vim'}
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 "Testing
+Plugin 'dag/vim-fish'
+Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'jiangmiao/auto-pairs'
 
 call vundle#end()
