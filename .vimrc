@@ -8,7 +8,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-set wildignore+=*/node_modules/*,*/bower_components/*,*/dist/*,*/tmp/*
+set wildignore+=*/node_modules/*,*/bower_components/*,*/dist/*,*/tmp/*,*/build/*
 call vundle#begin() 
 
 "Default
