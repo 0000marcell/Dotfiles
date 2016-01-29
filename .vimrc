@@ -25,7 +25,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 
 "Testing
 Plugin 'easymotion/vim-easymotion'
-Plugin 'alvan/vim-closetag'
 Plugin 'dag/vim-fish'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'jiangmiao/auto-pairs'
@@ -50,7 +49,14 @@ endif
 vmap <Tab> >gv
 vmap <S-Tab> <gv
 nmap <C-k> :set nohls<CR>
-map <C-u> <Plug>(easymotion-prefix)
+nmap Q	:wq<CR>
+nmap S :q<CR>
+
+" Insert Maps
+imap <C-l> <esc>
+imap <C-f> <esc>A
+imap <C-b> ( 
+imap <C-c> {
 
 "Show highlighting groups for current word
 
@@ -66,3 +72,9 @@ colorscheme lemon
 let g:mustache_abbreviations = 1
 
 let g:closetag_filenames = "*.html, *.hbs, *.xhtml, *.phtml"
+
+" Easy motion shortcuts
+
+map <C-o> <Leader><Leader>w
+map <C-E> <Leader><Leader>W
+map T <Leader><Leader>f
