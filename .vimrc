@@ -7,11 +7,11 @@ syntax on
 set relativenumber
 set rtp+=~/.vim/bundle/Vundle.vim
 set tabstop=2
+set clipboard=unnamed
 set shiftwidth=2
 set softtabstop=2
 set wildignore+=*/node_modules/*,*/bower_components/*,*/dist/*,*/tmp/*,*/build/*
 call vundle#begin() 
-
 "Default
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
@@ -22,9 +22,9 @@ Plugin 'leshill/vim-json'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'easymotion/vim-easymotion'
 
 "Testing
-Plugin 'easymotion/vim-easymotion'
 Plugin 'dag/vim-fish'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'jiangmiao/auto-pairs'
@@ -42,20 +42,22 @@ set fillchars+=stl:\ ,stlnc:\
 set termencoding=utf-8
 let g:Powerline_symbols = 'fancy'
 "CTRLP config
+:command RefreshFiles CtrlPClearCache
 let g:ctrlp_cache_dir = $HOME . '/ .cache/ctrlp'
+let g:ctrlp_working_path_mode = 0
 if executable('ag')
 	let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
-vmap <Tab> >gv
-vmap <S-Tab> <gv
-nmap <C-k> :set nohls<CR>
+"vmap <Tab> >gv
+"vmap <S-Tab> <gv
+nmap <C-k> :set nohls!<CR>
 nmap Q	:wq<CR>
 nmap S :q<CR>
-
+map <C-n> :NERDTreeToggle<CR>
 " Insert Maps
 imap <C-l> <esc>
 imap <C-f> <esc>A
-imap <C-b> ( 
+imap <C-b> (
 imap <C-c> {
 
 "Show highlighting groups for current word
@@ -69,12 +71,10 @@ function! <SID>SynStack()
 endfunc
 
 colorscheme lemon
-let g:mustache_abbreviations = 1
-
-let g:closetag_filenames = "*.html, *.hbs, *.xhtml, *.phtml"
-
+"General maps
+map <C-r> :set relativenumber!<CR>
 " Easy motion shortcuts
-
-map <C-o> <Leader><Leader>w
-map <C-E> <Leader><Leader>W
-map T <Leader><Leader>f
+map <C-o> <Leader><Leader>s
+"map <C-o> <Leader><Leader>w
+"map <C-E> <Leader><Leader>W
+"map T <Leader><Leader>f
