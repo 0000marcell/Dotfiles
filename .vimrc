@@ -48,8 +48,8 @@ let g:ctrlp_working_path_mode = 0
 if executable('ag')
 	let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
-"vmap <Tab> >gv
-"vmap <S-Tab> <gv
+vmap <Tab> >gv
+vmap <S-Tab> <gv
 nmap <C-k> :set nohls!<CR>
 nmap Q	:wq<CR>
 nmap S :q<CR>
