@@ -10,3 +10,39 @@ snippet div
 snippet p
 	<p>${1}</p>
 
+# each
+snippet each
+	{{#each model as |${1}|}}
+		${2}	
+	{{/each}}
+
+# input 
+snippet input
+	<label>${1}</label>
+	{{input type='${2}' value=${3}}}
+
+# select 
+snippet select
+	<label>${1}</label>
+	<select onchange={{action "selectRoom" value="target.value"}}>
+		{{#each ${2} as |${3}}}
+			<option value=${3} 
+				selected={{eq ${2} ${3}}}>{{${3}}}</option>
+		{{/each}}
+	</select>
+
+# button 
+snippet button
+	<button {{action ${1}}}>${2}</button>
+
+# ul
+snippet ul
+	<ul>
+		<li>
+			${1}
+		</li>
+	</ul>
+
+#link
+snippet link
+	{{#link-to '${1}' ${2}}}${3}{{/link-to}}

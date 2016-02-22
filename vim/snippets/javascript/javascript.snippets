@@ -22,6 +22,16 @@ snippet vfun
 		${3}
 	}
 
+#function es6
+snippet nfun
+	${1}(){
+		${2}
+	}
+#if
+snippet if
+	if(${1}){
+		${2}
+	}
 #import
 snippet imp
 	import ${1:Name} from '${2}';
@@ -29,3 +39,11 @@ snippet imp
 #export
 snippet exp
 	export ${1:default} ${2:variable name}
+
+# actions
+snippet act
+	actions: {
+		${1}(){
+			${2}
+		}
+	}
