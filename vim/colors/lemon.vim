@@ -23,6 +23,21 @@ highlight javaScriptNumber ctermbg=darkgreen ctermfg=black
 highlight javaScriptOpSymbols ctermfg=64
 highlight javaScriptBoolean ctermbg=73 ctermfg=16
 
+" Syntax Ruby
+highlight rubyString ctermfg=22 cterm=underline
+highlight rubyInstanceVariable ctermfg=42
+highlight rubyComment ctermbg=42 ctermfg=0
+highlight rubyDefine ctermfg=46
+highlight rubySymbol ctermfg=77
+highlight rubyInterpolationDelimiter ctermfg=0 ctermbg=82
+highlight rubyBoolean ctermfg=46
+highlight rubyInclude ctermfg=112
+highlight rubyPseudoVariable ctermfg=148 
+
+
+
+
+
 " Syntax HandleBars 
 
 highlight hbsNumber ctermfg=22 
