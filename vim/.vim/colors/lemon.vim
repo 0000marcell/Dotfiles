@@ -24,7 +24,9 @@ highlight javaScriptOpSymbols ctermfg=64
 highlight javaScriptBoolean ctermbg=73 ctermfg=16
 
 " Syntax Ruby
-highlight rubyString ctermfg=22 cterm=underline
+highlight rubyConditional ctermfg=46
+highlight rubyControl ctermfg=46
+highlight rubyString ctermfg=118 cterm=underline
 highlight rubyInstanceVariable ctermfg=42
 highlight rubyComment ctermbg=42 ctermfg=0
 highlight rubyDefine ctermfg=46
