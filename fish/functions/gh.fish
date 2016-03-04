@@ -1,5 +1,7 @@
 function gh-create-repo
 	if count $argv > /dev/null
+		echo $GITHUB_USER
+		echo $GITHUB_TOKEN
 		curl -u "$GITHUB_USER:$GITHUB_TOKEN" https://api.github.com/user/repos -d '{"name":"'$argv[1]'"}'
 	else
 		set_color red
@@ -9,9 +11,10 @@ end
 
 function gh-push-new-repo
 	if count $argv > /dev/null
-		git init 
+		echo "# thor-generators" >> README.md
+		git init
 		git add README.md
-		git commit -m "first commit"
+		git commit -m "first commit"	
 		git remote add origin git@github.com:0000marcell/$argv[1].git
 		git push -u origin master
 	else

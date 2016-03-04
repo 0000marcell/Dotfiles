@@ -50,3 +50,17 @@ snippet link
 # checkbox
 snippet check
 	{{input type="checkbox" name="${1}" checked=${2}}}
+
+# if
+snippet if
+	{{#if ${1}}}
+		${2}
+	{{/if}}
+
+#if else
+snippet ife
+	{{#if ${1}}}
+		${2}
+	{{else}}
+		${3}
+	{{/if}}

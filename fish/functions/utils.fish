@@ -7,3 +7,8 @@ function save-dotfiles
 	cp -R ~/.vim ~/documents/github/dotfiles/vim/ 
 	cd ~/documents/github/dotfiles
 end
+
+
+function make-exec
+	chmod +x $argv[1]
+end
