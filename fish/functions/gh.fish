@@ -39,7 +39,7 @@ function gh-commit
 	git commit -m "$argv[1]"
 end
 
-funcion gh-new-branch
+function gh-new-branch
 	git checkout -b $argv[1]
 end
 

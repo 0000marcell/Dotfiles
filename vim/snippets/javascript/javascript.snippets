@@ -4,6 +4,12 @@ snippet for
 		var ${3:v} = $1[$2];${0:}
 	}
 
+# foreach
+snippet fore
+	${1}.forEach((${2}) => {
+		${3}
+	});
+
 # function
 snippet fun
 	function ${1:function_name}(${2}) {
@@ -13,9 +19,8 @@ snippet fun
 # arrow funcitons
 snippet afun
 	(${1}) => {
-		${2}	
+		${2} 
 	}
-
 # variable functions
 snippet vfun
 	var ${1:name} = function (${2}){
@@ -53,3 +58,14 @@ snippet set
 	setTimeout(function(){
 		${1}	
 	}, ${2})
+
+# ember observer
+snippet eob
+	Ember.observer('${1}', function(){
+		${2}	
+	});
+
+# ember set
+snippet eset
+	this.set('${1}', ${2});
+
