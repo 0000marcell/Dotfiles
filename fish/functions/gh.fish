@@ -38,3 +38,11 @@ function gh-commit
 	git add --all
 	git commit -m "$argv[1]"
 end
+
+funcion gh-new-branch
+	git checkout -b $argv[1]
+end
+
+function gh-delete-branch
+	git branch -D $argv[1]
+end
