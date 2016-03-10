@@ -75,7 +75,7 @@ function! <SID>SynStack()
 	echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
-colorscheme lemon
+colorscheme inkpot 
 "General maps
 map <C-r> :set relativenumber!<CR>
 " Easy motion shortcuts

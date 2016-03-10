@@ -28,10 +28,11 @@ snippet vfun
 	}
 
 #function es6
-snippet nfun
+snippet efun
 	${1}(){
 		${2}
 	}
+	
 #if
 snippet if
 	if(${1}){
@@ -80,3 +81,23 @@ snippet ter
 # console log
 snippet log
 	console.log('${1}'+${2});
+
+# ember inject
+snippet einj
+	Ember.inject.service('${1}'),
+
+# ember ajax
+snippet eajax
+	Ember.$.ajax({
+		type: "POST",
+		url: "/send_mail",
+		data:	{
+			email: this.get('email'),
+			msg:   this.get('msg'), 
+			name:  this.get('name'),
+			title: this.get('title') 
+		}
+	}).done(function(response) {
+	}).fail(function(response){
+	});
+
