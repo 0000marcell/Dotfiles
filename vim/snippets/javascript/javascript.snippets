@@ -3,19 +3,16 @@ snippet for
 	for (var ${2:i} = 0, l = ${1:arr}.length; $2 < l; $2++) {
 		var ${3:v} = $1[$2];${0:}
 	}
-
 # foreach
 snippet fore
 	${1}.forEach((${2}) => {
 		${3}
 	});
-
 # function
 snippet fun
 	function ${1:function_name}(${2}) {
 			${0}
 	}
-
 # arrow funcitons
 snippet afun
 	(${1}) => {
@@ -26,13 +23,11 @@ snippet vfun
 	var ${1:name} = function (${2}){
 		${3}
 	}
-
 #function es6
 snippet efun
 	${1}(){
 		${2}
 	}
-	
 #if
 snippet if
 	if(${1}){
@@ -41,11 +36,9 @@ snippet if
 #import
 snippet imp
 	import ${1:Name} from '${2}';
-
 #export
 snippet exp
 	export ${1:default} ${2:variable name}
-
 # actions
 snippet act
 	actions: {
@@ -53,39 +46,31 @@ snippet act
 			${2}
 		}
 	}
-
 # setTimeout
 snippet set
 	setTimeout(function(){
 		${1}	
 	}, ${2})
-
 # ember observer
 snippet eob
 	Ember.observer('${1}', function(){
 		${2}	
 	});
-
 # ember set
 snippet eset
 	this.set('${1}', ${2});
-
 # ember get
 snippet eget
-	this.get('${1}', ${2});
-
+	this.get('${1}');
 # ternary
 snippet ter
 	${1} ? ${2} : ${3};
-
 # console log
 snippet log
 	console.log('${1}'+${2});
-
 # ember inject
 snippet einj
 	Ember.inject.service('${1}'),
-
 # ember ajax
 snippet eajax
 	Ember.$.ajax({
@@ -100,4 +85,9 @@ snippet eajax
 	}).done(function(response) {
 	}).fail(function(response){
 	});
-
+# ember promise
+snippet eprom
+	return new Ember.RSVP.Promise((resolve, reject) => {
+		${1}
+	});
+# another

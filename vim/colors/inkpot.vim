@@ -16,7 +16,7 @@ let g:colors_name = "inkpot_modified"
 "hi CTagsMember -- no settings --
 "hi CTagsGlobalConstant -- no settings --
 "hi Ignore -- no settings --
-hi Normal guifg=#cf8f45 guibg=#0a0a27 guisp=#0a0a27 gui=NONE ctermfg=179 ctermbg=17 cterm=NONE
+hi Normal ctermfg=179 cterm=NONE
 "hi CTagsImport -- no settings --
 "hi CTagsGlobalVariable -- no settings --
 "hi SpellRare -- no settings --
