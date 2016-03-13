@@ -90,4 +90,18 @@ snippet eprom
 	return new Ember.RSVP.Promise((resolve, reject) => {
 		${1}
 	});
-# another
+# fs read 
+snippet read 
+	try{
+		var fileContent = fs.readFileSync(${1});
+	}catch(err){
+		console.log('something went wrong ');
+	} 
+# fs read
+snippet write 
+	fs.writeFile(${1}, json, function(err) {
+	  if (err){
+	   throw err;
+	  };
+	  console.log('It\'s saved!');
+	});	
