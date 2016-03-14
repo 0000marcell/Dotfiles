@@ -48,5 +48,13 @@ function gh-delete-branch
 end
 
 function gh-reset
-	git reset --hard $argv[1]
+	if count $argv > /dev/null
+		git reset --hard $argv[1]
+	else
+		echo "pass the commit hash"
+	end
+end
+
+function gh-open 
+	open https://github.com/0000marcell/$argv[1]	
 end
