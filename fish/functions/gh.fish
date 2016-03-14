@@ -46,3 +46,7 @@ end
 function gh-delete-branch
 	git branch -D $argv[1]
 end
+
+function gh-reset
+	git reset --hard $argv[1]
+end
