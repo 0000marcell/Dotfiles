@@ -16,3 +16,7 @@ end
 function cp-sync
 	rsync -av --progress $argv[1] $argv[2] --exclude $argv[3] 
 end
+
+function repo-size
+	du -sh $argv[1]
+end
