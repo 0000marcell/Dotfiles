@@ -53,8 +53,8 @@ snippet link
 
 # checkbox
 snippet check
-	{{input type="checkbox" name="${1}" checked=${2}}}
-
+	<label>${1}</label>
+	{{input type="checkbox" name="${2}" checked=${3}}}}
 # if
 snippet if
 	{{#if ${1}}}
@@ -72,3 +72,12 @@ snippet ife
 # img
 snippet img
 	<img src="${1}">
+# label
+snippet lab
+	<label>${1}</label>
+# br
+snippet br
+	<br>
+# curly braces
+snippet eb
+	{{${1}}}

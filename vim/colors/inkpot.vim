@@ -37,7 +37,7 @@ hi Normal ctermfg=179 cterm=NONE
 "hi clear -- no settings --
 hi IncSearch guifg=#301730 guibg=#cdc9c7 guisp=#cdc9c7 gui=NONE ctermfg=236 ctermbg=252 cterm=NONE
 hi WildMenu guifg=#ee77ee guibg=#1717af guisp=#1717af gui=NONE ctermfg=213 ctermbg=19 cterm=NONE
-hi SpecialComment guifg=#ab17d0 guibg=NONE guisp=NONE gui=NONE ctermfg=128 ctermbg=NONE cterm=NONE
+hi SpecialComment guifg=#ab17d0 guibg=NONE guisp=NONE gui=NONE ctermfg=10 ctermbg=NONE cterm=NONE
 hi Typedef guifg=#ff0aff guibg=NONE guisp=NONE gui=NONE ctermfg=201 ctermbg=NONE cterm=NONE
 hi Title guifg=#afa3a3 guibg=NONE guisp=NONE gui=NONE ctermfg=138 ctermbg=NONE cterm=NONE
 hi Folded guifg=#cfcf65 guibg=#79698f guisp=#79698f gui=NONE ctermfg=185 ctermbg=60 cterm=NONE
@@ -119,3 +119,7 @@ hi user1 guifg=#7dffc2 guibg=#0f0f5e guisp=#0f0f5e gui=NONE ctermfg=122 ctermbg=
 hi doxygenspecialonelinedesc guifg=#ad8662 guibg=NONE guisp=NONE gui=NONE ctermfg=137 ctermbg=NONE cterm=NONE
 hi doxygencomment guifg=#ad9477 guibg=NONE guisp=NONE gui=NONE ctermfg=144 ctermbg=NONE cterm=NONE
 hi cspecialcharacter guifg=#ab17d0 guibg=#402140 guisp=#402140 gui=NONE ctermfg=128 ctermbg=238 cterm=NONE
+
+" Custom
+hi rubyComment ctermbg=42 ctermfg=0
+
