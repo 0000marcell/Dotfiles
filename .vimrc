@@ -58,7 +58,7 @@ vmap <S-Tab> <gv
 nmap <C-k> :set nohls!<CR>
 nmap Q	:wq<CR>
 nmap S :q<CR>
-nmap p :pu<CR>
+nmap P :pu<CR>
 map <C-n> :NERDTreeToggle<CR>
 " Insert Maps
 imap <C-l> <esc>
