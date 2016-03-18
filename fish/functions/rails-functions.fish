@@ -26,4 +26,6 @@ function rails-routes
 	rake routes
 end
 
-
+function bake
+	bundle exec rake $argv[1]
+end

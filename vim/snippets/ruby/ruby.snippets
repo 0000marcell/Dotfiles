@@ -1,17 +1,21 @@
 # rails match
 snippet mat
 	match '${1:URL}', to: '${2:controller}#${3:method}', via: '${4:HTTP}'	
-
 # ruby function
 snippet def
 	def ${1}
 		${2}
 	end
-
+# thor say
 snippet say
 	say "${1}", set_color(${2})
-
+# array each
 snippet each
 	${1}.each do |${2}|
 		${3}
+	end
+# rspec test
+snippet test
+	test "${1}" do
+		${2}
 	end

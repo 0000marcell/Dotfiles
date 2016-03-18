@@ -20,3 +20,13 @@ end
 function repo-size
 	du -sh $argv[1]
 end
+
+function read 
+	open http://learnvimscriptthehardway.stevelosh.com/
+	lrn
+	cd Programming/vim/
+end
+
+function colors
+	open https://upload.wikimedia.org/wikipedia/en/1/15/Xterm_256color_chart.svg
+end
