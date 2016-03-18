@@ -52,3 +52,7 @@ hi Number          guifg=#ff00ff gui=bold ctermfg=013 cterm=bold
 hi Special         guifg=#ff8700 gui=none ctermfg=208
 hi PreProc         guifg=#ffaf00 gui=bold ctermfg=214 cterm=bold
 hi Todo            guifg=#000000 guibg=#000000 gui=bold ctermbg=015 ctermfg=000 cterm=bold
+
+" Extra
+hi rubyDebugger ctermbg=161
+hi rubySymbol		ctermfg=208
