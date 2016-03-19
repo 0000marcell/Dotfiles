@@ -30,3 +30,7 @@ end
 function colors
 	open https://upload.wikimedia.org/wikipedia/en/1/15/Xterm_256color_chart.svg
 end
+
+function lrn
+	open https://www.railstutorial.org/book/user_microposts
+end
