@@ -30,6 +30,10 @@ if executable('ag')
 	let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
+" easy align 
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
 vmap <Tab> >gv
 vmap <S-Tab> <gv
 nmap <C-k> :set nohls!<CR>
@@ -69,8 +73,9 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
-"Testing
 Plugin 'tpope/vim-surround'
+"Testing
+Plugin 'junegunn/vim-easy-align'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'

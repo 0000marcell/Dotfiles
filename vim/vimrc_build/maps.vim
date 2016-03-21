@@ -1,3 +1,7 @@
+" easy align 
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
 vmap <Tab> >gv
 vmap <S-Tab> <gv
 nmap <C-k> :set nohls!<CR>

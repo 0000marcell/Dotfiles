@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/Users/marcell/Documents/github/learning/Filosophy'
 let g:netrw_dirhist_2='/Users/marcell/.vim'
-let g:netrw_dirhist_3='/Users/marcell/Documents/github/Pousada-Ronaldo/materialize/app/templates'
+let g:netrw_dirhist_3='/Users/marcell/.vim/vimrc_build'
+let g:netrw_dirhist_4='/Users/marcell/.vim'
+let g:netrw_dirhist_5='/Users/marcell/.vim/vimrc_build'
+let g:netrw_dirhist_6='/Users/marcell/.vim'
