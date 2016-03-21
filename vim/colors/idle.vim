@@ -3,7 +3,7 @@
 " Last Change:  February, 2016
 " Credits:      This is a bastardization of 'beekai' by Stephane Demotte.
 "               http://vimcolors.com/226/beekai/dark   
-
+" Colors: orange=208, 
 set background=dark
 
 hi clear
@@ -54,5 +54,14 @@ hi PreProc         guifg=#ffaf00 gui=bold ctermfg=214 cterm=bold
 hi Todo            guifg=#000000 guibg=#000000 gui=bold ctermbg=015 ctermfg=000 cterm=bold
 
 " Extra
+" Ruby
 hi rubyDebugger ctermbg=161
 hi rubySymbol		ctermfg=208
+
+" Hbs
+hi hbsDescBlock ctermbg=161
+hi hbsTag ctermfg=208
+hi hbsDoubleCurly ctermfg=039
+hi hbsString ctermfg=047
+hi hbsSymbols ctermfg=093
+hi hbsNumber ctermfg=039

@@ -24,23 +24,21 @@ syn match hbsNumber '\d[[:digit:]]*[eE][\-+]\=\d\+'
 syn match hbsNumber '[-+]\=\d[[:digit:]]*\.\d*[eE][\-+]\=\d\+'
 syn match hbsNumber '\d[[:digit:]]*\.\d*[eE][\-+]\=\d\+'
 
-syn match hbsComment "#.*$" 
+"syn match hbsComment "#.*$" 
 
 let b:current_syntax = "hbs"
 
 " Region
 
 syn region hbsString start="'" end="'"
-syn region hbsDescBlock start="{" end="}" fold transparent contains=hbsNumber,hbsBlockCmd
+syn region hbsCurly start="{" end="}"
 
 " Match 
 
 syn match hbsSymbols "[<>]"
 syn match hbsSymbols "[/]"
+syn match hbsSymbols "[{}]"
 
 " Keywords 
 
-syn keyword hbsTag		section div class svg width xml x y height style xml inkscape id pagecolor bordercolor
-
-syn keyword hbsSymbol < / >
-
+syn keyword hbsTag	li h3 h1 link-to offset href img section div class svg width xml x y height style xml inkscape id pagecolor bordercolor
