@@ -8,6 +8,8 @@ if exists("b:current_syntax")
 	finish
 endif
 
+set isk+=-
+
 " Number 
 
 " Integer with - + or nothing in front
@@ -30,8 +32,8 @@ let b:current_syntax = "hbs"
 
 " Region
 
-syn region hbsString start="'" end="'"
-syn region hbsCurly start="{" end="}"
+syn region hbsString   start="'" end="'"
+syn region hbsString   start="\"" end="\""
 
 " Match 
 
@@ -40,5 +42,4 @@ syn match hbsSymbols "[/]"
 syn match hbsSymbols "[{}]"
 
 " Keywords 
-set isk+=-
-syn keyword hbsTag	li h3 h1 link-to scroll-to offset href img section div class svg width xml x y height style xml inkscape id pagecolor bordercolor
+syn keyword hbsTag	li h3 h1 offset href img section div class svg width xml x y height style xml inkscape id pagecolor bordercolor
