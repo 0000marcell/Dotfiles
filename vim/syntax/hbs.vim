@@ -40,5 +40,5 @@ syn match hbsSymbols "[/]"
 syn match hbsSymbols "[{}]"
 
 " Keywords 
-
-syn keyword hbsTag	li h3 h1 link-to offset href img section div class svg width xml x y height style xml inkscape id pagecolor bordercolor
+set isk+=-
+syn keyword hbsTag	li h3 h1 link-to scroll-to offset href img section div class svg width xml x y height style xml inkscape id pagecolor bordercolor

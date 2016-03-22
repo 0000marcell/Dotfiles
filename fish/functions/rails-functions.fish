@@ -19,6 +19,7 @@ function rails-db-migrate
 end
 
 function rails-db-seed
+	bundle exec rake db:migrate:reset
 	bundle exec rake db:seed
 end
 
