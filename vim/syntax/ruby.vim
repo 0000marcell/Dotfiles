@@ -4,3 +4,4 @@
 "   Version: 0.8.1
 
 syntax keyword rubyDebugger debugger 
+syntax keyword rubyCallBack before_save before_create validates has_many before_action
