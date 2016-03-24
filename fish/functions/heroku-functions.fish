@@ -13,3 +13,11 @@ end
 function heroku-console
 	heroku run console --sandbox
 end
+
+function heroku-releases
+	heroku releases
+end
+
+function heroku-git-log
+	git ls-remote heroku
+end
