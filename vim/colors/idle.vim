@@ -66,3 +66,6 @@ hi hbsDoubleCurly ctermfg=039
 hi hbsString ctermfg=047
 hi hbsSymbols ctermfg=093
 hi hbsNumber ctermfg=039
+
+" Javascript 
+hi javaScriptObjectKey ctermfg=200
