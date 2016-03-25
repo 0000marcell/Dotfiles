@@ -58,7 +58,7 @@ hi Todo            guifg=#000000 guibg=#000000 gui=bold ctermbg=015 ctermfg=000 
 hi rubyDebugger ctermbg=161
 hi rubySymbol		ctermfg=208
 hi rubyCallBack	ctermfg=093
-
+hi rubyMethod		ctermfg=093
 " Hbs
 hi hbsDescBlock ctermbg=161
 hi hbsTag ctermfg=208
