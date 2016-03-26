@@ -309,3 +309,6 @@ if main_syntax == 'javascript'
 endif
 syntax region jsInJsdocExample matchgroup=Snip start="^\s*\* @example" end="\(^\s*\* [^[:space:]]\)\@=" containedin=@javaScriptComment contains=@javaScriptAll
 hi link Snip SpecialComment
+
+" Extra
+syntax match javaScriptMethod "\.\w*"

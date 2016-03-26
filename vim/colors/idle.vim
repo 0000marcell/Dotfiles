@@ -69,3 +69,4 @@ hi hbsNumber ctermfg=039
 
 " Javascript 
 hi javaScriptObjectKey ctermfg=200
+hi javaScriptMethod    ctermfg=039
