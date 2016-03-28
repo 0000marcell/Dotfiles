@@ -312,4 +312,4 @@ hi link Snip SpecialComment
 
 " Extra
 syntax match javaScriptMethod "\.\w*"
-syntax match javaScriptConstant "[A-Z]"
+syntax match javaScriptConstant "[A-Z]\{2,99}"
