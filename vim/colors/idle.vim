@@ -68,7 +68,8 @@ hi hbsSymbols ctermfg=093
 hi hbsNumber ctermfg=039
 
 " Javascript 
-hi javaScriptObjectKey ctermfg=200
-hi javaScriptMethod    ctermfg=208
-hi javaScriptConstant  ctermfg=021
-hi javaScriptPromise   ctermfg=200
+hi javaScriptObjectKey	 ctermfg=200
+hi javaScriptMethod			 ctermfg=208
+hi javaScriptConstant		 ctermfg=021
+hi javaScriptPromise		 ctermfg=200
+hi javaScriptES6Function ctermfg=200 

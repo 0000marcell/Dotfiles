@@ -311,6 +311,7 @@ syntax region jsInJsdocExample matchgroup=Snip start="^\s*\* @example" end="\(^\
 hi link Snip SpecialComment
 
 " Extra
-syntax match javaScriptMethod "\.\w*"
-syntax match javaScriptConstant "[A-Z]\{2,99}"
-syntax keyword javaScriptPromise resolve reject
+syntax match	 javaScriptMethod			 '\.\w*'
+syntax match	 javaScriptConstant		 '[A-Z]\{2,99}'
+syntax match	 javaScriptES6Function '\w*('
+syntax keyword javaScriptPromise     resolve reject
