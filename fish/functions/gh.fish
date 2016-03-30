@@ -5,13 +5,13 @@ function gh-create-repo
 		curl -u "$GITHUB_USER:$GITHUB_TOKEN" https://api.github.com/user/repos -d '{"name":"'$argv[1]'"}'
 	else
 		set_color red
-		echo "my user name is $GITHUB_USER"	
+		echo "error when creating the remote repo name: $GITHUB_USER token: $GITHUB_TOKEN"	
 	end
 end
 
 function gh-push-new-repo
 	if count $argv > /dev/null
-		echo "# thor-generators" >> README.md
+		echo "# $argv[1]" >> README.md
 		git init
 		git add README.md
 		git commit -m "first commit"	
@@ -41,6 +41,11 @@ end
 
 function gh-new-branch
 	git checkout -b $argv[1]
+end
+
+# argv branch name, remote is automatically created 
+function gh-push-branch
+	git push origin $argv[1]
 end
 
 function gh-delete-branch

@@ -17,8 +17,14 @@ function cp-sync
 	rsync -av --progress $argv[1] $argv[2] --exclude $argv[3] 
 end
 
-function repo-size
+function repo-size-total
 	du -sh $argv[1]
+end
+
+function repo-size
+	for file in *
+		du -sh $file
+	end
 end
 
 function read 
