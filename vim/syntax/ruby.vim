@@ -5,4 +5,5 @@
 
 syntax keyword rubyDebugger debugger 
 syntax keyword rubyCallBack get post match resources root mount_ember_app namespace before_save before_create validates has_many before_action
+syntax keyword rubyRailsSpecific params
 syntax match rubyMethod "\.\w*" 
