@@ -30,3 +30,8 @@ end
 function bake
 	bundle exec rake $argv[1]
 end
+
+# show information about gems
+function rails-gems
+	gem environment
+end
