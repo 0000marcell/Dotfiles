@@ -75,6 +75,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-surround'
 "Testing
+Plugin 'sudar/vim-arduino-syntax'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
