@@ -52,6 +52,7 @@ function gh-delete-branch
 	git branch -D $argv[1]
 end
 
+# throw away all uncommit changes and revert back to old state
 function gh-reset
 	if count $argv > /dev/null
 		git reset --hard $argv[1]
