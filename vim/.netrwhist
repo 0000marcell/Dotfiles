@@ -5,4 +5,4 @@ let g:netrw_dirhist_2='/Users/marcell/Documents/github/ember-resource-test/front
 let g:netrw_dirhist_3='/Users/marcell/Documents/github/ember-resource-test'
 let g:netrw_dirhist_4='/Users/marcell/Documents/github/ember-data'
 let g:netrw_dirhist_5='/Users/marcell/Documents/github/ember-data-async-rel'
-let g:netrw_dirhist_6='/Users/marcell/Documents/github/rails-async-rel'
+let g:netrw_dirhist_6='/Users/marcell/.config'
