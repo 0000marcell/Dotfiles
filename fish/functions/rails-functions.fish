@@ -32,6 +32,11 @@ function bake
 end
 
 # show information about gems
-function rails-gems
+function rails-env
 	gem environment
+end
+
+# show information about installed gems for that project
+function rails-gems
+	bundle show
 end

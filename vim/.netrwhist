@@ -1,4 +1,4 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/marcell/Documents/github/ember-rails-bookstore-rails-5/bookstore-api'
-let g:netrw_dirhist_2='/Users/marcell/.config'
+let g:netrw_dirhist_1='/Users/marcell/Documents/github/ember-rails-async/rails-async-rel'
+let g:netrw_dirhist_2='/Users/marcell/.config/fish'
