@@ -3,6 +3,13 @@
 #ember-rails-heroku-deploy
 #ember-rails-resource
 
+# show latest versions of ember rails and ember-data
+function ember-rails-latest
+ open http://rubyonrails.org/
+ open http://emberjs.com/builds/
+ open https://github.com/emberjs/data/releases
+end
+
 function ember-rails-new
 	set_color purple
 	echo 'installing rails without bundle'
