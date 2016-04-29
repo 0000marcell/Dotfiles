@@ -8,6 +8,24 @@ function ember-rails-latest
  open http://rubyonrails.org/
  open http://emberjs.com/builds/
  open https://github.com/emberjs/data/releases
+ open https://github.com/ember-cli/ember-cli/releases/tag/v2.5.0
+end
+
+# update ember and ember-data, see latest version with ember-rails-latest 2.5.6
+function ember-rails-update-ember
+	bower install ember#$argv[1] --save
+end
+
+# see which version with ember-rails-latest 2.3.4
+function ember-rails-update-ember-data
+	ember install ember-data@$argv[1]
+end
+
+# upate ember ember-cli
+function ember-rails-update-ember-cli
+	npm uninstall -g ember-cli
+	npm cache clean && bower cache clean
+	npm install -g ember-cli@$argv[1]
 end
 
 function ember-rails-new
