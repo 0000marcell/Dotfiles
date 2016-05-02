@@ -3,6 +3,16 @@
 #ember-rails-heroku-deploy
 #ember-rails-resource
 
+# ember api
+function ember-api
+	open http://emberjs.com/api/
+end
+
+# rails api
+function rails-api
+	open http://api.rubyonrails.org/
+end
+
 # show latest versions of ember rails and ember-data
 function ember-rails-latest
  open http://rubyonrails.org/
