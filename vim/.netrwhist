@@ -1,2 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =0
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Users/marcell/Documents/github/ember-rails-async/ember-data-async-rel'
+let g:netrw_dirhist_2='/Users/marcell/Documents/github/ember-rails-bookstore-rails-5/bookstore'
+let g:netrw_dirhist_3='/Users/marcell/Documents/github/ember-rails-async/ember-data-async-rel'
+let g:netrw_dirhist_4='/Users/marcell/Documents/github/ember-rails-bookstore-rails-5/bookstore'
+let g:netrw_dirhist_5='/Users/marcell/Documents/github/ember-rails-async/rails-async-rel'
+let g:netrw_dirhist_6='/Users/marcell/Documents/github/ember-resource-test/frontend'
+let g:netrw_dirhist_7='/Users/marcell/Documents/github/ember-resource-test'
+let g:netrw_dirhist_8='/Users/marcell/Documents/github/secretcodez'
+let g:netrw_dirhist_9='/Users/marcell/Documents/github/ember-resource-test'
