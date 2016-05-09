@@ -4,8 +4,13 @@ function curl-json
 	curl -v -H "Content-Type: application/json" -X POST -d $argv[1] $argv[2]
 end
 
-# curl with headers 
-# exemple: curl-header '"Autorization: Bearer some bs"' "http://localhost:3000/endpoint"
-function curl-header
-	curl -v --header $argv[1] $argv[2]
+# header ex: "Authorization: Bearer 89897878799"
+# json get with header 
+function curl-json-get
+	curl -v -H  --header $argv[1] $argv[2] 
+end
+
+# header - json - url
+function curl-json-post
+	curl -v -H  --header $argv[1] -X POST -d $argv[2] $argv[3] 
 end
