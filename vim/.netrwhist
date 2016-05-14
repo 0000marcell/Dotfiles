@@ -1,6 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/marcell/Documents/github/rails_api_app'
-let g:netrw_dirhist_2='/Users/marcell/.config/fish'
-let g:netrw_dirhist_3='/Users/marcell/Documents/github/rails_api_app'
-let g:netrw_dirhist_4='/Users/marcell/.config/fish'
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/marcell/Documents/github/thor-generators/rails'
+let g:netrw_dirhist_2='/Users/marcell/Documents/github/ember-resource-test'
+let g:netrw_dirhist_3='/Users/marcell/Documents/github/thor-generators/rails'
+let g:netrw_dirhist_4='/Users/marcell/Documents/github/ember-resource-test/config'
+let g:netrw_dirhist_5='/Users/marcell/Documents/github'
+let g:netrw_dirhist_6='/Users/marcell/Documents/github/thor-generators/rails'
