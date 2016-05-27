@@ -1,8 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/Users/marcell/Documents/github/ember-test'
 let g:netrw_dirhist_2='/Users/marcell/Documents/github/final-resource-test'
 let g:netrw_dirhist_3='/Users/marcell/Documents/github/ember-test'
-let g:netrw_dirhist_4='/Users/marcell/Documents/github/ember-rails-bookstore-rails-5'
-let g:netrw_dirhist_5='/Users/marcell/Documents/github/ember-resource-test/frontend'
-let g:netrw_dirhist_6='/Users/marcell/.vim'
+let g:netrw_dirhist_4='/Users/marcell'
+let g:netrw_dirhist_5='/Users/marcell/.vim'
