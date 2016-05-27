@@ -1,3 +1,7 @@
+function rails-lolcat
+	rails s 2>&1 | lolcat
+end
+
 function rails-test
 	bundle exec rake test
 end
