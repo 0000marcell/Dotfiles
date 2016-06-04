@@ -1,4 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/marcell/Documents/github/final-frontend'
-let g:netrw_dirhist_2='/Users/marcell/Documents/github/final-backend'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/marcell/Documents/github/thor-generators/rails'
+let g:netrw_dirhist_2='/Users/marcell/Documents/github/backend-views'
+let g:netrw_dirhist_3='/Users/marcell/Documents/github'
+let g:netrw_dirhist_4='/Users/marcell/Documents/github/final-frontend'
