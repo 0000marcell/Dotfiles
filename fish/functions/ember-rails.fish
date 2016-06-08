@@ -6,14 +6,7 @@
 
 # ember deploy install ember deploy for s3
 function ember-deploy
-	ember install ember-cli-deploy
-	ember install ember-cli-deploy-build
-	ember install ember-cli-deploy-revision-data
-	ember install ember-cli-deploy-display-revisions
-	ember install ember-cli-deploy-gzip
-	ember install ember-cli-deploy-s3-index
-	ember install ember-cli-deploy-s3
-	cp ~/.config/fish/functions/ember-rails/deploy.js ./
+	ember deploy production --verbose --activate=true
 end
 
 # ember api

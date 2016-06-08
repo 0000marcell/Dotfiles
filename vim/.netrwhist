@@ -1,10 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/Users/marcell/Documents/github/thor-generators/rails'
-let g:netrw_dirhist_2='/Users/marcell/Documents/github/backend-views'
-let g:netrw_dirhist_3='/Users/marcell/Documents/github'
-let g:netrw_dirhist_4='/Users/marcell/Documents/github/final-frontend'
-let g:netrw_dirhist_5='/Users/marcell/.config/fish'
-let g:netrw_dirhist_6='/Users/marcell/Documents/github/SandBox/elm-phoenix/seat_saver'
-let g:netrw_dirhist_7='/Users/marcell/.config'
-let g:netrw_dirhist_8='/Users/marcell/Documents/github/SandBox/elm-phoenix/seat_saver'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/Users/marcell/Documents/github/ember-rails-tests-2/frontend/app/authenticators'
+let g:netrw_dirhist_2='/Users/marcell/.config/fish'
