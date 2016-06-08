@@ -38,7 +38,7 @@ end
 # upate ember ember-cli
 function ember-rails-update-ember-cli
 	npm uninstall -g ember-cli
-	npm cache clean && bower cache clean
+	npm cache clean and bower cache clean
 	npm install -g ember-cli@$argv[1]
 end
 
