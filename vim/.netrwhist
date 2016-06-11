@@ -1,11 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/Users/marcell/Documents/github/thor-generators/rails'
-let g:netrw_dirhist_2='/Users/marcell/Documents/github/hospitalrun-frontend'
-let g:netrw_dirhist_3='/Users/marcell/Documents/github/ember-resource-test'
-let g:netrw_dirhist_4='/Users/marcell/Documents/github/ember-resource-test/frontend'
-let g:netrw_dirhist_5='/Users/marcell/Documents/github/ember-rails-tests/frontend'
-let g:netrw_dirhist_6='/Users/marcell/Documents/github/thor-generators/ember'
-let g:netrw_dirhist_7='/Users/marcell/Documents/github/ember-rails-tests/mirage-test'
-let g:netrw_dirhist_8='/Users/marcell/Documents/github/ember-rails-tests/ember-cli-mirage-example'
-let g:netrw_dirhist_9='/Users/marcell/Documents/github/ember-rails-tests/mirage-test'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/marcell/Documents/github/ember-rails-tests'
+let g:netrw_dirhist_2='/Users/marcell/Documents/github/ember-rails-tests/mirage-test'
+let g:netrw_dirhist_3='/Users/marcell/.vim/snippets/javascript'
