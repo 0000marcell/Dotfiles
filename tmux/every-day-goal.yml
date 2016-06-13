@@ -1,7 +1,7 @@
-# ~/.tmuxinator/thor-gen.yml
+# ~/.tmuxinator/every-day-goal.yml
 
-name: thor-gen
-root: ~/documents/github/thor-generators/
+name: every-day-goal
+root: ~/documents/github/every-day-goal
 
 # Optional tmux socket
 # socket_name: foo
@@ -25,14 +25,14 @@ root: ~/documents/github/thor-generators/
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t thor-gen
+# post: tmux -CC attach -t every-day-goal
 
 windows:
-  - ThorGen_Editor:
+  - EDG-Editor:
       layout: main-horizontal
       panes:
         - 
         - 
         - 
-  - ThorGen_Tests:
-  - ThorGen_Server:
+  - EDG-Tests: 
+  - EDG-Server: 
