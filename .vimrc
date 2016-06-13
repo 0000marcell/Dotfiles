@@ -22,7 +22,7 @@ set fillchars+=stl:\ ,stlnc:\
 set termencoding=utf-8
 let g:Powerline_symbols = 'fancy'
 "CTRLP config
-:command RefreshFiles CtrlPClearCache
+:command RF	CtrlPClearCache
 
 let g:ctrlp_cache_dir = $HOME . '/ .cache/ctrlp'
 let g:ctrlp_working_path_mode = 0
