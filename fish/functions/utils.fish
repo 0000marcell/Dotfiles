@@ -40,3 +40,13 @@ end
 function lrn
 	open https://www.railstutorial.org/book/user_microposts
 end
+
+function fish_color
+	set -l textcol  white
+	set -l bgcol    blue
+	set -l arrowcol green
+	set_color $textcol -b $bgcol
+	echo -n " "(basename $PWD)" "
+	set_color $arrowcol -b normal
+	echo -n "⮀ "
+end
