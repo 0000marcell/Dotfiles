@@ -1,7 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/Users/marcell/Documents/github/thor-generators/ember'
 let g:netrw_dirhist_2='/Users/marcell/Documents/github/final-backend'
 let g:netrw_dirhist_3='/Users/marcell/Documents/github/final-backend/lib'
 let g:netrw_dirhist_4='/Users/marcell/Documents/github/final-backend/test'
 let g:netrw_dirhist_5='/Users/marcell/Documents/github/final-backend'
+let g:netrw_dirhist_6='/Users/marcell/Documents/github/SandBox/elm-phoenix/elm/elm-architecture-tutorial'
+let g:netrw_dirhist_7='/Users/marcell/Documents/github/SandBox/YUIDOC'
+let g:netrw_dirhist_8='/Users/marcell/Documents/github/ember-cli-mirage'
