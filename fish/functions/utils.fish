@@ -8,6 +8,10 @@ function save-dotfiles
 	cd ~/documents/github/dotfiles
 end
 
+function ls-recent
+	ls -Art | tail -n 5
+end
+
 
 function make-exec
 	chmod +x $argv[1]
@@ -25,12 +29,6 @@ function repo-size
 	for file in *
 		du -sh $file
 	end
-end
-
-function read 
-	open http://learnvimscriptthehardway.stevelosh.com/
-	lrn
-	cd Programming/vim/
 end
 
 function colors
