@@ -1,9 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/marcell/Documents/github/ember-cli-mirage/out'
-let g:netrw_dirhist_2='/Users/marcell/Documents/github/thor-generators/ember'
-let g:netrw_dirhist_3='/Users/marcell/Documents/github/ember-rails-tests/app4'
-let g:netrw_dirhist_4='/Users/marcell/Documents/github/ember-rails-tests/app4/node_modules/ember-cli-mirage'
-let g:netrw_dirhist_5='/Users/marcell/Documents/github/ember-rails-tests/app4/mirage'
-let g:netrw_dirhist_6='/Users/marcell/Documents/github/ember-rails-tests/app4/node_modules/ember-cli-mirage'
-let g:netrw_dirhist_7='/Users/marcell/Documents/github/ember-rails-tests/app4'
+let g:netrw_dirhist_cnt =0
