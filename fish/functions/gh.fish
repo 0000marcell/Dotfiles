@@ -13,7 +13,7 @@ function gh-push-new-repo
 	if count $argv > /dev/null
 		echo "# $argv[1]" >> README.md
 		git init
-		git add README.md
+		git add --all
 		git commit -m "first commit"	
 		git remote add origin git@github.com:0000marcell/$argv[1].git
 		git push -u origin master
