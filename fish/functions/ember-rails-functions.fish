@@ -1,6 +1,18 @@
 #ember-rails-deploy-to-heroku
 #ember-rails-heroku-deploy
 #ember-deploy
+#ember-server ( ember server using rails )
+#rails-server ( rails server using ember )
+
+# ember server
+function ember-server
+	ember server --proxy http://0.0.0.0:3000
+end
+
+# rails server
+function rails-server
+	rails server --binding 0.0.0.0
+end
 
 # ember deploy install ember deploy for s3
 function ember-deploy

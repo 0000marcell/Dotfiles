@@ -4,6 +4,8 @@ set hls
 set nocompatible
 set shell=/bin/bash
 filetype off
+set swapfile
+set dir=~/tmp
 syntax on
 set relativenumber
 set rtp+=~/.vim/bundle/Vundle.vim
