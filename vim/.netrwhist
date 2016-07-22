@@ -1,2 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =0
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/marcell/Documents/github/ember-cli-mirage'
+let g:netrw_dirhist_2='/Users/marcell/Documents/github/ember-rails-tests/app4/node_modules/ember-cli'
+let g:netrw_dirhist_3='/Users/marcell/Documents/github/SandBox/Javascript-SandBox/babel-tests'
+let g:netrw_dirhist_4='/Users/marcell/Documents/github/SandBox/Javascript-SandBox/babel-tests/node_modules/ember-inflector'
+let g:netrw_dirhist_5='/Users/marcell/Documents/github/Pousada-Ronaldo'
+let g:netrw_dirhist_6='/Users/marcell/Documents/github/Pousada-Ronaldo/materialize/config'
+let g:netrw_dirhist_7='/Users/marcell/.config'
+let g:netrw_dirhist_8='/Users/marcell/Documents/github/Pousada-Ronaldo/materialize'
