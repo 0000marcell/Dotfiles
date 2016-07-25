@@ -1,5 +1,5 @@
 "General config
-colorscheme idle 
+colorscheme pastel 
 set hls
 set nocompatible
 set shell=/bin/bash
@@ -7,7 +7,7 @@ filetype off
 set swapfile
 set dir=~/tmp
 syntax on
-set relativenumber
+set nonumber 
 set rtp+=~/.vim/bundle/Vundle.vim
 set tabstop=2
 set clipboard=unnamed
