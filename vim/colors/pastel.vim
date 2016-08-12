@@ -18,14 +18,14 @@ let colors_name = "pastel"
 " These settings are unchanged from Demotte's beekai.
 if version >= 700
   hi CursorLine    guibg=#111111 ctermbg=234
-  hi CursorColumn  guibg=#111111 ctermbg=234
+  hi CursorColumn  guibg=#111111 ctermbg=004
   hi MatchParen    guifg=#d0ffc0 guibg=#111111 gui=bold ctermfg=157 ctermbg=237 cterm=bold
   hi Pmenu         guifg=#ffffff guibg=#111111 ctermfg=255 ctermbg=238
   hi PmenuSel      guifg=#000000 guibg=#d3ff3b ctermfg=0 ctermbg=148
 endif
 
 " General colors
-hi Cursor          guifg=NONE    guibg=#626262 gui=none ctermbg=241
+hi Cursor          guifg=NONE    guibg=#626262 gui=none ctermbg=004
 hi Normal          ctermfg=234
 hi NonText         guifg=#808080 guibg=#262626 gui=none ctermfg=244 ctermbg=235
 hi LineNr          guifg=#ffffff gui=bold guibg=#5fafff gui=none ctermfg=075 ctermbg=black cterm=bold

@@ -1,7 +1,7 @@
 # ~/.tmuxinator/pousada-serra.yml
 
 name: pousada-serra 
-root: ~/documents/github/Pousada-Ronaldo
+root: ~/documents/github/pousada-serra-rebuild
 
 # Optional tmux socket
 # socket_name: foo

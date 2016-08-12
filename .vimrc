@@ -1,5 +1,5 @@
 "General config
-colorscheme pastel 
+colorscheme jagpanther
 set hls
 set nocompatible
 set shell=/bin/bash
