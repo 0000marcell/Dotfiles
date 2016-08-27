@@ -4,6 +4,12 @@
 #ember-server ( ember server using rails )
 #rails-server ( rails server using ember )
 
+# copy ember default project, remember of rm symlinked node_modules folder after using
+function ember-copy
+	rsync -av --progress ~/documents/github/sandbox/ember-default-materialize ./ember-default --exclude node_modules
+	ln -s ./ember-default-materialize/node_modules ./ember-default/node_modules
+end
+
 # ember server
 function ember-server
 	ember server --proxy http://0.0.0.0:3000
