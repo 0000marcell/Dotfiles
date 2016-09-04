@@ -1,5 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =2
 let g:netrw_dirhist_1='/Users/marcell/Documents/github/thor-generators/thor'
-let g:netrw_dirhist_2='/Users/marcell/Documents/github/SandBox/ember-default-materialize'
-let g:netrw_dirhist_3='/Users/marcell/.config'
+let g:netrw_dirhist_2='/Users/marcell/Documents/github/SandBox/Javascript-SandBox/general_tests'
