@@ -1,4 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/marcell/Documents/github/thor-generators/thor'
-let g:netrw_dirhist_2='/Users/marcell/Documents/github/SandBox/Javascript-SandBox/general_tests'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/marcell/Documents/github/SandBox'
+let g:netrw_dirhist_2='/Users/marcell/Documents/github/SandBox/ember-rails-complete-app-ex/ember-complete-app-ex'
+let g:netrw_dirhist_3='/Users/marcell/Documents/github/ember-cli-materialize'
+let g:netrw_dirhist_4='/Users/marcell/Documents/github/pousada-serra-decouple/pousada-front-end'

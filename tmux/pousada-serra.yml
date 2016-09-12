@@ -1,7 +1,7 @@
 # ~/.tmuxinator/pousada-serra.yml
 
 name: pousada-serra 
-root: ~/documents/github/pousada-serra-rebuild
+root: ~/documents/github/pousada-serra-decouple
 
 # Optional tmux socket
 # socket_name: foo
@@ -29,26 +29,17 @@ root: ~/documents/github/pousada-serra-rebuild
 
 windows:
   - Pousada_Serra_Editor:
-      layout: main-horizontal
+      layout: main-vertical
       panes:
         - 
-        -
-        -
-  - Pousada_Serra_Editor: 
-      layout: main-horizontal
-      panes:
-        - 
-        -
         -
   - Pousada_Serra_Rails_Server:
-      layout: main-horizontal
+      layout: main-vertical
       panes:
-        -
         -
         -
   - Pousada_Serra_Ember_Server:
-      layout: main-horizontal
+      layout: main-vertical
       panes:
         - 
-        -
         -
