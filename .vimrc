@@ -9,10 +9,8 @@ set dir=~/tmp
 syntax on
 set nonumber 
 set rtp+=~/.vim/bundle/Vundle.vim
-set tabstop=2
+set tabstop=2 softtabstop=0 shiftwidth=2 smarttab
 set clipboard=unnamed
-set shiftwidth=2
-set softtabstop=2
 set wildignore+=*/node_modules/*,*/bower_components/*,*/dist/*,*/tmp/*,*/build/*
 "Powerline config
 set guifont=Inconsolata\ for\ Powerline:h15
