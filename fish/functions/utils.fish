@@ -1,3 +1,7 @@
+function bass-nvm
+	bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
+end
+
 function save-dotfiles
 	rsync -av --progress ~/.config/fish/ ~/documents/github/dotfiles/fish/ --exclude .git
 	rm ~/documents/github/dotfiles/fish/config.fish

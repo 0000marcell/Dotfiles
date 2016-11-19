@@ -28,18 +28,6 @@ root: ~/documents/github/pousada-serra-decouple
 # post: tmux -CC attach -t pousada-ronaldo
 
 windows:
-  - Pousada_Serra_Editor:
-      layout: main-vertical
-      panes:
-        - 
-        -
-  - Pousada_Serra_Rails_Server:
-      layout: main-vertical
-      panes:
-        -
-        -
-  - Pousada_Serra_Ember_Server:
-      layout: main-vertical
-      panes:
-        - 
-        -
+  - Pousada_Serra:
+  - Pousada_Serra:
+  - Pousada_Serra:

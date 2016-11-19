@@ -31,5 +31,5 @@ SET fish_pager_color_description:555\x1eyellow
 SET fish_pager_color_prefix:cyan
 SET fish_pager_color_progress:cyan
 SET fisher_active_prompt:simple
-SET fisher_dependency_count:git_util\x1epwd_info\x1epwd_is_home\x1ehost_info\x1elast_job_id\x1ehumanize_duration\x1esimple
+SET fisher_dependency_count:git_util\x1epwd_info\x1epwd_is_home\x1ehost_info\x1elast_job_id\x1ehumanize_duration\x1esimple\x1ebass
 SET fisher_prompt:chain
