@@ -20,7 +20,7 @@ function rails-server
 	rails server --binding 0.0.0.0
 end
 
-# ember deploy install ember deploy for s3
+# deploy ember app to amazon s3
 function ember-deploy
 	ember deploy production --verbose --activate=true
 end

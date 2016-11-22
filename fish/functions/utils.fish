@@ -1,3 +1,7 @@
+function loc
+	find . -name $argv[1] | xargs wc -l
+end
+
 function bass-nvm
 	bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
 end
