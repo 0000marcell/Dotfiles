@@ -1,8 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/Users/marcell/Documents/github/ember-rails-deploy/ember-complete-app-ex'
-let g:netrw_dirhist_2='/Users/marcell/Documents/github/ember-rails-deploy/rails-complete-app-ex'
-let g:netrw_dirhist_3='/Users/marcell/Documents/github/SandBox/javascript/ember/ember-rails-complete-app-ex/rails-complete-app-ex'
-let g:netrw_dirhist_4='/Users/marcell/Documents/github/SandBox/javascript/ember/ember-rails-complete-app-ex/ember-complete-app-ex'
-let g:netrw_dirhist_5='/Users/marcell/Documents/github/ember-rails-deploy/rails-complete-app-ex'
-let g:netrw_dirhist_6='/Users/marcell/.config/fish'
+let g:netrw_dirhist_2='/Users/marcell/.config/fish'
+let g:netrw_dirhist_3='/Users/marcell/Documents/github/ember-rails-deploy/ember-complete-app-ex'
+let g:netrw_dirhist_4='/Users/marcell/Documents/github/ember-test'
