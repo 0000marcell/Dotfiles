@@ -2,6 +2,7 @@ function loc
 	find . -name $argv[1] | xargs wc -l
 end
 
+# ex: bass-nvm use 6, to use node version 6
 function bass-nvm
 	bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
 end
