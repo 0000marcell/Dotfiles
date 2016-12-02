@@ -1,5 +1,5 @@
 #curl with json 
-# exemple: curl-json '{"username": "0000marcell@gmail.com","password":"123456"}' "http://localhost:3000/login"
+# exemple: curl-json '{"username": "0000marcell@gmail.com", "password":"123456"}' "http://localhost:3000/login"
 function curl-json
 	curl -v -H "Content-Type: application/json" -X POST -d $argv[1] $argv[2]
 end
