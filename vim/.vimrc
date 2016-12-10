@@ -9,7 +9,7 @@ set dir=~/tmp
 syntax on
 set nonumber 
 set rtp+=~/.vim/bundle/Vundle.vim
-set tabstop=2 softtabstop=0 shiftwidth=2 smarttab
+set tabstop=2 softtabstop=0 shiftwidth=2 expandtab
 set clipboard=unnamed
 set wildignore+=*/node_modules/*,*/bower_components/*,*/dist/*,*/tmp/*,*/build/*
 "Powerline config
