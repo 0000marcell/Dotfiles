@@ -4,6 +4,15 @@
 #ember-server ( ember server using rails )
 #rails-server ( rails server using ember )
 
+# install all ember deploy dependencies
+function ember-install-deploy
+  ember install ember-cli-deploy
+  ember install ember-cli-deploy-build
+  ember install ember-cli-deploy-revision-data
+  ember install ember-cli-deploy-display-revisions
+  ember install ember-cli-deploy-gzip
+end
+
 # copy ember default project, remember of rm symlinked node_modules folder after using
 function ember-copy
 	rsync -av --progress ~/documents/github/sandbox/ember-default-materialize ./ember-default --exclude node_modules
