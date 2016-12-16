@@ -11,6 +11,8 @@ function ember-install-deploy
   ember install ember-cli-deploy-revision-data
   ember install ember-cli-deploy-display-revisions
   ember install ember-cli-deploy-gzip
+  ember install ember-cli-deploy-s3-index
+  ember install ember-cli-deploy-s3
 end
 
 # copy ember default project, remember of rm symlinked node_modules folder after using
@@ -22,6 +24,11 @@ end
 # ember server
 function ember-server
 	ember server --proxy http://0.0.0.0:3000
+end
+
+# ember fastboot
+function ember-serve-fastboot
+  ember fastboot --serve-assets
 end
 
 # rails server
