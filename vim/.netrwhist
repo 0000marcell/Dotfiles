@@ -1,8 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/marcell/Documents/github/ember-fastboot-example'
-let g:netrw_dirhist_2='/Users/marcell/.config/fish/functions'
-let g:netrw_dirhist_3='/Users/marcell/Documents/github/ember-fastboot-example'
-let g:netrw_dirhist_4='/Users/marcell/.config/fish'
-let g:netrw_dirhist_5='/Users/marcell/Documents/github/ember-cli-materialize'
-let g:netrw_dirhist_6='/Users/marcell/.config/fish'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/marcell/Documents/github/ember-rails-deploy/ember-complete-app-ex'
+let g:netrw_dirhist_2='/Users/marcell/Documents/github/sc_scripts/ra/bin'
+let g:netrw_dirhist_3='/Users/marcell/Documents/github/sc_scripts/ra'

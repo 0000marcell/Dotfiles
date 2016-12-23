@@ -89,3 +89,4 @@ Plugin 'jiangmiao/auto-pairs'
 call vundle#end()
 filetype plugin indent on
 
+Plugin 'wakatime/vim-wakatime'
