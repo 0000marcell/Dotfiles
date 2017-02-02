@@ -51,6 +51,10 @@ snippet set
 	setTimeout(function(){
 		${1}	
 	}, ${2})
+# method
+snippet met
+	${1}.prototype.${2} = function(){
+	}
 # ember observer
 snippet eob
 	Ember.observer('${1}', function(){
@@ -110,6 +114,9 @@ snippet etest
 	test('${1}', function(assert){
 		${2}
 	});
+# assert
+snippet easse
+	assert.equal(${1}, ${2});
 # concat string 
 snippet con
 	`${1}`
@@ -135,3 +142,8 @@ snippet eand
 # ember fillIn
 snippet efill
 	fillIn(find('input#name'), '${1}');
+# documentation
+snippet doc
+	/**
+	* ${1}
+	*/

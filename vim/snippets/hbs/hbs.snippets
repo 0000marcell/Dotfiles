@@ -15,14 +15,15 @@ snippet p
 
 # each
 snippet each
-	{{#each model as |${1}|}}
-		${2}	
-	{{/each}}
-
+	<ul>
+		{{#each model as |${1}|}}
+			<li>${2}</li>
+		{{/each}}
+	</ul>
 # input 
 snippet input
 	<label>${1}</label>
-	{{input type='text' value=${3}}}
+	{{input type='text' value=${2}}}
 # select 
 snippet select
 	<label>${1}</label>
