@@ -1,4 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/marcell/Documents/github/ember-mirage-test'
-let g:netrw_dirhist_2='/Users/marcell/.vim/snippets'
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/marcell/Documents/github/Pomodoro-NW/pomodoro-nw'
+let g:netrw_dirhist_2='.'
+let g:netrw_dirhist_3='/Users/marcell/Documents/github/Pomodoro-NW/pomodoro-nw'
+let g:netrw_dirhist_4='/Users/marcell/Documents/github/ember-mirage-test'
+let g:netrw_dirhist_5='/Users/marcell/Documents/github/pousada-serra-decouple/pousada-front-end'
+let g:netrw_dirhist_6='/Users/marcell/Documents/github/pousada-serra-decouple/pousada-back-end'
+let g:netrw_dirhist_7='/Users/marcell/Documents/github/ember-mirage-test'
+let g:netrw_dirhist_8='/Users/marcell/.vim/snippets'
