@@ -20,24 +20,17 @@ snippet each
 			<li>${2}</li>
 		{{/each}}
 	</ul>
-# input 
-snippet input
-	<label>${1}</label>
-	{{input type='text' value=${2}}}
+# ember input 
+snippet einput
+	{{input id='test-${1}' type='text' value=${2}}}
 # select 
-snippet select
-	<label>${1}</label>
-	<select onchange={{action "selectRoom" value="target.value"}}>
-		{{#each ${2} as |${3}}}
-			<option value=${3} 
-				selected={{eq ${2} ${3}}}>{{${3}}}</option>
-		{{/each}}
-	</select>
-
+snippet eselect
+	{{ember-selectize id='test-${1}' content=${2} 
+	  optionValuePath="content.id" optionLabelPath="content.name" 
+	  selection=selected${3} multiple=${4} placeholder="${5}" }}
 # button 
-snippet button
-	<button {{action ${1}}}>${2}</button>
-
+snippet ebutton
+	<button id='test-${1}' {{action ${2}}}>${3}</button>
 # ul
 snippet ul
 	<ul>
