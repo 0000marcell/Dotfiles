@@ -60,6 +60,16 @@ snippet eob
 	Ember.observer('${1}', function(){
 		${2}	
 	});
+# ember prom hash
+snippet ehash
+	return Ember.RSVP.hash({
+		name: this.store.findAll('user')	
+	});
+# ember model 
+snippet emod
+	model(){
+		this.store.findAll(${1});
+	}
 # ember click
 snippet eclick
 	click('#test-${1}');

@@ -38,3 +38,12 @@ snippet her
 	<<~HEREDOC
 		${1}
 	HEREDOC
+# simple commander new command
+snippet scommand
+	command "${1}" do
+		syntax '${2}'
+		description '${3}'
+		action do |args, options|
+			${4}
+		end
+	end
