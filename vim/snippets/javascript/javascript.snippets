@@ -60,6 +60,10 @@ snippet eob
 	Ember.observer('${1}', function(){
 		${2}	
 	});
+# ember run later
+snippet erun
+	Ember.run.later(this, () => {
+	});
 # ember prom hash
 snippet ehash
 	return Ember.RSVP.hash({

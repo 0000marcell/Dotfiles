@@ -129,3 +129,31 @@ snippet md-table
 	 {{md-table-col row=row valueBindingPath='id'}}
 	 {{md-table-col row=row valueBindingPath='name'}}
 	{{/md-table}}
+# ember paper button
+snippet pbutt
+	{{#paper-button raised=true onClick=(action "flatButton")}}
+		Button with action
+	{{/paper-button}}
+
+# ember paper input
+snippet pinput
+	{{paper-input flex=30 label="Name" value=name 
+		onChange=(action (mut name))}}
+
+# ember paper list
+snippet plist
+	{{#paper-list}}
+		{{#paper-subheader}}3 line item{{/paper-subheader}}
+		{{#each listData as |item|}}
+			{{#paper-item class="md-3-line"}}
+				<img src={{item.img}} alt={{item.name}} 
+					class="md-avatar">
+				<div class="md-list-item-text">
+					<h3>{{item.name}}</h3>
+					<h4>{{item.email}}</h4>
+					<p>Some longer notes here could be here. 
+					But they aren't.</p>
+				</div>
+			{{/paper-item}}
+		{{/each}}
+	{{/paper-list}}
