@@ -9,7 +9,7 @@ set dir=~/tmp
 syntax on
 set nonumber 
 set rtp+=~/.vim/bundle/Vundle.vim
-set tabstop=2
+set tabstop=2 expandtab shiftwidth=2
 "set tabstop=2 softtabstop=0 shiftwidth=2 expandtab
 set clipboard=unnamed
 set wildignore+=*/node_modules/*,*/bower_components/*,*/dist/*,*/tmp/*,*/build/*
@@ -24,8 +24,6 @@ set termencoding=utf-8
 let g:Powerline_symbols = 'fancy'
 "CTRLP config
 :command RF	CtrlPClearCache
-:command nodet node 
-
 let g:ctrlp_cache_dir = $HOME . '/ .cache/ctrlp'
 let g:ctrlp_working_path_mode = 0
 if executable('ag')
@@ -87,6 +85,8 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'dag/vim-fish'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'mattn/emmet-vim'
+
 
 call vundle#end()
 filetype plugin indent on
