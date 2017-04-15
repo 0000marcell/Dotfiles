@@ -1,5 +1,5 @@
 "General config
-colorscheme jagpanther
+colorscheme raggi 
 set hls
 set nocompatible
 set shell=/bin/bash
@@ -9,7 +9,8 @@ set dir=~/tmp
 syntax on
 set nonumber 
 set rtp+=~/.vim/bundle/Vundle.vim
-set tabstop=2 softtabstop=0 shiftwidth=2 expandtab
+set tabstop=2
+"set tabstop=2 softtabstop=0 shiftwidth=2 expandtab
 set clipboard=unnamed
 set wildignore+=*/node_modules/*,*/bower_components/*,*/dist/*,*/tmp/*,*/build/*
 "Powerline config
@@ -23,6 +24,7 @@ set termencoding=utf-8
 let g:Powerline_symbols = 'fancy'
 "CTRLP config
 :command RF	CtrlPClearCache
+:command nodet node 
 
 let g:ctrlp_cache_dir = $HOME . '/ .cache/ctrlp'
 let g:ctrlp_working_path_mode = 0
@@ -69,11 +71,11 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'Lokaltog/powerline',{'rtp': 'powerline/bindings/vim'}
 Plugin 'leshill/vim-json'
-Plugin 'jelera/vim-javascript-syntax'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-surround'
+Plugin 'leafgarland/typescript-vim'
 "Testing
 Plugin 'ElmCast/elm-vim'
 Plugin 'sudar/vim-arduino-syntax'

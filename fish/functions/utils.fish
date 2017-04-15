@@ -1,5 +1,9 @@
-function loc
+function loce
 	find . -name $argv[1] | xargs wc -l
+end
+
+function loc
+  git ls-files | xargs wc -l
 end
 
 # ex: bass-nvm use 6, to use node version 6
