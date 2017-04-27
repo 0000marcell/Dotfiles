@@ -1,0 +1,18 @@
+# mixin
+snippet mix
+	@mixin ${1}(${2}) {
+		${3}
+	}
+# include
+snippet inc
+	@include ${1}(${2});
+# for
+snippet for
+	@for $i from ${1} through ${2}
+# each
+snippet each
+	@each $value in $list
+		#{$value}
+# concatenate
+snippet con
+	#{$${1}}
