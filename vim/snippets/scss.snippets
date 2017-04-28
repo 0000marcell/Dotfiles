@@ -8,11 +8,13 @@ snippet inc
 	@include ${1}(${2});
 # for
 snippet for
-	@for $i from ${1} through ${2}
+	@for $i from ${1} through ${2}{
+	}
 # each
 snippet each
-	@each $value in $list
+	@each $value in $list{
 		#{$value}
+	}
 # concatenate
 snippet con
 	#{$${1}}
