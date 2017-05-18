@@ -1,3 +1,7 @@
+function sleep
+  osascript -e 'tell application "Finder" to sleep'
+end
+
 function loce
 	find . -name $argv[1] | xargs wc -l
 end

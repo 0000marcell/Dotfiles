@@ -1,4 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/marcell/Documents/github/ember-layout-practice/new-project/frontend'
-let g:netrw_dirhist_2='/Users/marcell/.vim/snippets'
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Users/marcell/Documents/github/safe-action/backend'
+let g:netrw_dirhist_2='/Users/marcell/Documents/github/SandBox/AB-test-frameworks/frontend/vuejs'
+let g:netrw_dirhist_3='/Users/marcell/Documents/github/Pomodoro-NW/pomodoro-nw/pomodoro-electron'
+let g:netrw_dirhist_4='/Users/marcell/Documents/github/safe-action/backend'
+let g:netrw_dirhist_5='/Users/marcell/Documents/github/safe-action/frontend'
+let g:netrw_dirhist_6='/Users/marcell/Documents/github/safe-action/backend'
+let g:netrw_dirhist_7='/Users/marcell/Documents/github/safe-action/frontend'
+let g:netrw_dirhist_8='/Users/marcell/.config/fish'
+let g:netrw_dirhist_9='/Users/marcell/Documents/github/safe-action/frontend'
