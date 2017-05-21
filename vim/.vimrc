@@ -74,6 +74,7 @@ Plugin 'leafgarland/typescript-vim'
 "Plugin 'Raimondi/delimitMate'
 "Plugin 'Townk/vim-autoclose'
 "Testing
+Plugin 'posva/vim-vue'
 Plugin 'pangloss/vim-javascript'
 Plugin 'ElmCast/elm-vim'
 Plugin 'sudar/vim-arduino-syntax'
