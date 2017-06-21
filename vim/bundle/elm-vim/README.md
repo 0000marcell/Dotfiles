@@ -8,15 +8,15 @@
 1. Automatic indentation
 1. Function completion
 1. Build and package commands
-1. Code formating and linting
+1. Code formatting and linting
 1. Documentation lookup
-1. Repl integration
+1. REPL integration
 
 Check out this [ElmCast video](https://vimeo.com/132107269) for more detail.
 
 ## Installation
 
-If you don't have a preferred installation method, I recommend installing [vim-plug](https://github.com/junegunn/vim-plug), and then simply add `Plug 'elmcast/elm-vim` to your plugin section:
+If you don't have a preferred installation method, I recommend installing [vim-plug](https://github.com/junegunn/vim-plug), and then simply add `Plug 'elmcast/elm-vim'` to your plugin section:
 
 Once help tags have been generated, you can view the manual with :help elm-vim.
 
@@ -67,14 +67,6 @@ You can disable these mappings if you want to use your own.
 let g:elm_setup_keybindings = 0
 ```
 
-## Highlighting
-
-Vim syntax highlighting is biased for the c family of languages, with entire syntax groups for the preprocessor. This can leave functional languages looking mismatched, so `elm-vim` has very opinionated highlighting. If you do not like that, you can switch to a more traditional mode.
-
-```vim
-g:elm_classic_highlighting = 1
-```
-
 ## Integration
 
 ### [Syntastic](https://github.com/scrooloose/syntastic)
@@ -119,8 +111,8 @@ let g:elm_syntastic_show_warnings = 0
 let g:elm_browser_command = ""
 let g:elm_detailed_complete = 0
 let g:elm_format_autosave = 0
+let g:elm_format_fail_silently = 0
 let g:elm_setup_keybindings = 1
-let g:elm_classic_hightlighting = 0
 ```
 
 * `:ElmMake [filename]` calls `elm-make` with the given file. If no file is given it uses the current file being edited.
@@ -133,7 +125,7 @@ let g:elm_classic_hightlighting = 0
 
 * `:ElmErrorDetail` shows the detail of the current error in the quickfix window.
 
-* `:ElmShowDocs` queries elm-oracle, then echos the type and docs for the word under the cursor.
+* `:ElmShowDocs` queries elm-oracle, then echoes the type and docs for the word under the cursor.
 
 * `:ElmBrowseDocs` queries elm-oracle, then opens docs web page for the word under the cursor.
 *

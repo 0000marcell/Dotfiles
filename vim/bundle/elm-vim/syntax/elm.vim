@@ -1,6 +1,6 @@
 " syntax highlighting for Elm (http://elm-lang.org/)
 
-if exists("b:current_syntax")
+if exists('b:current_syntax')
   finish
 endif
 
@@ -32,12 +32,12 @@ syn region elmComment matchgroup=elmComment start="{-|\=" end="-}" contains=elmT
 " Strings
 syn match elmStringEscape "\\u[0-9a-fA-F]\{4}" contained
 syn match elmStringEscape "\\[nrfvbt\\\"]" contained
-syn region elmString start="\"" skip="\\\"" end="\"" contains=elmStringEscape
-syn region elmTripleString start="\"\"\"" skip="\\\"" end="\"\"\"" contains=elmStringEscape
+syn region elmString start="\"" skip="\\\"" end="\"" contains=elmStringEscape,@spell
+syn region elmTripleString start="\"\"\"" skip="\\\"" end="\"\"\"" contains=elmStringEscape,@spell
 syn match elmChar "'[^'\\]'\|'\\.'\|'\\u[0-9a-fA-F]\{4}'"
 
 " Numbers
-syn match elmInt "\(\<\d\+\>\)"
+syn match elmInt "-\?\<\d\+\>\|0[xX][0-9a-fA-F]\+\>"
 syn match elmFloat "\(\<\d\+\.\d\+\>\)"
 
 " Identifiers
@@ -54,26 +54,14 @@ hi def link elmChar String
 hi def link elmStringEscape Special
 hi def link elmInt Number
 hi def link elmFloat Float
-hi def link elmDelimiter Comment
+hi def link elmDelimiter Delimiter
+hi def link elmBraces Delimiter
+hi def link elmTypedef TypeDef
+hi def link elmImport Include
+hi def link elmConditional Conditional
+hi def link elmAlias Delimiter
+hi def link elmOperator Operator
+hi def link elmType Identifier
+hi def link elmNumberType Identifier
 
-if get(g:, "elm_classic_highlighting", 1)
-	hi def link elmTypedef Keyword
-	hi def link elmImport Keyword
-	hi def link elmConditional Keyword
-	hi def link elmAlias Keyword
-	hi def link elmOperator Operator
-	hi def link elmType Type
-	hi def link elmNumberType Type
-	hi def link elmDelimiter Delimiter
-else
-	hi def link elmTypedef TypeDef
-	hi def link elmImport Include
-	hi def link elmConditional Conditional
-	hi def link elmAlias StorageClass
-	hi def link elmOperator Comment
-	hi def link elmType Identifier
-	hi def link elmNumberType Identifier
-	hi def link elmBraces Delimiter
-endif
-
-let b:current_syntax = "elm"
+let b:current_syntax = 'elm'
