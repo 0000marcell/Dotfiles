@@ -1,7 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/private/tmp/kafka-logs'
-let g:netrw_dirhist_2='/Users/marcell/Documents/github/kafka-examples/SimpleCounter'
-let g:netrw_dirhist_3='/Users/marcell/Documents/github/SandBox/java/apache-kafka-examples'
-let g:netrw_dirhist_4='/Users/marcell/Documents/github/SandBox/java/test'
-let g:netrw_dirhist_5='/Users/marcell/Documents/github/SandBox/java/apache-kafka-examples'
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/marcell/Documents/github/SandBox/java/zk-test'
+let g:netrw_dirhist_2='/Users/marcell/Documents/github/kafka-examples'
+let g:netrw_dirhist_3='/Users/marcell/Documents/github/kafka-examples/AvroConsumerExample'
+let g:netrw_dirhist_4='/Users/marcell/Documents/github/kafka-examples'
+let g:netrw_dirhist_5='/private/tmp'
+let g:netrw_dirhist_6='/Users/marcell/Documents/github/kafka-examples'
