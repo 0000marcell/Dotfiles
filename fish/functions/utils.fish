@@ -22,6 +22,7 @@ function save-dotfiles
 	rsync -av --progress ~/.tmux.conf ~/documents/github/dotfiles/tmux/ --exclude .git 
 	rsync -av --progress ~/.tmuxinator/ ~/documents/github/dotfiles/tmux/ --exclude .git
 	rsync -av --progress ~/.vim/ ~/documents/github/dotfiles/vim/ --exclude .git
+  rsync -av --progress ~/.config/nvim/ ~/documents/github/dotfiles/nvim/
 	cd ~/documents/github/dotfiles
 end
 

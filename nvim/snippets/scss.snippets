@@ -1,0 +1,39 @@
+# mixin
+snippet mix
+	@mixin ${1}(${2}) {
+		${3}
+	}
+# include
+snippet inc
+	@include ${1}(${2});
+# for
+snippet for
+	@for $i from ${1} through ${2}{
+	}
+# each
+snippet each
+	@each $value in $list{
+		#{$value}
+	}
+# concatenate
+snippet con
+	#{$${1}}
+# if
+snippet if
+	@if $value == 'auto'{
+	}
+# if else
+snippet ife
+	@if $value == 'auto'{
+	} @else if $value == 'something' {
+	}
+# media query
+snippet med
+	@media (max-width: 400px){
+	}
+# class
+snippet fclass
+	.${1}{
+		flex: 0 0 ${2}%;
+		height: ${3}%;
+	}

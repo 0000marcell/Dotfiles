@@ -99,6 +99,11 @@ snippet ter
 # console log
 snippet log
 	console.log(${1});
+
+# console assert
+snippet ass
+	console.assert(${1}, ${2});
+
 # ember inject
 snippet einj
 	Ember.inject.service('${1}'),
@@ -189,3 +194,7 @@ snippet switch
 		default:
 			return;
 	}
+# eslint ignore
+snippet eignore
+	/*eslint-disable */
+	/*eslint-enable */

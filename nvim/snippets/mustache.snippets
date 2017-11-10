@@ -1,0 +1,208 @@
+# h1
+snippet h1
+	<h1>${1}</h1>
+# div
+snippet div
+	<div class='${1}'>
+		${2}
+	</div>
+
+# p
+snippet p
+	<p>
+		${1}
+	</p>
+
+# each
+snippet each
+	<ul>
+		{{#each model as |${1}|}}
+			<li>${2}</li>
+		{{/each}}
+	</ul>
+# ember input 
+snippet einput
+	{{input id='test-${1}' type='text' value=${2}}}
+# select 
+snippet eselect
+	{{ember-selectize id='test-${1}' content=${2} 
+	  optionValuePath="content.id" optionLabelPath="content.name" 
+	  selection=selected${3} multiple=${4} placeholder="${5}" }}
+# button 
+snippet ebutton
+	<button id='test-${1}' {{action ${2}}}>${3}</button>
+# ul
+snippet ul
+	<ul>
+		<li>
+			${1}
+		</li>
+	</ul>
+
+#link
+snippet link
+	{{#link-to '${1}' ${2}}}${3}{{/link-to}}
+# checkbox
+snippet check
+	<label>${1}</label>
+	{{input type="checkbox" name="${2}" checked=${3}}}}
+# if
+snippet if
+	{{#if ${1}}}
+		${2}
+	{{/if}}
+#if else
+snippet ife
+	{{#if ${1}}}
+		${2}
+	{{else}}
+		${3}
+	{{/if}}
+
+# img
+snippet img
+	<img src="${1}">
+# label
+snippet lab
+	<label>${1}</label>
+# br
+snippet br
+	<br>
+# curly braces
+snippet eb
+	{{${1}}}
+# text area
+snippet textarea
+	{{textarea value=${1} cols="80" rows="6"}}
+# Ember Materialize components
+# md-badge
+snippet md-badge
+	{{md-badge class='deep-purple white-text' text="6"}}
+# md-button
+snippet md-btn
+	{{md-btn text='Button'
+		action='debug'
+		class='indigo darken-2'}}
+# md-card
+snippet md-card
+	{{#md-card title="Card Title" id="basic-card"}}
+		{{#md-card-content}}
+		{{/md-card-content}}
+		{{#md-card-action}}
+		{{/md-card-action}}
+	{{/md-card}}
+snippet md-collapsible
+	{{#md-card-collapsible}}
+		{{#md-collapsible icon="mdi-image-filter-drama"
+	     title="One"}}
+		{{/md-collapsible}}
+	{{/md-card-collapsible}}
+# md-collection
+snippet md-collection
+	{{#md-collection content=content as |item|}}
+	{{/md-collection}}
+# snippet md-input
+snippet md-input
+	{{md-input value="Hi Mom" label='Example' class="col s12" validate=true}}
+# snippet md-loader
+snippet md-loader
+	{{md-loader}}
+# snippet md-navbar
+snippet md-navbar
+	{{#md-navbar name='Example' class='indigo' homeRoute='navbar'}}
+		{{#link-to 'navbar' tagName='li'}}
+	    {{link-to 'Navbar' 'navbar'}}
+		{{/link-to}}
+	{{/md-navbar}}
+# snippet md-tabs
+snippet md-tabs
+	{{#md-tabs
+	  selected=basicTabsSelection}}
+		{{md-tab value='a' title="Sixth"}}
+		{{md-tab value='b' title="Seventh"}}
+		{{md-tab value='c' title="Eighth"}}
+	{{/md-tabs}}
+# snippet md-table
+snippet md-table
+	{{#md-table content=content as |row|}}
+	 {{md-table-col row=row valueBindingPath='id'}}
+	 {{md-table-col row=row valueBindingPath='name'}}
+	{{/md-table}}
+# ember paper button
+snippet pbutt
+	{{#paper-button raised=true onClick=(action "flatButton")}}
+		Button with action
+	{{/paper-button}}
+
+# ember paper input
+snippet pinput
+	{{paper-input flex=30 label="Name" value=name 
+		onChange=(action (mut name))}}
+
+# ember paper list
+snippet plist
+	{{#paper-list}}
+		{{#paper-subheader}}3 line item{{/paper-subheader}}
+		{{#each listData as |item|}}
+			{{#paper-item class="md-3-line"}}
+				<img src={{item.img}} alt={{item.name}} 
+					class="md-avatar">
+				<div class="md-list-item-text">
+					<h3>{{item.name}}</h3>
+					<h4>{{item.email}}</h4>
+					<p>Some longer notes here could be here. 
+					But they aren't.</p>
+				</div>
+			{{/paper-item}}
+		{{/each}}
+	{{/paper-list}}
+
+# ember paper 3 row
+snippet p3r
+	<div class='layout-column color-one'>
+		<div class='flex-10 color-two'>
+		</div>
+		<div class='flex-80 color-three'>
+		</div>
+		<div class='flex-10 color-four'>
+		</div>
+	</div>
+# ember paper 3 columns
+snippet p3c
+	<div class='layout-row color-one'>
+		<div class='flex-20 color-two'>
+		</div>
+		<div class='flex-60 color-three'>
+		</div>
+		<div class='flex-20 color-four'>
+		</div>
+	</div>
+# ember paper 2 columns
+snippet p2c
+	<div class='layout-row color-one'>
+		<div class='flex-50 color-two'>
+		</div>
+		<div class='flex-50 color-three'>
+		</div>
+	</div>
+# ember paper 2 rows
+snippet p2r
+	<div class='layout-column color-one'>
+		<div class='flex-50 color-two'>
+		</div>
+		<div class='flex-50 color-three'>
+		</div>
+	</div>
+# ember paper centralized
+snippet pcen
+	<div class='layout-row layout-align-center-center color-one'>
+		<div class='flex-50 color-two' style="height: 80%;">
+		</div>
+	</div>
+# ember component
+snippet econ
+	{{#${1}}}
+	{{/${1}}}
+# ember double curly
+snippet edc
+	{{${1}}}

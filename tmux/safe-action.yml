@@ -1,7 +1,7 @@
-# ~/.tmuxinator/simple_commander.yml
+# ~/.tmuxinator/safe-action.yml
 
-name: simple_commander
-root: ~/Documents/github/simple_commander
+name: safe-action
+root: ~/Documents/github/safe-action/frontend
 
 # Optional tmux socket
 # socket_name: foo
@@ -25,8 +25,10 @@ root: ~/Documents/github/simple_commander
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t simple_commander
+# post: tmux -CC attach -t safe-action
 
 windows:
-  - simple_commander:
-  - simple_commander:
+  - safe-action: nvim ./
+  - safe-action: 
+  - frontend: 
+  - backend: cd ../backend 

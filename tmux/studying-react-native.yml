@@ -1,7 +1,7 @@
-# ~/.tmuxinator/simple_commander.yml
+# ~/.tmuxinator/studying-react-native.yml
 
-name: simple_commander
-root: ~/Documents/github/simple_commander
+name: studying-react-native
+root: ~/Documents/github/SandBox/javascript/react-native/AwesomeProject
 
 # Optional tmux socket
 # socket_name: foo
@@ -25,8 +25,10 @@ root: ~/Documents/github/simple_commander
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t simple_commander
+# post: tmux -CC attach -t studying-react-native
 
 windows:
-  - simple_commander:
-  - simple_commander:
+  - sncli: sncli
+  - editor:  
+  - frontend: npm start 
+  - backend: 
