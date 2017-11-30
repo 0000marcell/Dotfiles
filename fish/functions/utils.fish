@@ -1,3 +1,9 @@
+function start
+  open 'https://workflowy.com/'
+  open 'https://www.youtube.com/watch?v=85bkCmaOh4o'
+  open 'https://calendar.google.com/calendar'
+end
+
 function sleep
   osascript -e 'tell application "Finder" to sleep'
 end
@@ -20,7 +26,6 @@ function save-dotfiles
 	rm ~/documents/github/dotfiles/fish/config.fish
 	rsync -av --progress ~/.vimrc ~/documents/github/dotfiles/vim/ --exclude .git 
 	rsync -av --progress ~/.tmux.conf ~/documents/github/dotfiles/tmux/ --exclude .git 
-	rsync -av --progress ~/.tmuxinator/ ~/documents/github/dotfiles/tmux/ --exclude .git
 	rsync -av --progress ~/.vim/ ~/documents/github/dotfiles/vim/ --exclude .git
   rsync -av --progress ~/.config/nvim/ ~/documents/github/dotfiles/nvim/
 	cd ~/documents/github/dotfiles
