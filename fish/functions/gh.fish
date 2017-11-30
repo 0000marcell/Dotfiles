@@ -1,5 +1,3 @@
-# update local fork
-# ex: gh-pull https://github.com/mike-north/ember-cli-materialize.git
 function gh-pull
   git pull $argv[1] master
 end
