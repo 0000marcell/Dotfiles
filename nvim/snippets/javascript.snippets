@@ -1,0 +1,321 @@
+# react constructor
+snippet rcons
+	constructor(props){
+		super(props);
+		this.state = {
+		};
+	}
+  	super(props);
+		${1:}
+  }
+
+# for loop
+snippet for
+	for (var i = 0; i < ${1:}; i++) {
+		${2:}
+	}
+
+# for of
+snippet forof
+	for (let ${1:} of ${2:}) {
+		${3:}
+	}
+
+# promise 
+snippet prom
+	new Promise(function(resolve, reject){
+		${1:}
+	});
+# module exports 
+snippet mod
+	module.exports = {
+		${1}
+	}
+# foreach
+snippet fore
+	${1}.forEach(function(${2}) {
+		${3}
+	});
+# find 
+snippet find 
+	find(function(item) {
+		return item;
+	});
+# map 
+snippet map 
+	map(function(${1}) {
+		${2}
+	});
+# then 
+snippet then 
+	then(function(${1}) {
+		${2}
+	});
+# function
+snippet fun
+	function ${1:function_name}(${2}) {
+			${0}
+	}
+# arrow funcitons
+snippet afun
+	(${1}) => ${2}
+# variable functions
+snippet vfun
+	var ${1:name} = function (${2}){
+		${3}
+	}
+#function es6
+snippet efun
+	${1}(${2}){
+		${3}
+	},
+#if else
+snippet ife
+	if(${1}){
+		${2}
+	}else(${3}){
+		${4}
+	}
+#if
+snippet if
+	if(${1}){
+		${2}
+	}
+#import
+snippet imp
+	import ${1:Name} from '${2}';
+#export
+snippet exp
+	export ${1:default} ${2:variable name}
+# actions
+snippet act
+	actions: {
+		${1}(){
+			${2}
+		}
+	}
+# setTimeout
+snippet setT
+	setTimeout(function(){
+		${1}	
+	}, ${2})
+# method
+snippet met
+	${1}.prototype.${2} = function(){
+	}
+# ember observer
+snippet eob
+	Ember.observer('${1}', function(){
+		${2}	
+	});
+# ember run 
+snippet erun
+	await run(async () => {
+	});
+
+# ember prom hash
+snippet ehash
+	return Ember.RSVP.hash({
+		name: this.store.findAll('user')	
+	});
+# ember model 
+snippet emod
+	model(){
+		return this.store.findAll(${1});
+	}
+# ember click
+snippet eclick
+	click('#test-${1}');
+# ember visit
+snippet evisit
+	visit('${1}');
+# ember set
+snippet eset
+	this.set('${1}', ${2});
+# ember get
+snippet eget
+	this.get('${1}');
+# ternary
+snippet ter
+	${1} ? ${2} : ${3};
+# console log
+snippet log
+	console.log(${1});
+# console assert
+snippet ass
+	console.assert(${1}, ${2});
+
+# ember inject
+snippet einj
+	Ember.inject.service('${1}'),
+# ember ajax
+snippet eajax
+	Ember.$.ajax({
+		type: "POST",
+		url: "/send_mail",
+		data:	{
+			email: this.get('email'),
+			msg:   this.get('msg'), 
+			name:  this.get('name'),
+			title: this.get('title') 
+		}
+	}).done((resp) => {
+	}).fail((resp) => {
+	});
+# ajax get
+snippet ajaxget
+	$.ajax({
+		url: url, 
+		type: "GET",
+		headers: {},
+		data: {},
+		success: function(data) {
+			if(typeof data === 'string') 
+				data = JSON.parse(data);
+			resolve(data);
+		},
+		error: function(e) {
+			if(typeof e === 'object') {
+				console.error(JSON.stringify(e));
+			}
+			if(typeof e === 'string') {
+				console.error(JSON.stringify(e));
+				e = JSON.parse(e);
+			}
+			if(e.responseText) {
+				e = JSON.parse(e.responseText);
+			}
+			reject(e);
+		}
+	}); 
+# ember promise
+snippet eprom
+	return new Ember.RSVP.Promise((resolve, reject) => {
+		${1}
+	});
+# fs read 
+snippet read 
+	try{
+		var fileContent = fs.readFileSync(${1});
+	}catch(err){
+		console.log('something went wrong ');
+	} 
+# fs read
+snippet write 
+	fs.writeFile(${1}, json, function(err) {
+	  if (err){
+	   throw err;
+	  };
+	  console.log('It\'s saved!');
+	});	
+# test 
+snippet etest
+	test('${1}', function(assert){
+		${2}
+	});
+# assert
+snippet easse
+	assert.equal(${1}, ${2});
+# concat string 
+snippet con
+	${}
+# jquery
+snippet jq
+	$('${1}')
+# ember jquery
+snippet ejq
+	Ember.$('${1}')
+# ember belongsTo
+snippet belong
+	DS.belongsTo('${1}'),
+# ember hasMany
+snippet has
+	DS.hasMany('${1}'),
+# ember computed property
+snippet ecom
+	Ember.computed('${1}', function(){
+		${2}		
+	});
+# ember andThen
+snippet eand
+	andThen(() => {
+		${1}	
+	});
+# ember fillIn
+snippet efill
+	fillIn('#test-${1}-form', '${2}');
+# documentation
+snippet doc
+	/**
+	* ${1}
+	*/
+# reduce
+snippet red
+	arr.reduce((prev, curr, index, array) => {
+	}, 0);
+# switch
+snippet switch
+	switch(${1}){
+		case ${2}:	
+			return;
+		default:
+			return;
+	}
+# eslint ignore
+snippet eignore
+	/*eslint-disable */
+	/*eslint-enable */
+# javascript promise
+snippet prom	
+	new Promise(function(resolve, reject))
+# javascript filter
+snippet filter	
+	.filter(function() {
+	});
+
+# javascript error
+snippet error
+	console.error(${1});
+# javascript try
+snippet try
+	try {
+		${1}
+	}catch(err) {
+		${2}
+	}
+# jest test
+snippet jtest
+	test('${1}', function(){
+		${2}
+	});
+# jest expect
+snippet jexpect
+	expect(${1}).toBe(${2});
+# bash node 
+snippet node 
+	#!/usr/bin/env node
+# jquery click
+snippet jclick
+	$('body').on('click', '', () => {
+	});
+# fetch
+snippet fetch
+	fetch('https://api.github.com/orgs/nodejs')
+	.then(response => response.json())
+	.then(data => {
+		console.log(data) // Prints result from `response.json()` in getRequest
+	})
+# todo
+snippet todo
+	//TODO:	
+# test
+snippet test
+	test('testing', () => {
+	});
+# expect
+snippet expect
+	expect().toBe();
+# exec 
+snippet exec 
+	exec('command', (error, stdout, stderr) => {
+	});
