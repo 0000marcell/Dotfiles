@@ -1,4 +1,3 @@
-
 " map leader key
 " let mapleader = "-" 
 
@@ -97,6 +96,7 @@ noremap <C-l> <C-w>l
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'w0rp/ale'
+Plug 'leafoftree/vim-svelte-plugin'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'leafgarland/typescript-vim'
 Plug 'tpope/vim-commentary'
