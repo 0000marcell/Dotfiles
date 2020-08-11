@@ -1,62 +1,16 @@
-
-" map leader key
-" let mapleader = "-" 
-
-" local leader key
-" let maplocalleader = "\\"
+" fold options
+set foldmethod=indent
+set foldlevel=1
+set foldlevelstart=99
 
 " nerdtree
 let NERDTreeShowHidden=1
-
-
-
-" in next parenthesis
-:onoremap np :<c-u>normal! f(vi(<cr>
-
-" in next parenthesis
-:onoremap pp :<c-u>normal! F(vi(<cr>
-
-
-" toggle hlsearch
-:noremap <leader>h :set hlsearch!<cr>
-
-" abbreviation  
-:iabbrev @@ 0000marcell@gmail.com
 
 " go to the end of the line
 :nnoremap L $
 
 " go to the beggining of the line
 :nnoremap H 0
-
-" wrap with single quotes
-:nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel 
-
-" wrap with double quotes
-:nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
-
-" delete line
-:nnoremap <leader>d dd
-
-" edit .vimrc
-:noremap <leader>ev :vsplit $MYVIMRC<cr>
-
-" reload vimrc
-:nnoremap <leader>sv :source $MYVIMRC<cr>
-
-" fold block
-:nnoremap <leader>f zfa}
-
-" DELETE fold
-:noremap <leader>d zd
-
-" uppercase
-inoremap <leader>u <esc>viwU
-nnoremap <leader>u viwU
-
-" lowercase
-inoremap <leader>l <esc>viwu
-nnoremap <leader>l viwu
 
 " Copy paste
 vnoremap <C-c> "+y
@@ -96,21 +50,41 @@ noremap <C-l> <C-w>l
 " " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.local/share/nvim/plugged')
 
+" Code completion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Code Analisys
 Plug 'w0rp/ale'
+" Svelte syntax
+Plug 'leafoftree/vim-svelte-plugin'
+" vim mustache handlebars syntax
 Plug 'mustache/vim-mustache-handlebars'
+" vim typescript syntax
 Plug 'leafgarland/typescript-vim'
+" Comment lines of code
 Plug 'tpope/vim-commentary'
+" File Treeview
 Plug 'scrooloose/nerdtree'
+" Vim surround
 Plug 'tpope/vim-surround'
+" Vue syntax
 Plug 'posva/vim-vue'
+" React syntax
+Plug 'maxmellon/vim-jsx-pretty'
+" Jump to specific letters
 Plug 'easymotion/vim-easymotion'
+" Fuzzy searching with CTRL+P
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+" Closes parentheses quotes etc...
 Plug 'Raimondi/delimitMate'
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
+" Create snippets
 Plug 'garbas/vim-snipmate'
+" Emmet plugin for html completion
 Plug 'mattn/emmet-vim'
+" Requirement for other plugins
+Plug 'tomtom/tlib_vim'
+" File identifier 
+Plug 'MarcWeber/vim-addon-mw-utils'
 
 " Initialize plugin system
 call plug#end()
