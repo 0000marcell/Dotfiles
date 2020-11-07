@@ -2,6 +2,7 @@
 set foldmethod=indent
 set foldlevel=1
 set foldlevelstart=99
+set nowrap
 
 " nerdtree
 let NERDTreeShowHidden=1
@@ -31,7 +32,8 @@ noremap <C-o> <Leader><Leader>s
 noremap <C-e> :lopen<CR>
 noremap <C-p> :Files ./<CR>
 " noremap <C-t> :Files ./tests<CR>
-noremap <C-H> :set nohlsearch<CR>
+noremap <C-u> :noh<CR>
+noremap <C-o> :b#<CR>
 noremap <C-h> :History<CR>
 noremap <C-i> :s/ /./g<CR>
 let g:user_emmet_leader_key='<C-Y>'
@@ -44,12 +46,17 @@ noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
+" Go to code definition
+nmap <silent> gd <Plug>(coc-definition)
 
 " Specify a directory for plugins
 " " - For Neovim: ~/.local/share/nvim/plugged
 " " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.local/share/nvim/plugged')
 
+" Debugger Pluggins
+Plug 'puremourning/vimspector'
+Plug 'szw/vim-maximizer'
 " Code completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Code Analisys
