@@ -6,14 +6,17 @@ snippet def
 	def ${1}
 		${2}
 	end
-# thor say
-snippet say
-	say "${1}", set_color(${2})
 # array each
 snippet each
 	${1}.each do |${2}|
 		${3}
 	end
+# array map 
+snippet map 
+	map do |${1}|
+		${2}
+	end
+
 # rspec test
 snippet test
 	test "${1}" do
@@ -24,13 +27,11 @@ snippet con
 	#{${1}}
 # rspec describe
 snippet des
-	Rspec.describe Bowling, "#score" do 
-		it "" do
-		end
+	describe "${1}" do 
 	end	
 # rspec it 
 snippet it
-	it "${1}" do 
+	it ${1} do 
 		${2}
 	end
 # HEREDOC
@@ -38,15 +39,6 @@ snippet her
 	<<~HEREDOC
 		${1}
 	HEREDOC
-# simple commander new command
-snippet scommand
-	command "${1}" do
-		syntax '${2}'
-		description '${3}'
-		action do |args, options|
-			${4}
-		end
-	end
 # assert_equal
 snippet ass
 	assert_equal ${1}, ${2}
@@ -56,3 +48,90 @@ snippet assnn
 # has and belongs to
 snippet hasa
 	has_and_belongs_to_many :users
+# spec have_http_status
+snippet have
+	have_http_status(302)
+snippet redi
+	redirect_to(welcome_url)
+snippet cont 
+	context ${1} do
+		${2}
+	end
+snippet column
+	add_column :products, :user_id, :integer
+snippet fill
+	fill_in('First Name', :with => 'John')
+snippet expect
+	expect(${1}).to ${2}
+snippet starttest
+	require 'rails_helper'
+
+	describe ${1}, type: :${2} do
+	 ${3}
+	end
+
+snippet havet
+	have_text(${1})
+
+snippet post
+	post ${1}, params: { ${2} }
+
+snippet acc
+	attr_accessor ${1}
+
+snippet if
+	if ${1}
+	end
+
+snippet before
+	before do
+		${1}
+	end
+
+snippet allowany
+	allow_any_instance_of(${1})
+
+snippet receiveandreturn
+	receive(:approval_status).and_return("approved")
+
+snippet receivemessagechain
+	receive_message_chain(:${1}, :${2})
+
+snippet allow
+	allow(${1}).to receive(${2}) do |arg1|
+		${3}	
+	end
+
+snippet raise
+	allow(${1}).to receive(${2}).and_raise(Stripe::StripeError, "error message") 
+
+snippet module
+	module ${1}
+	end
+
+snippet cla
+	class ${1}
+	end
+
+# rspec init
+snippet rinit
+	RSpec.describe Fleet::Assets::ListPresenter do
+	end
+
+# rspec expect_any_instance_of
+snippet expectany
+	expect_any_instance_of(${1}).to
+
+# do
+snippet do
+	do |${1}|
+		${2}
+	end
+
+# begin
+snippet begin
+	begin
+		${1}
+	rescue
+		${2}
+	end

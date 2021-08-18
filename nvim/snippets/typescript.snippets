@@ -4,18 +4,6 @@ snippet for
 		${2:}
 	}
 
-# jest it 
-snippet it 
-	it('${1}', () => {
-		${2}
-	});
-
-# describe
-snippet describe
-	describe('${1}', () => {
-		${2}
-	});
-
 # for of
 snippet forof
 	for (let ${1:} of ${2:}) {
@@ -83,7 +71,6 @@ snippet whi
 	while (${1} < ${2}.length) {
 		${3}
 	}
-
 #if
 snippet if
 	if (${1}){
@@ -148,7 +135,7 @@ snippet ter
 	${1} ? ${2} : ${3};
 # console log
 snippet log
-	console.log(">>>>>>>>>>>>>>", ${1})
+	console.log(${1})
 # console log variable
 snippet logv
 	console.log('${1} ', ${2});
@@ -403,3 +390,6 @@ snippet tryCatch
 			console.error(err)
 			showBannerCb(`Erro por favor tente outra vez`, 'error')
 		})
+
+
+

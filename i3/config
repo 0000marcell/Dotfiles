@@ -14,12 +14,12 @@
 # This config file will use environmental variables such as $BROWSER and $TERMINAL.
 # You can set these variables in ~/.profile or ~/.bash_profile if you have it as below:
 #
-# export BROWSER="google-chrome-stable"
+# export BROWSER="chromium"
 # export TERMINAL="st"
 
 # #---Basic Definitions---# #
 # Needed for i3-gaps
-for_window [class="^.*"] border pixel 4
+for_window [class="^.*"] border pixel 6
 gaps inner 5
 gaps outer 5
 set $term --no-startup-id $TERMINAL
@@ -107,7 +107,7 @@ bar {
 }
 
 # #---Basic Bindings---# #
-bindsym $mod+Return 		exec $term
+bindsym $mod+Return 		exec $term -e /bin/bash --login
 bindsym $mod+Shift+Return	exec --no-startup-id samedir
 
 bindsym $mod+Shift+space 	floating toggle
@@ -134,7 +134,7 @@ bindsym $mod+q			[con_id="__focused__" instance="^(?!dropdowncalc|sncli).*$"] ki
 bindsym $mod+Shift+q		[con_id="__focused__" instance="^(?!dropdowncalc|sncli).*$"] kill
 
 bindsym $mod+w			exec $term -e nmtui
-bindsym $mod+Shift+w		exec --no-startup-id google-chrome-stable
+bindsym $mod+Shift+w		exec --no-startup-id $BROWSER 
 
 bindsym $mod+e			exec $term -e neomutt && pkill -RTMIN+12 i3blocks
 bindsym $mod+Shift+e		exec --no-startup-id tutorialvids
