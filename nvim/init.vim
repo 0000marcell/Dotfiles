@@ -11,6 +11,9 @@ let mapleader = " "
 " Adds command VisualBlock, visual block is useful to delete columns
 :command! VisualBlock execute "normal! \<C-v>"
 
+" ctrlP window configuration
+let g:fzf_preview_window = ['right,0%', 'ctrl-/']
+
 " nerdtree
 let NERDTreeShowHidden=1
 
@@ -27,8 +30,12 @@ noremap <C-v> "+p
 " Reload
 noremap <C-r> :so %<CR>
 
-" Compile
-noremap <C-b> :!node %<CR>
+" execute selected ruby
+noremap <leader>r :w !ruby<CR>
+" execute selected bash
+noremap <leader>b :w !bash<CR>
+
+" noremap <C-b> :!node %<CR>
 
 " Find where it's used in the project
 noremap <leader>w :! rg -l 
@@ -73,6 +80,8 @@ highlight Normal ctermfg=251
 " " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.local/share/nvim/plugged')
 
+" context menu
+Plug 'kizza/actionmenu.nvim'
 " Debugger Pluggins
 Plug 'kevinoid/vim-jsonc'
 Plug '/tpope/vim-rails'
@@ -123,3 +132,7 @@ Plug 'markstory/vim-zoomwin'
 
 " Initialize plugin system
 call plug#end()
+
+function Test() range
+  echo system('rg '.shellescape(join(getline(a:firstline, a:lastline), "\n")))
+endfunction

@@ -29,7 +29,7 @@ snippet fun
 		echo $1
 	}
 # if file exists
-snippet ife
+snippet iffe
 	if [ -f "~/tmp" ]; then
 	fi
 # if directory exists
@@ -45,3 +45,7 @@ snippet awk
 # array, creates a array based on a list
 snippet array
 	my_array=($(cat ~/tmp))
+
+# concat
+snippet con 
+	'"${1:}"'

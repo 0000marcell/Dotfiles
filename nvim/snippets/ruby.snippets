@@ -132,6 +132,11 @@ snippet do
 snippet begin
 	begin
 		${1}
-	rescue
+	rescue StandardError => e
 		${2}
+	end
+
+snippet rescue
+	rescue StandardError => e
+		${1}
 	end
