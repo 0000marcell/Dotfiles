@@ -12,3 +12,10 @@ vim.keymap.set("n", "<C-k>", '<c-w>k', {})
 vim.keymap.set("n", "<C-l>", '<c-w>l', {})
 -- execute selected ruby
 vim.keymap.set("v", "<leader>r", ":w !ruby<CR>", { noremap=true})
+
+-- execute selected python 
+vim.keymap.set("v", "<leader>p", ":w !python<CR>")
+
+-- execute python
+vim.keymap.set("i", "<C-b>", '<cmd>! python %<CR>')
+vim.keymap.set("n", "<C-b>", '<cmd>! python %<CR>')
