@@ -19,3 +19,9 @@ vim.keymap.set("v", "<leader>p", ":w !python<CR>")
 -- execute python
 vim.keymap.set("i", "<C-b>", '<cmd>! python %<CR>')
 vim.keymap.set("n", "<C-b>", '<cmd>! python %<CR>')
+
+-- open project 
+vim.keymap.set("n", "<leader>o", '<cmd>lua OpenProject()<CR>')
+
+--reload vimrc
+vim.keymap.set("n", "<leader><leader>", '<cmd>source $MYVIMRC<CR>')
