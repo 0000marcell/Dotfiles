@@ -53,6 +53,15 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec $term -f "Liberation Mono-16"
 
+# open nvim configuration 
+bindsym $mod+n exec $term -f "Liberation Mono-16" -e bash -c 'cd /home/mmc/.config/nvim && nvim .'
+
+# open i3 configuration
+bindsym $mod+i exec $term -f "Liberation Mono-16" -e bash -c 'nvim /home/mmc/.config/i3/config'
+
+# open .bashrc 
+bindsym $mod+b exec $term -f "Liberation Mono-16" -e bash -c 'nvim /home/mmc/.bashrc'
+
 # kill focused window
 bindsym $mod+q kill
 
