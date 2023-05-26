@@ -18,10 +18,15 @@ vim.keymap.set("v", "<leader>p", ":w !python<CR>")
 
 -- execute python
 vim.keymap.set("i", "<C-b>", '<cmd>! python %<CR>')
-vim.keymap.set("n", "<C-b>", '<cmd>! python %<CR>')
+
+-- print current file full path
+vim.keymap.set("n", "<leader>cf", "<cmd>echo expand('%:p')<CR>")
 
 -- open project 
 vim.keymap.set("n", "<leader>o", '<cmd>lua OpenProject()<CR>')
+
+-- open current open file projects 
+vim.keymap.set("n", "<leader>i", '<cmd>lua OpenProjectFile()<CR>')
 
 --reload vimrc
 vim.keymap.set("n", "<leader><leader>", '<cmd>source $MYVIMRC<CR>')
