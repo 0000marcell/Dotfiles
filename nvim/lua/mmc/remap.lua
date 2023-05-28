@@ -16,8 +16,9 @@ vim.keymap.set("v", "<leader>r", ":w !ruby<CR>", { noremap=true})
 -- execute selected python 
 vim.keymap.set("v", "<leader>p", ":w !python<CR>")
 
--- execute python
-vim.keymap.set("i", "<C-b>", '<cmd>! python %<CR>')
+-- execute code 
+vim.keymap.set("i", "<C-b>", '<cmd>lua ExecFile()<CR>')
+vim.keymap.set("n", "<C-b>", '<cmd>lua ExecFile()<CR>')
 
 -- print current file full path
 vim.keymap.set("n", "<leader>cf", "<cmd>echo expand('%:p')<CR>")
