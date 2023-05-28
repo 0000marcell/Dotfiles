@@ -34,3 +34,17 @@ vim.keymap.set("n", "<leader>i", '<cmd>lua OpenProjectFile()<CR>')
 
 --reload vimrc
 vim.keymap.set("n", "<leader><leader>", '<cmd>source $MYVIMRC<CR>')
+
+-- move highlighted text
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- don't move curser when concatenating lines
+vim.keymap.set("n", "J", "mzJ`z")
+
+
+-- half page jumping keeps cursor in the middle
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+
