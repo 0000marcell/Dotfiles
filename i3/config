@@ -53,6 +53,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec $term -f "Liberation Mono-16"
 
+# open clipboard path to file content in vim 
+bindsym $mod+o exec $term -f "Liberation Mono-16" -e bash -c 'cd $(xclip -o) && nvim $(xclip -o)'
+
 # open nvim configuration 
 bindsym $mod+n exec $term -f "Liberation Mono-16" -e bash -c 'cd /home/mmc/.config/nvim && nvim .'
 

@@ -22,6 +22,9 @@ vim.keymap.set("i", "<C-b>", '<cmd>! python %<CR>')
 -- print current file full path
 vim.keymap.set("n", "<leader>cf", "<cmd>echo expand('%:p')<CR>")
 
+-- show information about current ruby test in new split buffer
+vim.keymap.set("n", "<leader>ti", "<cmd>lua ShowTestInfo()<CR>")
+
 -- open project 
 vim.keymap.set("n", "<leader>o", '<cmd>lua OpenProject()<CR>')
 
