@@ -54,7 +54,10 @@ floating_modifier $mod
 bindsym $mod+Return exec $term -f "Liberation Mono-16"
 
 # open clipboard path to file content in vim 
-bindsym $mod+o exec $term -f "Liberation Mono-16" -e bash -c 'cd $(xclip -o) && nvim $(xclip -o)'
+bindsym $mod+o exec $term -f "Liberation Mono-16" -e bash -c 'nvim $(xclip -o)'
+
+# open dev documentation
+bindsym $mod+Shift+u exec brave "https://devdocs.io/"
 
 # open nvim configuration 
 bindsym $mod+n exec $term -f "Liberation Mono-16" -e bash -c 'cd /home/mmc/.config/nvim && nvim .'
@@ -71,6 +74,9 @@ bindsym $mod+q kill
 # toggle keyboard
 bindsym $mod+p exec togglekb
 
+# pavucontrol
+bindsym $mod+Shift+p exec pavucontrol
+
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
@@ -84,6 +90,9 @@ bindsym $mod+l focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+h focus right
+
+# joplin
+bindsym $mod+Shift+o exec $term -f "Liberation Mono-16" -e bash -c 'joplin'
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left

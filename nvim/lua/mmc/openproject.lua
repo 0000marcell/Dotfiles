@@ -8,8 +8,8 @@ function ShowMenu(opts, cb)
   local borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }
 
   Win_id = popup.create(opts, {
-        title = "Harpoon",
-        highlight = "HarpoonWindow",
+        title = "MyProjects",
+        highlight = "MyProjectWindow",
         line = math.floor(((vim.o.lines - height) / 2) - 1),
         col = math.floor((vim.o.columns - width) / 2),
         minwidth = width,

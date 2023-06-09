@@ -7,3 +7,5 @@ function OpenProjectFile()
   vim.cmd("cd " .. current_file_directory)
   print("Changing Directory To " .. current_file_directory)
 end
+
+--OpenProjectFile()

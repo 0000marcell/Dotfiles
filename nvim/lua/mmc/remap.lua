@@ -17,11 +17,11 @@ vim.keymap.set("v", "<leader>r", ":w !ruby<CR>", { noremap=true})
 vim.keymap.set("v", "<leader>p", ":w !python<CR>")
 
 -- execute code 
-vim.keymap.set("i", "<C-b>", '<cmd>lua ExecFile()<CR>')
-vim.keymap.set("n", "<C-b>", '<cmd>lua ExecFile()<CR>')
+vim.keymap.set("i", "<C-b>", '<cmd>lua MMCExecFile()<CR>')
+vim.keymap.set("n", "<C-b>", '<cmd>lua MMCExecFile()<CR>')
 
--- print current file full path
-vim.keymap.set("n", "<leader>cf", "<cmd>echo expand('%:p')<CR>")
+-- copy current file full path to clipboard
+vim.keymap.set("n", "<leader>cf", "<cmd>lua MMCCurrentFileClipBoard()<CR>")
 
 -- show information about current ruby test in new split buffer
 vim.keymap.set("n", "<leader>ti", "<cmd>lua ShowTestInfo()<CR>")
@@ -46,5 +46,3 @@ vim.keymap.set("n", "J", "mzJ`z")
 -- half page jumping keeps cursor in the middle
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
-
-
