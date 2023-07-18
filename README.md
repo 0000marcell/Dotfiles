@@ -1,3 +1,3 @@
 # Dotfiles
 
-my dot files configuration, working on adding more lua
+my dot files configuration
