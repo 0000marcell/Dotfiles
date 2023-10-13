@@ -1,4 +1,6 @@
-function MMCUtilsListOpenBuffers()
+local M = {}
+
+function M.list_buffers()
   local buffer_list = vim.api.nvim_list_bufs()
 
   for _, buf in ipairs(buffer_list) do
@@ -7,7 +9,9 @@ function MMCUtilsListOpenBuffers()
   end
 end
 
-function MMCUtilsExecAndPrint(command)
+function M.exec_and_print(command)
   local output = vim.fn.system(command)
   print(output)
 end
+
+return M

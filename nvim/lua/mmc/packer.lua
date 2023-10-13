@@ -1,77 +1,90 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
+local M = {}
 
--- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
+function M.setup()
+  -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
-return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+  -- Only required if you have packer configured as `opt`
+  vim.cmd [[packadd packer.nvim]]
 
-  use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.1',
-	  -- or                            , branch = '0.1.x',
-	  requires = { {'nvim-lua/plenary.nvim'} }
-  }
+  return require('packer').startup(function(use)
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
 
-  use({ 'rose-pine/neovim', as = 'rose-pine' })
+    use {
+      'nvim-telescope/telescope.nvim', tag = '0.1.2',
+      -- or                            , branch = '0.1.x',
+      requires = { { 'nvim-lua/plenary.nvim' } }
+    }
 
-  vim.cmd('colorscheme rose-pine')
+    use({ 'rose-pine/neovim', as = 'rose-pine' })
 
-  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    vim.cmd('colorscheme rose-pine')
 
-  use('nvim-treesitter/playground')
+    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 
-  use('ThePrimeagen/harpoon')
+    use('nvim-treesitter/playground')
 
-  use('mbbill/undotree')
-  use('tpope/vim-fugitive')
+    use('ThePrimeagen/harpoon')
 
-  use('scrooloose/nerdtree')
+    use('mbbill/undotree')
+    use('tpope/vim-fugitive')
 
-  use('tpope/vim-commentary')
+    use('scrooloose/nerdtree')
 
-  use('neovim/nvim-lspconfig')
-  use('hrsh7th/cmp-nvim-lsp')
-  use('hrsh7th/cmp-buffer')
-  use('hrsh7th/cmp-path')
-  use('hrsh7th/cmp-cmdline')
-  use('hrsh7th/nvim-cmp')
-  use('saadparwaiz1/cmp_luasnip')
-  use('Raimondi/delimitMate')
-  use('gabrielelana/vim-markdown')
-  use({ "L3MON4D3/LuaSnip", run = "make install_jsregexp" })
-  use("rafamadriz/friendly-snippets")
+    use('tpope/vim-commentary')
 
-  -- WhichKey
-  use {
-    "folke/which-key.nvim",
-    event = "VimEnter",
-  }
+    use('neovim/nvim-lspconfig')
+    use('hrsh7th/cmp-nvim-lsp')
+    use('hrsh7th/cmp-buffer')
+    use('hrsh7th/cmp-path')
+    use('hrsh7th/cmp-cmdline')
+    use('hrsh7th/nvim-cmp')
+    use('saadparwaiz1/cmp_luasnip')
+    use('Raimondi/delimitMate')
+    use('gabrielelana/vim-markdown')
+    use({ "L3MON4D3/LuaSnip", run = "make install_jsregexp" })
+    use("rafamadriz/friendly-snippets")
 
-  use('leoluz/nvim-dap-go')
+    -- WhichKey
+    use {
+      "folke/which-key.nvim",
+      event = "VimEnter",
+    }
 
-  use('mfussenegger/nvim-dap-python')
+    -- Debugging
+    use {
+      "mfussenegger/nvim-dap",
+      opt = true,
+      event = "BufReadPre",
+      module = { "dap" },
+      requires = {
+        'suketa/nvim-dap-ruby',
+        "Pocco81/DAPInstall.nvim",
+        "theHamsta/nvim-dap-virtual-text",
+        "rcarriga/nvim-dap-ui",
+        "mfussenegger/nvim-dap-python",
+        "nvim-telescope/telescope-dap.nvim",
+        { "leoluz/nvim-dap-go",                module = "dap-go" },
+        { "jbyuki/one-small-step-for-vimkind", module = "osv" },
+      },
+      wants = {
+        "telescope.nvim",
+        "telescope-dap.nvim",
+        "nvim-dap-virtual-text",
+        "DAPInstall.nvim",
+        "nvim-dap-ui",
+        "nvim-dap-ruby",
+        "nvim-dap-python",
+        "nvim-dap-go",
+        "one-small-step-for-vimkind",
+        "which-key.nvim"
+      },
+      config = function()
+        require('dap').set_log_level('TRACE')
+        require("mmc.dap").setup()
+      end,
+    }
+  end)
+end
 
-  use('suketa/nvim-dap-ruby')
-
-  -- Debugging
-  use {
-    "mfussenegger/nvim-dap",
-    opt = true,
-    event = "BufReadPre",
-    module = { "dap" },
-    wants = { "nvim-dap-virtual-text", "DAPInstall.nvim", "nvim-dap-ui", "nvim-dap-python", "which-key.nvim" },
-    requires = {
-      "Pocco81/DAPInstall.nvim",
-      "theHamsta/nvim-dap-virtual-text",
-      "rcarriga/nvim-dap-ui",
-      "mfussenegger/nvim-dap-python",
-      "nvim-telescope/telescope-dap.nvim",
-      { "leoluz/nvim-dap-go", module = "dap-go" },
-      { "jbyuki/one-small-step-for-vimkind", module = "osv" },
-    },
-    config = function()
-      require("mmc.dap").setup()
-    end,
-  }
-end)
+return M

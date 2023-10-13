@@ -10,6 +10,7 @@ function M.setup()
   local keymap = {
     d = {
       name = "Debug",
+      a = { "<cmd>lua require'dap'.restart()<cr>", "Restart" },
       R = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run to Cursor" },
       c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
       d = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
@@ -23,7 +24,9 @@ function M.setup()
       f = { "<cmd>Telescope dap frames<cr>", "Telescope frames" },
       b = { "<cmd>Telescope dap list_breakpoints<cr>", "Telescope list breakpoints" },
       q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
-      r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
+      --r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
+      r = { "<cmd>lua  require('dapui').float_element('repl', { width = 100, height = 20, enter = true, position = 'center' })<cr>", "Toggle Repl" },
+      v = { "<cmd>lua require'telescope'.extensions.dap.variables{}<cr>", "Toggle Repl" },
       s = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
       t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
       x = { "<cmd>lua require'dap'.terminate()<cr>", "Terminate" },
@@ -32,7 +35,6 @@ function M.setup()
       h = { "<cmd>lua require'dap.ui.widgets'.hover()<cr>", "Hover Variables" },
       S = { "<cmd>lua require'dap.ui.widgets'.scopes()<cr>", "Scopes" },
 
-      E = { "<cmd>lua require'dapui'.eval(vim.fn.input '[Expression] > ')<cr>", "Evaluate Input" },
       U = { "<cmd>lua require'dapui'.toggle()<cr>", "Toggle UI" },
       e = { "<cmd>lua require'dapui'.eval()<cr>", "Evaluate" },
       D = { "<cmd>lua require'osv'.launch({port = 8086})<cr>", "Start Debugging" },

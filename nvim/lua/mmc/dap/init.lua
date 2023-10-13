@@ -1,26 +1,21 @@
 local M = {}
 
 local function configure()
-  -- local dap_install = require "dap-install"
-  -- dap_install.setup {
-  --   installation_path = vim.fn.stdpath "data" .. "/dapinstall/",
-  -- }
-
   local dap_breakpoint = {
     error = {
-      text = "🟥",
+      text = "=>",
       texthl = "LspDiagnosticsSignError",
       linehl = "",
       numhl = "",
     },
     rejected = {
-      text = "",
+      text = "=>",
       texthl = "LspDiagnosticsSignHint",
       linehl = "",
       numhl = "",
     },
     stopped = {
-      text = "⭐️",
+      text = "=>",
       texthl = "LspDiagnosticsSignInformation",
       linehl = "DiagnosticUnderlineInfo",
       numhl = "LspDiagnosticsSignInformation",
@@ -44,11 +39,11 @@ local function configure_exts()
       {
         elements = {
           {
-            id = "scopes",
+            id = "watches",
             size = 0.5
           },
           {
-            id = "stacks",
+            id = "scopes",
             size = 0.5
           },
         },

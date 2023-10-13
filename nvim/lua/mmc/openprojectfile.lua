@@ -1,4 +1,3 @@
--- open current file project path
 function OpenProjectFile()
   local current_buffer = vim.api.nvim_get_current_buf()
   local current_file_path = vim.api.nvim_buf_get_name(current_buffer)
@@ -7,5 +6,3 @@ function OpenProjectFile()
   vim.cmd("cd " .. current_file_directory)
   print("Changing Directory To " .. current_file_directory)
 end
-
---OpenProjectFile()

@@ -1,10 +1,14 @@
-require("mmc.remap")
-require("mmc.packer")
-require("mmc.set")
-require("mmc.openproject")
-require("mmc.openprojectfile")
-require("mmc.showtestinfo")
-require("mmc.utils")
-require("mmc.execfile")
-require("mmc.currentfileclipboard")
-require("mmc.dap")
+local M = {}
+
+function M.setup()
+  require("mmc.remap").setup()
+  require("mmc.packer").setup()
+  require("mmc.set").setup()
+  require("mmc.openproject")
+  require("mmc.openprojectfile")
+  require("mmc.showtestinfo")
+  require("mmc.execfile")
+  require("mmc.currentfileclipboard")
+end
+
+return M

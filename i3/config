@@ -13,6 +13,9 @@ set $mod Mod4
 set $term st
 
 # open browser 
+bindsym $mod+Shift+q exec togglescreenkey 
+
+# open screenkey 
 bindsym $mod+Shift+w exec brave 
 
 # volume with alsa mixer 
@@ -51,28 +54,31 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec $term -f "Liberation Mono-16"
+bindsym $mod+Return exec $term -f "RobotoMono Nerd Font Mono-16"
 
 # open clipboard path to file content in vim 
-bindsym $mod+o exec $term -f "Liberation Mono-16" -e bash -c 'nvim $(xclip -o)'
+bindsym $mod+o exec $term -f "RobotoMono Nerd Font Mono-16" -e bash -c 'nvim $(xclip -o)'
 
 # open dev documentation
 bindsym $mod+Shift+u exec brave "https://devdocs.io/"
 
 # open nvim configuration 
-bindsym $mod+n exec $term -f "Liberation Mono-16" -e bash -c 'cd /home/mmc/.config/nvim && nvim .'
+bindsym $mod+n exec $term -f "RobotoMono Nerd Font Mono-16" -e bash -c 'cd /home/mmc/.config/nvim && nvim .'
 
 # open i3 configuration
-bindsym $mod+i exec $term -f "Liberation Mono-16" -e bash -c 'nvim /home/mmc/.config/i3/config'
+bindsym $mod+i exec $term -f "RobotoMono Nerd Font Mono-16" -e bash -c 'nvim /home/mmc/.config/i3/config'
 
 # open .bashrc 
-bindsym $mod+b exec $term -f "Liberation Mono-16" -e bash -c 'nvim /home/mmc/.bashrc'
+bindsym $mod+b exec $term -f "RobotoMono Nerd Font Mono-16" -e bash -c 'nvim /home/mmc/.bashrc'
 
 # kill focused window
 bindsym $mod+q kill
 
 # toggle keyboard
 bindsym $mod+p exec togglekb
+
+# open tmp file
+bindsym $mod+t exec $term -f "RobotoMono Nerd Font Mono-16" -e bash -c 'nvim /home/mmc/tmp'
 
 # pavucontrol
 bindsym $mod+Shift+p exec pavucontrol
@@ -92,7 +98,7 @@ bindsym $mod+k focus up
 bindsym $mod+h focus right
 
 # joplin
-bindsym $mod+Shift+o exec $term -f "Liberation Mono-16" -e bash -c 'joplin'
+bindsym $mod+Shift+o exec $term -f "RobotoMono Nerd Font Mono-16" -e bash -c 'joplin'
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
