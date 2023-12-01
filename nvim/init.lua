@@ -3,6 +3,13 @@ vim.api.nvim_create_autocmd(
   { pattern = "*.md", command = [[syn match htmlBoldUnderline /`.*[^`]*`/]] }
 )
 
+vim.cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+  augroup end
+]])
+
 function MMCUtilsExecAndPrint(command)
   local output = vim.fn.system(command)
   print(output)
@@ -77,11 +84,13 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  
+
   use('preservim/nerdtree')
 
-  use 'folke/tokyonight.nvim'
+  -- use 'folke/tokyonight.nvim'
 
-  vim.cmd("colorscheme tokyonight")
+  -- vim.cmd("colorscheme tokyonight")
 
   vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
   vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
@@ -89,6 +98,8 @@ return require('packer').startup(function(use)
   use('neovim/nvim-lspconfig')
   use('hrsh7th/nvim-cmp')
   use('hrsh7th/cmp-nvim-lsp')
+
+  use("L3MON4D3/LuaSnip")
 
   use('tpope/vim-surround')
 
@@ -114,7 +125,14 @@ return require('packer').startup(function(use)
 
   }
 
-  use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+  -- use {
+  --   'nvim-treesitter/nvim-treesitter',
+  --   run = function()
+  --     local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+  --     ts_update()
+  --   end,
+  -- }
+
 
   -- Debugging
   use {
