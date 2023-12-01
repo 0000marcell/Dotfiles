@@ -1,0 +1,34 @@
+{
+    "name": "friendly-snippets",
+    "engines": {
+        "vscode": "^1.11.0"
+    },
+    "contributes": {
+        "snippets": [
+            {
+                "language": "python",
+                "path": "./python/base.json"
+            },
+            {
+                "language": "python",
+                "path": "./python/unittest.json"
+            },
+            {
+                "language": "lua",
+                "path": "./lua/base.json"
+            },
+            {
+                "language": "ruby",
+                "path": "./ruby/base.json"
+            },
+            {
+                "language": "bash",
+                "path": "./bash/base.json"
+            },
+            {
+                "language": "sql",
+                "path": "./sql/base.json"
+            }
+        ]
+    }
+}

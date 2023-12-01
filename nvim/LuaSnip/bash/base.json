@@ -1,0 +1,10 @@
+{
+    "crate a array": {
+        "prefix": [
+          "arr",
+          "array"
+        ],
+        "body": "items=('apple' 'banana' 'cherry' 'date' 'fig')",
+        "description" : "creates a array"
+    }
+}

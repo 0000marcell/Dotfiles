@@ -1,0 +1,12 @@
+{
+    "assert True == True": {
+        "prefix": "ass",
+        "body": "assert True == True$0",
+        "description" : "Basic assertion"
+    },
+    "pdg debugger": {
+        "prefix": "deb",
+        "body": "pdb.set_trace()",
+        "description" : "debugger"
+    }
+}
