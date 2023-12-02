@@ -84,7 +84,7 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  
+  use 'David-Kunz/gen.nvim'
 
   use('preservim/nerdtree')
 
@@ -103,7 +103,6 @@ return require('packer').startup(function(use)
 
   use('tpope/vim-surround')
 
-  use('ThePrimeagen/harpoon')
 
   use('tpope/vim-commentary')
   use('tpope/vim-markdown')
@@ -111,6 +110,13 @@ return require('packer').startup(function(use)
   use {
     "folke/which-key.nvim",
     event = "VimEnter",
+  }
+
+  use "nvim-lua/plenary.nvim" -- don't forget to add this one if you don't have it yet!
+  use {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    requires = { {"nvim-lua/plenary.nvim"} }
   }
 
   use {
