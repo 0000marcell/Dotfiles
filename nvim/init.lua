@@ -88,6 +88,8 @@ return require('packer').startup(function(use)
 
   use('preservim/nerdtree')
 
+  use('github/copilot.vim')
+
   -- use 'folke/tokyonight.nvim'
 
   -- vim.cmd("colorscheme tokyonight")
