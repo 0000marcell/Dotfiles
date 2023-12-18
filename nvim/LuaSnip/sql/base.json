@@ -7,7 +7,7 @@
     "body": [
       "set search_path to dcv;"
     ],
-    "description" : "insert"
+    "description": "insert"
   },
   "insert": {
     "prefix": "insert",
@@ -18,7 +18,7 @@
       "values",
       "('1T9TSNA81RR825041', '123', '123', '123');"
     ],
-    "description" : "insert"
+    "description": "insert"
   },
   "delete": {
     "prefix": "delete",
@@ -29,7 +29,7 @@
       "and attr_name = 'rear_axle_model_number'",
       "and attr_value = 'cc';"
     ],
-    "description" : "delete"
+    "description": "delete"
   },
   "update": {
     "prefix": "update",
@@ -39,6 +39,14 @@
       "WHERE vin='1T9TSTA85NR825011'",
       "and fleet_id='TICOFLEET'",
       "and attr_name='rear_axle_serial_number';"
+    ]
+  },
+  "select": {
+    "prefix": "select",
+    "body": [
+      "select",
+      " *",
+      "from estimates;"
     ]
   }
 }
