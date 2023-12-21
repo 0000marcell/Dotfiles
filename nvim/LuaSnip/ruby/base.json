@@ -92,5 +92,11 @@
       "  puts line",
       "end"
     ]
+  },
+  "route": {
+    "prefix": "route",
+    "body": [
+      "delete \"/users/sign_out\", to: \"users#sign_out\", as: :user_sign_out"
+    ]
   }
 }

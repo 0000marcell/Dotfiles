@@ -86,16 +86,10 @@
   "read": {
     "prefix": "read",
     "body": [
-      "file_path = './humio-logs.txt'",
-      "",
-      "if File.exist?(file_path)",
-      "  File.open(file_path, 'r') do |file|",
-      "      file.each_line do |line|",
-      "        puts line",
-      "      end",
-      "  end",
-      "else",
-      "  puts 'error'",
+      "file_path = 'path/to/your/example.txt'",
+      "lines_array = File.readlines(file_path, chomp: true)",
+      "lines_array.each do |line|",
+      "  puts line",
       "end"
     ]
   }
