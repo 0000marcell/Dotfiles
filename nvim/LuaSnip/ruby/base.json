@@ -98,5 +98,19 @@
     "body": [
       "delete \"/users/sign_out\", to: \"users#sign_out\", as: :user_sign_out"
     ]
+  },
+  "around": {
+    "prefix": "around",
+    "body": [
+      "around do |example|",
+      "    ENV['SERVICE_PROVIDER_ID'] = service_provider.id",
+      "    ENV['CUSTOMER_CSV_FILE'] = \"spec/fixtures/data/elsa_customer_file.csv\"",
+      "    ENV['DECISIV_USERNAME'] = user.username",
+      "    example.run",
+      "    ENV.delete('SERVICE_PROVIDER_ID')",
+      "    ENV.delete('CUSTOMER_CSV_FILE')",
+      "    ENV.delete('DECISIV_USERNAME')",
+      "  end"
+    ]
   }
 }
