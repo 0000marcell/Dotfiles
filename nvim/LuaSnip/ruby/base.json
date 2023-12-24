@@ -112,5 +112,11 @@
       "    ENV.delete('DECISIV_USERNAME')",
       "  end"
     ]
+  },
+  "expect": {
+    "prefix": "expect",
+    "body": [
+      "expect(1).to eq(1)"
+    ]
   }
 }
