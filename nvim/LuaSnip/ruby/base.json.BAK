@@ -118,5 +118,11 @@
     "body": [
       "expect(1).to eq(1)"
     ]
+  },
+  "query": {
+    "prefix": "query",
+    "body": [
+      "ActiveRecord::Base.connection.exec_query(%Q{select * from ..})"
+    ]
   }
 }
