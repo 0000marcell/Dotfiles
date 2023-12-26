@@ -124,5 +124,23 @@
     "body": [
       "ActiveRecord::Base.connection.exec_query(%Q{select * from ..})"
     ]
+  },
+  "con": {
+    "prefix": "con",
+    "body": [
+      "#{}"
+    ]
+  },
+  "get": {
+    "prefix": "get",
+    "body": [
+      "get '/products', to: 'products#index'"
+    ]
+  },
+  "put": {
+    "prefix": "put",
+    "body": [
+      "put '/products/:id', to: 'products#edit'"
+    ]
   }
 }

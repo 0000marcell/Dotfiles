@@ -130,5 +130,23 @@
     "body": [
       "#{}"
     ]
+  },
+  "get": {
+    "prefix": "get",
+    "body": [
+      "get '/products', to: 'products#index'"
+    ]
+  },
+  "put": {
+    "prefix": "put",
+    "body": [
+      "put '/products/:id', to: 'products#edit'"
+    ]
+  },
+  "post": {
+    "prefix": "post",
+    "body": [
+      "post '/products', to: 'producsts#create'"
+    ]
   }
 }
