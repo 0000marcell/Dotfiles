@@ -142,5 +142,23 @@
     "body": [
       "put '/products/:id', to: 'products#edit'"
     ]
+  },
+  "post": {
+    "prefix": "post",
+    "body": [
+      "post '/products', to: 'producsts#create'"
+    ]
+  },
+  "delete": {
+    "prefix": "delete",
+    "body": [
+      "delete '/products', to: projects"
+    ]
+  },
+  "deletefile": {
+    "prefix": "deletefile",
+    "body": [
+      "File.delete('./duplicates_test')"
+    ]
   }
 }

@@ -134,7 +134,7 @@
   "get": {
     "prefix": "get",
     "body": [
-      "get '/products', to: 'products#index'"
+      "get '/${1}', to: '${2}#${3}'"
     ]
   },
   "put": {
@@ -147,6 +147,25 @@
     "prefix": "post",
     "body": [
       "post '/products', to: 'producsts#create'"
+    ]
+  },
+  "delete": {
+    "prefix": "delete",
+    "body": [
+      "delete '/products', to: projects"
+    ]
+  },
+  "deletefile": {
+    "prefix": "deletefile",
+    "body": [
+      "File.delete('./duplicates_test')"
+    ]
+  },
+  "jsonread": {
+    "prefix": "jsonread",
+    "body": [
+      "require 'json'",
+      "parsed = JSON.parse(File.read(file_path))"
     ]
   }
 }
