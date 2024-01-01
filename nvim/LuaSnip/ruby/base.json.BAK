@@ -93,12 +93,6 @@
       "end"
     ]
   },
-  "route": {
-    "prefix": "route",
-    "body": [
-      "delete \"/users/sign_out\", to: \"users#sign_out\", as: :user_sign_out"
-    ]
-  },
   "around": {
     "prefix": "around",
     "body": [
@@ -134,31 +128,38 @@
   "get": {
     "prefix": "get",
     "body": [
-      "get '/products', to: 'products#index'"
+      "get '/${1}', to: '${2}#${3}'"
     ]
   },
   "put": {
     "prefix": "put",
     "body": [
-      "put '/products/:id', to: 'products#edit'"
+      "put '/${1}/:id', to: '${2}#${3}'"
     ]
   },
   "post": {
     "prefix": "post",
     "body": [
-      "post '/products', to: 'producsts#create'"
+      "post '/${1}', to: '${2}#${3}'"
     ]
   },
   "delete": {
     "prefix": "delete",
     "body": [
-      "delete '/products', to: projects"
+      "delete '/${1}', to: ${2}#${3}"
     ]
   },
   "deletefile": {
     "prefix": "deletefile",
     "body": [
       "File.delete('./duplicates_test')"
+    ]
+  },
+  "jsonread": {
+    "prefix": "jsonread",
+    "body": [
+      "require 'json'",
+      "parsed = JSON.parse(File.read(file_path))"
     ]
   }
 }

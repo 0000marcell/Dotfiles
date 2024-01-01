@@ -161,5 +161,11 @@
       "require 'json'",
       "parsed = JSON.parse(File.read(file_path))"
     ]
+  },
+  "redirect": {
+    "prefix": "redirect",
+    "body": [
+      "redirect_to todos_path, alert: \"Not authorized to edit this todo\""
+    ]
   }
 }

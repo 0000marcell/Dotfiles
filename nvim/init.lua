@@ -15,12 +15,12 @@ function MMCUtilsExecAndPrint(command)
   print(output)
 end
 
-function MMCCurrentFileClipBoard()
-  local current_buffer = vim.api.nvim_get_current_buf()
-  local current_file_path = vim.api.nvim_buf_get_name(current_buffer)
-  local output = vim.fn.system("echo '" .. current_file_path .. "' | xclip -selection Clipboard")
-  print(output)
-end
+-- function MMCCurrentFileClipBoard()
+--   local current_buffer = vim.api.nvim_get_current_buf()
+--   local current_file_path = vim.api.nvim_buf_get_name(current_buffer)
+--   local output = vim.fn.system("echo '" .. current_file_path .. "' | xclip -selection Clipboard")
+--   print(output)
+-- end
 
 function MMCExecFile()
   local current_buffer = vim.api.nvim_get_current_buf()
@@ -64,7 +64,6 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>cf", MMCCurrentFileClipBoard, { silent = true })
 vim.keymap.set("v", "<C-c>", '"*y :let @+=@*<CR>', { silent = true })
 vim.keymap.set("n", "<C-v>", '"+p', { silent = true })
 vim.keymap.set("n", "<C-h>", '<c-w>h', {})
@@ -79,6 +78,8 @@ vim.keymap.set("v", "<Tab>", ">gv")
 vim.keymap.set("v", "<S-Tab>", "<gv")
 
 vim.cmd [[packadd packer.nvim]]
+
+require('mmc').setup()
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
@@ -118,7 +119,7 @@ return require('packer').startup(function(use)
   use {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
-    requires = { {"nvim-lua/plenary.nvim"} }
+    requires = { { "nvim-lua/plenary.nvim" } }
   }
 
   use {

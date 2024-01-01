@@ -28,6 +28,10 @@
             {
                 "language": "sql",
                 "path": "./sql/base.json"
+            },
+            {
+                "language": "eruby",
+                "path": "./erb/base.json"
             }
         ]
     }
