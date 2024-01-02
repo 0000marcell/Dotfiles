@@ -165,7 +165,7 @@
   "redirect": {
     "prefix": "redirect",
     "body": [
-      "redirect_to todos_path, alert: \"Not authorized to edit this todo\""
+      "redirect_to ${1:todos_path}, alert: \"Not authorized to edit this todo\""
     ]
   }
 }
