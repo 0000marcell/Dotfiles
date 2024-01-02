@@ -161,5 +161,19 @@
       "require 'json'",
       "parsed = JSON.parse(File.read(file_path))"
     ]
+  },
+  "redirect": {
+    "prefix": "redirect",
+    "body": [
+      "redirect_to ${1:todos_path}, alert: \"Not authorized to edit this todo\""
+    ]
+  },
+  "format": {
+    "prefix": "format",
+    "body": [
+      "format.html do",
+      "  redirect_to todos, notice: 'Todo was successfully destroyed.'",
+      "end"
+    ]
   }
 }

@@ -167,5 +167,21 @@
     "body": [
       "redirect_to ${1:todos_path}, alert: \"Not authorized to edit this todo\""
     ]
+  },
+  "format": {
+    "prefix": "format",
+    "body": [
+      "format.${1:} do",
+      "  ${2:}",
+      "end"
+    ]
+  },
+  "respond": {
+    "prefix": "respond",
+    "body": [
+      "respond_to do |format|",
+      "  ${1:}",
+      "end"
+    ]
   }
 }
