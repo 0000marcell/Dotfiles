@@ -8,7 +8,6 @@ function M.currentfileclipboard()
 end
 
 function M.setup()
-  print("currentfileclipboard setup")
   vim.keymap.set("n", "<leader>cf", M.currentfileclipboard, { silent = true })
 end
 

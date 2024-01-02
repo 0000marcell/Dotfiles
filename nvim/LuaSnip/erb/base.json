@@ -1,0 +1,40 @@
+{
+  "textfield": {
+    "prefix": "textfield",
+    "body": [
+      "<div>",
+      "  <%= form.label :title, style: \"display: block\" %>",
+      "  <%= form.text_field :title %>",
+      "</div>"
+    ]
+  },
+  "link": {
+    "prefix": "link",
+    "body": [
+      "<%= link_to \"${1}\", ${2}, data: { \"turbo-method\": :delete } %>"
+    ]
+  },
+  "notice": {
+    "prefix": "notice",
+    "body": [
+      "<p style=\"color: green\"><%= notice %></p>"
+    ]
+  },
+  "each": {
+    "prefix": "each",
+    "body": [
+      "  <% @todos.each do |todo| %>",
+      "    <%= render todo %>",
+      "    <p>",
+      "      <%= link_to \"Show this todo\", todo %>",
+      "    </p>",
+      "  <% end %>"
+    ]
+  },
+  "=": {
+    "prefix": "=",
+    "body": [
+      "<p><%= @todo.description %></p>"
+    ]
+  }
+}
