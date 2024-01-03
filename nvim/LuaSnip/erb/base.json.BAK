@@ -11,7 +11,7 @@
   "link": {
     "prefix": "link",
     "body": [
-      "<%= link_to \"Sign Out\", destroy_user_session_path, data: { \"turbo-method\": :delete } %>"
+      "<%= link_to \"${1}\", ${2}, data: { \"turbo-method\": :delete } %>"
     ]
   },
   "notice": {
@@ -29,6 +29,50 @@
       "      <%= link_to \"Show this todo\", todo %>",
       "    </p>",
       "  <% end %>"
+    ]
+  },
+  "=": {
+    "prefix": "=",
+    "body": [
+      "<p><%= @todo.description %></p>"
+    ]
+  },
+  "render": {
+    "prefix": "render",
+    "body": [
+      "<%= render todo %>"
+    ]
+  },
+  "form": {
+    "prefix": "form",
+    "body": [
+      "<%= form_with(model: todo) do |form| %>",
+      "  <% if todo.errors.any? %>",
+      "    <div style=\"color: red\">",
+      "      <h2><%= pluralize(todo.errors.count, \"error\") %> prohibited this todo from being saved:</h2>",
+      "",
+      "      <ul>",
+      "        <% todo.errors.each do |error| %>",
+      "          <li><%= error.full_message %></li>",
+      "        <% end %>",
+      "      </ul>",
+      "    </div>",
+      "  <% end %>",
+      "",
+      "  <div>",
+      "    <%= form.label :title, style: \"display: block\" %>",
+      "    <%= form.text_field :title %>",
+      "  </div>",
+      "",
+      "  <div>",
+      "    <%= form.label :description, style: \"display: block\" %>",
+      "    <%= form.text_field :description %>",
+      "  </div>",
+      "",
+      "  <div>",
+      "    <%= form.submit %>",
+      "  </div>",
+      "<% end %>"
     ]
   }
 }
