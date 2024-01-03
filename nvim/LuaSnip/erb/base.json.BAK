@@ -74,5 +74,13 @@
       "  </div>",
       "<% end %>"
     ]
+  },
+  "if": {
+    "prefix": "if",
+    "body": [
+      "<% if todo.errors.any? %>",
+      "  ${1:}",
+      "<% end %>"
+    ]
   }
 }

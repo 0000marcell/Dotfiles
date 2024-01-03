@@ -77,6 +77,9 @@ vim.g["NERDTreeShowHidden"] = 1
 vim.keymap.set("v", "<Tab>", ">gv")
 vim.keymap.set("v", "<S-Tab>", "<gv")
 
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
 vim.cmd [[packadd packer.nvim]]
 
 require('mmc').setup()

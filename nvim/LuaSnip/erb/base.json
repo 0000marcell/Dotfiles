@@ -82,5 +82,11 @@
       "  ${1:}",
       "<% end %>"
     ]
+  },
+  "button": {
+    "prefix": "button",
+    "body": [
+      "<%= button_to \"Destroy todo\", todos_destroy_path(@todo), method: :delete %>"
+    ]
   }
 }
