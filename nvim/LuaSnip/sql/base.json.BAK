@@ -1,0 +1,44 @@
+{
+  "search_path": {
+    "prefix": [
+      "set",
+      "search"
+    ],
+    "body": [
+      "set search_path to dcv;"
+    ],
+    "description" : "insert"
+  },
+  "insert": {
+    "prefix": "insert",
+    "body": [
+      "insert into",
+      "etl.tico_fleet_update_vin_attrs",
+      "(vin, fleet_id, attr_name, attr_value)",
+      "values",
+      "('1T9TSNA81RR825041', '123', '123', '123');"
+    ],
+    "description" : "insert"
+  },
+  "delete": {
+    "prefix": "delete",
+    "body": [
+      "delete from ",
+      "etl.tico_fleet_update_vin_attrs",
+      "where vin = '1T9TSNA81RR825041'",
+      "and attr_name = 'rear_axle_model_number'",
+      "and attr_value = 'cc';"
+    ],
+    "description" : "delete"
+  },
+  "update": {
+    "prefix": "update",
+    "body": [
+      "UPDATE etl.tico_fleet_update_vin_attrs",
+      "SET attr_value='LRS01722080'",
+      "WHERE vin='1T9TSTA85NR825011'",
+      "and fleet_id='TICOFLEET'",
+      "and attr_name='rear_axle_serial_number';"
+    ]
+  }
+}
