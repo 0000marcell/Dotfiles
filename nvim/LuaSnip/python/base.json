@@ -175,17 +175,6 @@
     ],
     "description": "read file line by line"
   },
-  "mock": {
-    "prefix": "mock",
-    "body": [
-      "vds_bulk_vin_decoder_mock = mocker.MagicMock(return_value=(None, None))",
-      "mocker.patch(",
-      "\t'jobs.bulk_vds_redecode_assets.vds_redecode.VdsService.bulk_vin_decoder',",
-      "\tvds_bulk_vin_decoder_mock",
-      ")"
-    ],
-    "description": "read file line by line"
-  },
   "test": {
     "prefix": "test",
     "body": [
@@ -206,7 +195,7 @@
       "${1:mockname}_mock = mocker.MagicMock()",
       "mocker.patch(",
       "  '${2:classimportpath}',",
-      "  ${1:mockname}",
+      "  ${1:mockname}_mock",
       ")"
     ]
   },
