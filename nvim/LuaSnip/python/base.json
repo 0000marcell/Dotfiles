@@ -213,5 +213,11 @@
     "body": [
       "assert  ${1:side1} == ${2:side2}"
     ]
+  },
+  "mockassert": {
+    "prefix": "mockassert",
+    "body": [
+      "${1:mock}.assert_called_once_with(${2:args}, ${3:kwargs})"
+    ]
   }
 }
