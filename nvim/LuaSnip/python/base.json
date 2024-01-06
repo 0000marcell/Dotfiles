@@ -219,5 +219,11 @@
     "body": [
       "${1:mock}.assert_called_once_with(${2:args}, ${3:kwargs})"
     ]
+  },
+  "mockerror": {
+    "prefix": "mockerror",
+    "body": [
+      "${1:mockname}.${2:mocked_method}.side_effect = Exception('error')"
+    ]
   }
 }
