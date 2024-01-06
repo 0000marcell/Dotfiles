@@ -225,5 +225,12 @@
     "body": [
       "${1:mockname}.${2:mocked_method}.side_effect = Exception('error')"
     ]
+  },
+  "write": {
+    "prefix": ["write", "w"],
+    "body": [
+      "with open(${1:file_name}, 'w') as f:",
+      "    f.write(${2:data})"
+    ]
   }
 }
