@@ -227,10 +227,21 @@
     ]
   },
   "write": {
-    "prefix": ["write", "w"],
+    "prefix": [
+      "write",
+      "w"
+    ],
     "body": [
       "with open(${1:file_name}, 'w') as f:",
       "    f.write(${2:data})"
+    ]
+  },
+  "fixture": {
+    "prefix": "fixture",
+    "body": [
+      "@pytest.fixture",
+      "def ${1:fixture_name}():",
+      "    return 1"
     ]
   }
 }

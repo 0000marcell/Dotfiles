@@ -213,5 +213,24 @@
     "body": [
       "assert  ${1:side1} == ${2:side2}"
     ]
+  },
+  "mockassert": {
+    "prefix": "mockassert",
+    "body": [
+      "${1:mock}.assert_called_once_with(${2:args}, ${3:kwargs})"
+    ]
+  },
+  "mockerror": {
+    "prefix": "mockerror",
+    "body": [
+      "${1:mockname}.${2:mocked_method}.side_effect = Exception('error')"
+    ]
+  },
+  "write": {
+    "prefix": ["write", "w"],
+    "body": [
+      "with open(${1:file_name}, 'w') as f:",
+      "    f.write(${2:data})"
+    ]
   }
 }
