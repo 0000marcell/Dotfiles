@@ -189,22 +189,12 @@
       "import pdb"
     ]
   },
-  "mockclass": {
-    "prefix": "mockclass",
+  "patch": {
+    "prefix": "patch",
     "body": [
-      "${1:mockname}_mock = mocker.MagicMock()",
       "mocker.patch(",
       "  '${2:classimportpath}',",
       "  ${1:mockname}_mock",
-      ")"
-    ]
-  },
-  "mockfunction": {
-    "prefix": "mockfunction",
-    "body": [
-      "mocker.patch(",
-      "  '${1:functionimportpath}',",
-      "  return_value=${2:returnvalue}",
       ")"
     ]
   },
@@ -227,10 +217,27 @@
     ]
   },
   "write": {
-    "prefix": ["write", "w"],
+    "prefix": [
+      "write",
+      "w"
+    ],
     "body": [
       "with open(${1:file_name}, 'w') as f:",
       "    f.write(${2:data})"
+    ]
+  },
+  "fixture": {
+    "prefix": "fixture",
+    "body": [
+      "@pytest.fixture",
+      "def ${1:fixture_name}():",
+      "    return 1"
+    ]
+  },
+  "magicmock": {
+    "prefix": "magicmock",
+    "body": [
+      "${1:mockname}_mock = mocker.MagicMock()"
     ]
   }
 }
