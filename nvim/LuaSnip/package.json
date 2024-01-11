@@ -22,7 +22,7 @@
                 "path": "./ruby/base.json"
             },
             {
-                "language": "bash",
+                "language": "sh",
                 "path": "./bash/base.json"
             },
             {

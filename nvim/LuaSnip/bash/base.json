@@ -12,5 +12,14 @@
     "body": [
       "#!/usr/bin/bash"
     ]
+  },
+  "for": {
+    "prefix": "for",
+    "body": [
+      "for file_path in \"${file_paths[@]}\"; do",
+      "    echo \"Processing file: $file_path\"",
+      "    git add $file_path",
+      "done"
+    ]
   }
 }
