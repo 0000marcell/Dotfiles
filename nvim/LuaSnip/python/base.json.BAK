@@ -239,5 +239,15 @@
     "body": [
       "${1:mockname}_mock = mocker.MagicMock()"
     ]
+  },
+  "unitpatch": {
+    "prefix": "unitpatch",
+    "body": [
+      "from unittest.mock import patch",
+      "self.patcher = patch(\"decisiv.telematics.providers.peoplenet_provider.get_telematics_credstore\")",
+      "mock_credstore = self.patcher.start()",
+      "mock_credstore.return_value.get_credentials.return_value = {\"user\": \"3360\", \"password\": \"bagofbugs\"}",
+      "self.patcher.stop()"
+    ]
   }
 }

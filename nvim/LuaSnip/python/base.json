@@ -249,5 +249,22 @@
       "mock_credstore.return_value.get_credentials.return_value = {\"user\": \"3360\", \"password\": \"bagofbugs\"}",
       "self.patcher.stop()"
     ]
+  },
+  "connect": {
+    "prefix": "connect",
+    "body": [
+      "import psycopg2",
+      "",
+      "conn = psycopg2.connect(",
+      "    dbname=\"pythontest\",",
+      "    user=\"postgres\",",
+      "    password=\"\",",
+      ")",
+      "sql = \"\"\"",
+      "  select * from public.\"TestTable\";",
+      "  \"\"\"",
+      "cursor = conn.cursor()",
+      "cursor.execute(sql)"
+    ]
   }
 }
