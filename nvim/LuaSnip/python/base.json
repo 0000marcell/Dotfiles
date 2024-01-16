@@ -266,5 +266,13 @@
       "cursor = conn.cursor()",
       "cursor.execute(sql)"
     ]
+  },
+  "mockresp": {
+    "prefix": "mockresp",
+    "body": [
+      "import responses",
+      "rsp1 = responses.post(\"http://www.foo.bar/1/\", status=200)",
+      "assert json.loads(rsp1.calls[0].request.body) == {\"is_active\": False}"
+    ]
   }
 }
