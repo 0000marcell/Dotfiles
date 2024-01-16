@@ -14,16 +14,6 @@
     ],
     "description": "let"
   },
-  "test": {
-    "prefix": "test",
-    "body": [
-      "require_relative '../../spec_helper'",
-      "",
-      "RSpec.describe PaccarRDSIntegration::Functions::QueueAccounts do",
-      "end"
-    ],
-    "description": "test"
-  },
   "struct": {
     "prefix": "struct",
     "body": [
@@ -181,6 +171,15 @@
     "body": [
       "respond_to do |format|",
       "  ${1:}",
+      "end"
+    ]
+  },
+  "test": {
+    "prefix": "test",
+    "body": [
+      "require 'rails_helper'",
+      "",
+      "RSpec.describe ${1:\"this is a test\"}, type: ${2:type} do",
       "end"
     ]
   }

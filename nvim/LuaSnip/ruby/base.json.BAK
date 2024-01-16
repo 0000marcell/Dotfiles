@@ -14,16 +14,6 @@
     ],
     "description": "let"
   },
-  "test": {
-    "prefix": "test",
-    "body": [
-      "require_relative '../../spec_helper'",
-      "",
-      "RSpec.describe PaccarRDSIntegration::Functions::QueueAccounts do",
-      "end"
-    ],
-    "description": "test"
-  },
   "struct": {
     "prefix": "struct",
     "body": [
@@ -171,8 +161,16 @@
   "format": {
     "prefix": "format",
     "body": [
-      "format.html do",
-      "  redirect_to todos, notice: 'Todo was successfully destroyed.'",
+      "format.${1:} do",
+      "  ${2:}",
+      "end"
+    ]
+  },
+  "respond": {
+    "prefix": "respond",
+    "body": [
+      "respond_to do |format|",
+      "  ${1:}",
       "end"
     ]
   }
