@@ -6,7 +6,7 @@
     },
     "pdg debugger": {
         "prefix": ["debug", "deb", "debugger"],
-        "body": "pdb.set_trace()",
+        "body": "breakpoint()",
         "description" : "debugger"
     }
 }
