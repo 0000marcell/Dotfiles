@@ -173,5 +173,37 @@
       "  ${1:}",
       "end"
     ]
+  },
+  "test": {
+    "prefix": "test",
+    "body": [
+      "require 'rails_helper'",
+      "",
+      "RSpec.describe ${1:\"this is a test\"}, type: ${2:type} do",
+      "end"
+    ]
+  },
+  "json": {
+    "prefix": "json",
+    "body": [
+      "require 'json'",
+      "",
+      "# Specify the path to your JSON file",
+      "file_path = 'path/to/your/data.json'",
+      "",
+      "# Read JSON data from the file",
+      "begin",
+      "  json_data = JSON.parse(File.read(file_path))",
+      "",
+      "  # Access data from the parsed JSON",
+      "  puts \"Name: #{json_data['name']}\"",
+      "  puts \"Age: #{json_data['age']}\"",
+      "  puts \"City: #{json_data['city']}\"",
+      "rescue JSON::ParserError => e",
+      "  puts \"Error parsing JSON: #{e.message}\"",
+      "rescue Errno::ENOENT",
+      "  puts \"File not found: #{file_path}\"",
+      "end"
+    ]
   }
 }

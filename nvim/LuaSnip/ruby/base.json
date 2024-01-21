@@ -182,5 +182,61 @@
       "RSpec.describe ${1:\"this is a test\"}, type: ${2:type} do",
       "end"
     ]
+  },
+  "json": {
+    "prefix": "json",
+    "body": [
+      "require 'json'",
+      "",
+      "# Specify the path to your JSON file",
+      "file_path = 'path/to/your/data.json'",
+      "",
+      "# Read JSON data from the file",
+      "begin",
+      "  json_data = JSON.parse(File.read(file_path))",
+      "",
+      "  # Access data from the parsed JSON",
+      "  puts \"Name: #{json_data['name']}\"",
+      "  puts \"Age: #{json_data['age']}\"",
+      "  puts \"City: #{json_data['city']}\"",
+      "rescue JSON::ParserError => e",
+      "  puts \"Error parsing JSON: #{e.message}\"",
+      "rescue Errno::ENOENT",
+      "  puts \"File not found: #{file_path}\"",
+      "end"
+    ]
+  },
+  "db": {
+    "prefix": "db",
+    "body": [
+      "require 'pg'",
+      "",
+      "# Connection parameters",
+      "db_params = {",
+      "  host: 'your_host',      # replace with your PostgreSQL host",
+      "  port: 'your_port',      # replace with your PostgreSQL port",
+      "  dbname: 'your_database', # replace with your database name",
+      "  user: 'your_username',   # replace with your database username",
+      "  password: 'your_password' # replace with your database password",
+      "}",
+      "",
+      "begin",
+      "  # Connect to the PostgreSQL database",
+      "  conn = PG.connect(db_params)",
+      "",
+      "  # Execute a simple query",
+      "  result = conn.exec('SELECT version()')",
+      "",
+      "  # Output the result",
+      "  puts \"PostgreSQL version: #{result[0]['version']}\"",
+      "",
+      "rescue PG::Error => e",
+      "  puts \"Error connecting to the database: #{e.message}\"",
+      "",
+      "ensure",
+      "  # Close the database connection",
+      "  conn.close if conn",
+      "end"
+    ]
   }
 }
