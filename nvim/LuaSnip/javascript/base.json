@@ -1,0 +1,24 @@
+{
+  "usememo": {
+    "prefix": "usememo",
+    "body": [
+      "import React, { useMemo } from 'react';",
+      "",
+      "function ExpensiveComponent({ data }: { data: number[] }) {",
+      "  const sum = useMemo(() => {",
+      "    return data.reduce((acc, val) => acc + val, 0);",
+      "  }, [data]);",
+      "",
+      "  return <p>Sum: {sum}</p>;",
+      "}"
+    ]
+  },
+  "usecallback": {
+    "prefix": "usecallback",
+    "body": [
+      "const callbackAtualizado = useCallback(() => {",
+      "    console.log('callbackAtualizado:', contador);",
+      "}, [contador]);"
+    ]
+  }
+}
