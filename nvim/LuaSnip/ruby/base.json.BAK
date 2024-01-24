@@ -238,5 +238,12 @@
       "  conn.close if conn",
       "end"
     ]
+  },
+  "allow": {
+    "prefix": "allow",
+    "body": [
+      "allow(EstimateTotals::CalculatesEstimateItemFleetPrice).to receive(:new)",
+      "        .and_return(calculate_estimate_item_double)"
+    ]
   }
 }

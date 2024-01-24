@@ -245,5 +245,11 @@
       "allow(EstimateTotals::CalculatesEstimateItemFleetPrice).to receive(:new)",
       "        .and_return(calculate_estimate_item_double)"
     ]
+  },
+  "double": {
+    "prefix": "double",
+    "body": [
+      "instance_double(EstimateTotals::CalculatesEstimateItemFleetPrice)"
+    ]
   }
 }
