@@ -205,5 +205,38 @@
       "  puts \"File not found: #{file_path}\"",
       "end"
     ]
+  },
+  "db": {
+    "prefix": "db",
+    "body": [
+      "require 'pg'",
+      "",
+      "# Connection parameters",
+      "db_params = {",
+      "  host: 'your_host',      # replace with your PostgreSQL host",
+      "  port: 'your_port',      # replace with your PostgreSQL port",
+      "  dbname: 'your_database', # replace with your database name",
+      "  user: 'your_username',   # replace with your database username",
+      "  password: 'your_password' # replace with your database password",
+      "}",
+      "",
+      "begin",
+      "  # Connect to the PostgreSQL database",
+      "  conn = PG.connect(db_params)",
+      "",
+      "  # Execute a simple query",
+      "  result = conn.exec('SELECT version()')",
+      "",
+      "  # Output the result",
+      "  puts \"PostgreSQL version: #{result[0]['version']}\"",
+      "",
+      "rescue PG::Error => e",
+      "  puts \"Error connecting to the database: #{e.message}\"",
+      "",
+      "ensure",
+      "  # Close the database connection",
+      "  conn.close if conn",
+      "end"
+    ]
   }
 }
