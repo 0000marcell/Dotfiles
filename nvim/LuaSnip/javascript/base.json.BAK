@@ -20,5 +20,21 @@
       "    console.log('callbackAtualizado:', contador);",
       "}, [contador]);"
     ]
+  },
+  "if": {
+    "prefix": "if",
+    "body": [
+      "if(${1:}) {",
+      "    ${2:}",
+      "}"
+    ]
+  },
+  "usestate": {
+    "prefix": "usestate",
+    "body": [
+      "import { useState, useContext } from \"react\";",
+      "const [mystate, setMyState] = useState(\"something else\");",
+      "setMyState(\"Hello World\");"
+    ]
   }
 }

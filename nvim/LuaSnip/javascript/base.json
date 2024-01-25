@@ -28,5 +28,23 @@
       "    ${2:}",
       "}"
     ]
+  },
+  "usestate": {
+    "prefix": "usestate",
+    "body": [
+      "import { useState, useContext } from \"react\";",
+      "const [mystate, setMyState] = useState(\"something else\");",
+      "setMyState(\"Hello World\");"
+    ]
+  },
+  "fun": {
+    "prefix": "fun",
+    "body": [
+      "function NewComponent() {",
+      "  return (",
+      "    <p>hello</p>",
+      "  )",
+      "}"
+    ]
   }
 }
