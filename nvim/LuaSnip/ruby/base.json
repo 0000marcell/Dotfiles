@@ -251,5 +251,11 @@
     "body": [
       "instance_double(EstimateTotals::CalculatesEstimateItemFleetPrice)"
     ]
+  },
+  "class_double": {
+    "prefix": "class_double",
+    "body": [
+      "class_double(\"Teta\").as_stubbed_const"
+    ]
   }
 }

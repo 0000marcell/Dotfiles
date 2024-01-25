@@ -1,12 +1,4 @@
 {
-  "before": {
-    "prefix": "",
-    "body": [
-      "before do",
-      "end"
-    ],
-    "description": "before"
-  },
   "usememo": {
     "prefix": "usememo",
     "body": [
@@ -19,6 +11,14 @@
       "",
       "  return <p>Sum: {sum}</p>;",
       "}"
+    ]
+  },
+  "usecallback": {
+    "prefix": "usecallback",
+    "body": [
+      "const callbackAtualizado = useCallback(() => {",
+      "    console.log('callbackAtualizado:', contador);",
+      "}, [contador]);"
     ]
   }
 }

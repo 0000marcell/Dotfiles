@@ -20,5 +20,13 @@
       "    console.log('callbackAtualizado:', contador);",
       "}, [contador]);"
     ]
+  },
+  "if": {
+    "prefix": "if",
+    "body": [
+      "if(${1:}) {",
+      "    ${2:}",
+      "}"
+    ]
   }
 }
