@@ -257,5 +257,11 @@
     "body": [
       "class_double(\"Teta\").as_stubbed_const"
     ]
+  },
+  "req": {
+    "prefix": "req",
+    "body": [
+      "require '${1:}'"
+    ]
   }
 }
