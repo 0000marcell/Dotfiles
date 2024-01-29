@@ -46,5 +46,12 @@
       "  )",
       "}"
     ]
+  },
+  "state": {
+    "prefix": "state",
+    "body": [
+      "import { useState } from \"react\";",
+      "const [${1:state}, ${2:setState}] = useState(${3:initialState});"
+    ]
   }
 }

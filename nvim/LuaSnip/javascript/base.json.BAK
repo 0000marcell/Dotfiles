@@ -36,5 +36,15 @@
       "const [mystate, setMyState] = useState(\"something else\");",
       "setMyState(\"Hello World\");"
     ]
+  },
+  "fun": {
+    "prefix": "fun",
+    "body": [
+      "function NewComponent() {",
+      "  return (",
+      "    <p>hello</p>",
+      "  )",
+      "}"
+    ]
   }
 }

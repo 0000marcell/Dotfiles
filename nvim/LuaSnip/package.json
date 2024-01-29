@@ -32,6 +32,10 @@
             {
                 "language": "eruby",
                 "path": "./erb/base.json"
+            },
+            {
+                "language": "javascript",
+                "path": "./javascript/base.json"
             }
         ]
     }
