@@ -45,6 +45,11 @@ function MMCExecFile()
     print("current_file_path: " .. current_file_path)
     MMCUtilsExecAndPrint("bash " .. current_file_path)
   end
+
+  if string.match(current_file_path, ".js") then
+    print("current_file_path: " .. current_file_path)
+    MMCUtilsExecAndPrint("node " .. current_file_path)
+  end
 end
 
 vim.opt.foldmethod = 'indent'

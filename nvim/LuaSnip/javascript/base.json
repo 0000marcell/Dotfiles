@@ -53,5 +53,34 @@
       "import { useState } from \"react\";",
       "const [${1:state}, ${2:setState}] = useState(${3:initialState});"
     ]
+  },
+  "map": {
+    "prefix": "map",
+    "body": [
+      "{(",
+      "  ${1:list}.map((${2:item}) => {",
+      "    return (",
+      "      <li key={${2:item}.id}>",
+      "        {${2:item}.name}",
+      "      </li>",
+      "    )",
+      "  })",
+      ")}"
+    ]
+  },
+  "button": {
+    "prefix": "button",
+    "body": [
+      "<button onClick={() => {",
+      "  ${1:console.log('button')}",
+      "}}>${2:name}</button>"
+    ]
+  },
+  "route": {
+    "prefix": "route",
+    "body": [
+      "import { BrowserRouter as Router, Route } from 'react-router-dom';",
+      "<Router path=\"${1:path}\" component={${2:component} />"
+    ]
   }
 }
