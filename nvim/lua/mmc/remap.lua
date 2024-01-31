@@ -23,9 +23,6 @@ function M.setup()
   vim.keymap.set("i", "<C-b>", '<cmd>lua MMCExecFile()<CR>')
   vim.keymap.set("n", "<C-b>", '<cmd>lua MMCExecFile()<CR>')
 
-  -- copy current file full path to clipboard
-  vim.keymap.set("n", "<leader>cf", "<cmd>lua MMCCurrentFileClipBoard()<CR>")
-
   -- show information about current ruby test in new split buffer
   vim.keymap.set("n", "<leader>ti", "<cmd>lua ShowTestInfo()<CR>")
 
