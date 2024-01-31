@@ -89,6 +89,7 @@ return require('packer').startup(function(use)
   --use 'David-Kunz/gen.nvim'
 
   use('preservim/nerdtree')
+  use('tpope/vim-fugitive')
 
   use('github/copilot.vim')
 
