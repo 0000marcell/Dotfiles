@@ -21,5 +21,13 @@
       "    git add $file_path",
       "done"
     ]
+  },
+  "if": {
+    "prefix": "if",
+    "body": [
+      "if [[ \"$val\" == \"marcell\" ]]; then",
+      "  echo \"testing\"",
+      "fi"
+    ]
   }
 }

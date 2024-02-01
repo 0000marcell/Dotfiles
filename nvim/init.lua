@@ -91,6 +91,11 @@ return require('packer').startup(function(use)
   use('preservim/nerdtree')
   use('tpope/vim-fugitive')
 
+  use('jiangmiao/auto-pairs')
+
+  -- open current file on github
+  use "almo7aya/openingh.nvim"
+
   use('github/copilot.vim')
 
   -- use 'folke/tokyonight.nvim'

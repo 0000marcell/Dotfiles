@@ -6,6 +6,10 @@
     "contributes": {
         "snippets": [
             {
+                "language": "gitcommit",
+                "path": "./gitcommit/base.json"
+            },
+            {
                 "language": "python",
                 "path": "./python/base.json"
             },
