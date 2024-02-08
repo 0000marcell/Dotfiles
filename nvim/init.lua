@@ -135,19 +135,27 @@ return require('packer').startup(function(use)
       { 'nvim-lua/plenary.nvim' },
       { "nvim-telescope/telescope-live-grep-args.nvim" },
       config = function()
-        require("telescope").load_extension("live_grep_args")
+        local ts = require("telescope")
+        ts.load_extension("live_grep_args")
+        ts.setup{
+          defaults = {
+            file_ignore_patterns = {
+              "node_modules"
+            }
+          }
+        }
       end
     }
 
   }
 
-  -- use {
-  --   'nvim-treesitter/nvim-treesitter',
-  --   run = function()
-  --     local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-  --     ts_update()
-  --   end,
-  -- }
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+      ts_update()
+    end,
+  }
 
 
   -- Debugging

@@ -29,5 +29,14 @@
       "  echo \"testing\"",
       "fi"
     ]
+  },
+  "ife": {
+    "prefix": "ife",
+    "body": [
+      "if [[ -z ${1:var} ]]; then",
+      "  echo \"${2:}\"",
+      "  exit 1",
+      "fi"
+    ]
   }
 }
