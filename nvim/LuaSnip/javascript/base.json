@@ -92,5 +92,12 @@
       "  <option value=\"option3\">Option 3</option>",
       "</select>"
     ]
+  },
+  "form": {
+    "prefix": "form",
+    "body": [
+      "<Form method=\"post\">",
+      "</Form>"
+    ]
   }
 }
