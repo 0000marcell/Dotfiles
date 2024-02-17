@@ -40,6 +40,10 @@
             {
                 "language": "javascript",
                 "path": "./javascript/base.json"
+            },
+            {
+                "language": "javascriptreact",
+                "path": "./javascriptreact/base.json"
             }
         ]
     }

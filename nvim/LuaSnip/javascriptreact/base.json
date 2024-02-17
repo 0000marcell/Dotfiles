@@ -37,5 +37,13 @@
     "body": [
       "<button type=\"submit\">Save</button>"
     ]
+  },
+  "div": {
+    "prefix": "div",
+    "body": [
+      "<div>",
+      "  ${1}",
+      "</div>"
+    ]
   }
 }

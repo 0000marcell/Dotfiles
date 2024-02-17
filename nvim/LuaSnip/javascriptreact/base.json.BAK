@@ -31,5 +31,11 @@
       "  defaultValue={contact.last}",
       "/>"
     ]
+  },
+  "button": {
+    "prefix": "button",
+    "body": [
+      "<button type=\"submit\">Save</button>"
+    ]
   }
 }
