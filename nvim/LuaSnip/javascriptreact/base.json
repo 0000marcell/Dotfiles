@@ -45,5 +45,21 @@
       "  ${1}",
       "</div>"
     ]
+  },
+  "ul": {
+    "prefix": "ul",
+    "body": [
+      "<ul>",
+      "  ${1}",
+      "</ul>"
+    ]
+  },
+  "exp": {
+    "prefix": "exp",
+    "body": [
+      "export default function ${1}() {",
+      "  ${2}",
+      "}"
+    ]
   }
 }
