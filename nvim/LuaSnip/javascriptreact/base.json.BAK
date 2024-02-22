@@ -41,8 +41,8 @@
   "div": {
     "prefix": "div",
     "body": [
-      "<div>",
-      "  ${1}",
+      "<div className=${1}>",
+      "  ${2}",
       "</div>"
     ]
   },
@@ -60,6 +60,12 @@
       "export default function ${1}() {",
       "  ${2}",
       "}"
+    ]
+  },
+  "import": {
+    "prefix": "import",
+    "body": [
+      "import ${1} from '${2}';"
     ]
   }
 }

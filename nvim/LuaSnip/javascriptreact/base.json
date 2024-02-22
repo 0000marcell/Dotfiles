@@ -41,8 +41,8 @@
   "div": {
     "prefix": "div",
     "body": [
-      "<div>",
-      "  ${1}",
+      "<div className=${1}>",
+      "  ${2}",
       "</div>"
     ]
   },
@@ -66,6 +66,12 @@
     "prefix": "import",
     "body": [
       "import ${1} from '${2}';"
+    ]
+  },
+  "log": {
+    "prefix": "log",
+    "body": [
+      "console.log(\"${1}\", ${2});"
     ]
   }
 }
