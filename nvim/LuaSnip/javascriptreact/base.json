@@ -63,7 +63,7 @@
     ]
   },
   "import": {
-    "prefix": "import",
+    "prefix": ["import", "imp"],
     "body": [
       "import ${1} from '${2}';"
     ]
