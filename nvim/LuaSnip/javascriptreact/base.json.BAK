@@ -63,7 +63,10 @@
     ]
   },
   "import": {
-    "prefix": ["import", "imp"],
+    "prefix": [
+      "import",
+      "imp"
+    ],
     "body": [
       "import ${1} from '${2}';"
     ]
@@ -72,6 +75,12 @@
     "prefix": "log",
     "body": [
       "console.log(\"${1}\", ${2});"
+    ]
+  },
+  "react": {
+    "prefix": "react",
+    "body": [
+      "import React from 'react';"
     ]
   }
 }

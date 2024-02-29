@@ -82,5 +82,11 @@
     "body": [
       "import React from 'react';"
     ]
+  },
+  "link": {
+    "prefix": "link",
+    "body": [
+      "<Link to={`${1}`}>{${2}</Link>"
+    ]
   }
 }
