@@ -88,5 +88,23 @@
     "body": [
       "<Link to={`${1}`}>{${2}</Link>"
     ]
+  },
+  "loader": {
+    "prefix": "loader",
+    "body": [
+      "export async function loader() {",
+      "  const ${1} = await get${2}();",
+      "  return { ${1} };",
+      "}"
+    ]
+  },
+  "action": {
+    "prefix": "action",
+    "body": [
+      "export async function action() {",
+      "  const ${1} = await create${1}();",
+      "  return redirect(`${3}`);",
+      "}"
+    ]
   }
 }

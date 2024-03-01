@@ -82,5 +82,20 @@
     "body": [
       "import React from 'react';"
     ]
+  },
+  "link": {
+    "prefix": "link",
+    "body": [
+      "<Link to={`${1}`}>{${2}</Link>"
+    ]
+  },
+  "loader": {
+    "prefix": "loader",
+    "body": [
+      "export async function loader() {",
+      "  const ${1} = await get${2}();",
+      "  return { ${1} };",
+      "}"
+    ]
   }
 }
