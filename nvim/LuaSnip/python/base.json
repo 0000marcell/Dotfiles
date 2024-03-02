@@ -274,5 +274,11 @@
       "rsp1 = responses.post(\"http://www.foo.bar/1/\", status=200)",
       "assert json.loads(rsp1.calls[0].request.body) == {\"is_active\": False}"
     ]
+  },
+  "dirname": {
+    "prefix": "dirname",
+    "body": [
+      "os.path.dirname(__file__)"
+    ]
   }
 }
