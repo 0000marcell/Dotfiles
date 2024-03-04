@@ -112,6 +112,7 @@ return require('packer').startup(function(use)
   use("L3MON4D3/LuaSnip")
 
   use('tpope/vim-surround')
+  use('tpope/vim-dadbod')
 
 
   use('tpope/vim-commentary')
