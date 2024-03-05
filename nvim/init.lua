@@ -131,6 +131,13 @@ return require('packer').startup(function(use)
   }
 
   use {
+    'kristijanhusak/vim-dadbod-ui',
+    wants = {
+      'tpope/vim-dadbod',
+    }
+  }
+
+  use {
     'nvim-telescope/telescope.nvim', tag = '0.1.2',
     requires = {
       { 'nvim-lua/plenary.nvim' },

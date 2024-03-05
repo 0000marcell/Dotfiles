@@ -106,5 +106,13 @@
       "  return redirect(`${3}`);",
       "}"
     ]
+  },
+  "li": {
+    "prefix": "li",
+    "body": [
+      "<li>",
+      "  ${1:content}",
+      "</li>"
+    ]
   }
 }
