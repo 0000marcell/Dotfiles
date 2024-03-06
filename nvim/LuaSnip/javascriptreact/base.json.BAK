@@ -86,7 +86,7 @@
   "link": {
     "prefix": "link",
     "body": [
-      "<Link to={`${1}`}>{${2}</Link>"
+      "<Link to={`${1}`}>${2}</Link>"
     ]
   },
   "loader": {
@@ -95,6 +95,52 @@
       "export async function loader() {",
       "  const ${1} = await get${2}();",
       "  return { ${1} };",
+      "}"
+    ]
+  },
+  "action": {
+    "prefix": "action",
+    "body": [
+      "export async function action() {",
+      "  const ${1} = await create${1}();",
+      "  return redirect(`${3}`);",
+      "}"
+    ]
+  },
+  "li": {
+    "prefix": "li",
+    "body": [
+      "<li>",
+      "  ${1:content}",
+      "</li>"
+    ]
+  },
+  "post": {
+    "prefix": "post",
+    "body": [
+      "try {",
+      "  const data = {",
+      "    name: updates.name,",
+      "    done: 'false',",
+      "  };",
+      "  const response = await fetch('/todos', {",
+      "    method: 'POST',",
+      "    headers: {",
+      "      \"Content-Type\": \"application/json\",",
+      "      \"X-CSRF-Token\": document.querySelector(\"meta[name='csrf-token']\").content,",
+      "    },",
+      "    body: JSON.stringify(data),",
+      "  })",
+      "",
+      "  if (!response.ok) {",
+      "    throw new Error(`HTTP error! Status: ${response.status}`);",
+      "  } ",
+      "",
+      "  const responseData = await response.json();",
+      "  console.log(\"responseData: \", responseData);",
+      "  return responseData;",
+      "} catch(e) {",
+      "  console.log(\"Error: \", e);",
       "}"
     ]
   }
