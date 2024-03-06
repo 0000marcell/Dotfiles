@@ -86,7 +86,7 @@
   "link": {
     "prefix": "link",
     "body": [
-      "<Link to={`${1}`}>{${2}</Link>"
+      "<Link to={`${1}`}>${2}</Link>"
     ]
   },
   "loader": {
