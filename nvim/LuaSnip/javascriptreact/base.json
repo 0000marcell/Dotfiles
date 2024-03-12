@@ -13,6 +13,14 @@
       "}"
     ]
   },
+  "button": {
+    "prefix": "button",
+    "body": [
+      "<button onClick={() => {",
+      "  ${1:console.log('button')}",
+      "}}>${2:name}</button>"
+    ]
+  },
   "form": {
     "prefix": "form",
     "body": [
@@ -32,8 +40,8 @@
       "/>"
     ]
   },
-  "button": {
-    "prefix": "button",
+  "submit": {
+    "prefix": "submit",
     "body": [
       "<button type=\"submit\">Save</button>"
     ]
@@ -165,6 +173,14 @@
       "  return responseData;",
       "} catch(e) {",
       "  console.log(\"Error: \", e);",
+      "}"
+    ]
+  },
+  "afun": {
+    "prefix": "afun",
+    "body": [
+      "const ${1:function} = (${2:params}) => {",
+      "  ${3:body}",
       "}"
     ]
   }

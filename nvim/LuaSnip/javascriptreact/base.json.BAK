@@ -13,6 +13,14 @@
       "}"
     ]
   },
+  "button": {
+    "prefix": "button",
+    "body": [
+      "<button onClick={() => {",
+      "  ${1:console.log('button')}",
+      "}}>${2:name}</button>"
+    ]
+  },
   "form": {
     "prefix": "form",
     "body": [
@@ -32,8 +40,8 @@
       "/>"
     ]
   },
-  "button": {
-    "prefix": "button",
+  "submit": {
+    "prefix": "submit",
     "body": [
       "<button type=\"submit\">Save</button>"
     ]
@@ -130,6 +138,30 @@
       "      \"X-CSRF-Token\": document.querySelector(\"meta[name='csrf-token']\").content,",
       "    },",
       "    body: JSON.stringify(data),",
+      "  })",
+      "",
+      "  if (!response.ok) {",
+      "    throw new Error(`HTTP error! Status: ${response.status}`);",
+      "  } ",
+      "",
+      "  const responseData = await response.json();",
+      "  console.log(\"responseData: \", responseData);",
+      "  return responseData;",
+      "} catch(e) {",
+      "  console.log(\"Error: \", e);",
+      "}"
+    ]
+  },
+  "get": {
+    "prefix": "get",
+    "body": [
+      "try {",
+      "  const response = await fetch('/todos', {",
+      "    method: 'GET',",
+      "    headers: {",
+      "      \"Content-Type\": \"application/json\",",
+      "      \"X-CSRF-Token\": document.querySelector(\"meta[name='csrf-token']\").content,",
+      "    }",
       "  })",
       "",
       "  if (!response.ok) {",

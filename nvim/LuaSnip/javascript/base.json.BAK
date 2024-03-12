@@ -128,5 +128,29 @@
       "  console.log(\"Error: \", e);",
       "}"
     ]
+  },
+  "get": {
+    "prefix": "get",
+    "body": [
+      "try {",
+      "  const response = await fetch('/todos', {",
+      "    method: 'GET',",
+      "    headers: {",
+      "      \"Content-Type\": \"application/json\",",
+      "      \"X-CSRF-Token\": document.querySelector(\"meta[name='csrf-token']\").content,",
+      "    }",
+      "  })",
+      "",
+      "  if (!response.ok) {",
+      "    throw new Error(`HTTP error! Status: ${response.status}`);",
+      "  } ",
+      "",
+      "  const responseData = await response.json();",
+      "  console.log(\"responseData: \", responseData);",
+      "  return responseData;",
+      "} catch(e) {",
+      "  console.log(\"Error: \", e);",
+      "}"
+    ]
   }
 }
