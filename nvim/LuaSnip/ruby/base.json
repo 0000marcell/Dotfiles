@@ -263,5 +263,16 @@
     "body": [
       "require '${1:}'"
     ]
+  },
+  "begin": {
+    "prefix": "begin",
+    "body": [
+      "begin",
+      "  ${1:body}",
+      "rescue StandardError => e",
+      "  puts \"Error: #{e}\"",
+      "  ${2:rbody}",
+      "end"
+    ]
   }
 }
