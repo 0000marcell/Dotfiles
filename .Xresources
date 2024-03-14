@@ -1,0 +1,44 @@
+!! Transparency (0-1):
+st.alpha: 0.5
+
+!! Set a default font and font size as below:
+st.font: Monospace-16;
+
+! st.termname: st-256color
+! st.borderpx: 2
+
+!! Set the background, foreground and cursor colors as below:
+
+!! the actual name of the color are incorrect, see the comments, the comments are correct
+!! `could not find` are the colors that I did not notice a difference
+!! gruvbox:
+!! background color:
+*.color0: #1d2021
+!! could not find:
+*.color1: #cc241d
+!! could not find:
+*.color2: #98971a
+!! could not find:
+*.color3: #d79921
+!! could not find:
+*.color4: #458588
+!! could not find:
+*.color5: #b16286
+!! vim-browser select color background
+*.color6: #c8c8c8
+*.color7: #a89984
+*.color8: #928374
+*.color9: #fb4934
+*.color10: #b8bb26
+*.color11: #fabd2f
+*.color12: #83a598
+*.color13: #d3869b
+*.color14: #8ec07c
+*.color15: #ebdbb2
+*.color256: #ff0000
+*.color257: #00ff00
+*.color258: #0000ff
+!! cursor color:
+*.background: #fbf1c7 
+*.foreground: #282828
+*.cursorColor: #282828
