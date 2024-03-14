@@ -152,5 +152,15 @@
       "  console.log(\"Error: \", e);",
       "}"
     ]
+  },
+  "afun": {
+    "prefix": "afun",
+    "body": [
+      "const ${1:name} = (${2:params}) => {",
+      "  return (",
+      "    ${3:body}",
+      "  )",
+      "}"
+    ]
   }
 }
