@@ -175,5 +175,13 @@
       "  console.log(\"Error: \", e);",
       "}"
     ]
+  },
+  "afun": {
+    "prefix": "afun",
+    "body": [
+      "const ${1:function} = (${2:params}) => {",
+      "  ${3:body}",
+      "}"
+    ]
   }
 }

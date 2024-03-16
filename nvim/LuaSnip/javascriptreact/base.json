@@ -183,5 +183,11 @@
       "  ${3:body}",
       "}"
     ]
+  },
+  "comment": {
+    "prefix": "comment",
+    "body": [
+      "{/**/}"
+    ]
   }
 }
