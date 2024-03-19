@@ -27,8 +27,6 @@ function M.setup()
 		},
 	}
 
-
-
 	require("nvim-dap-virtual-text").setup {
 		commented = true,
 	}
@@ -86,6 +84,7 @@ function M.setup()
 			i = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
 			o = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
 			j = { "<cmd>lua require'dap'.up()<cr>", "Go up the stack frame" },
+			l = { "<cmd>lua require'osv'.launch({port = 8086})<cr>", "Debug lua code" },
 			k = { "<cmd>lua require'dap'.down()<cr>", "Go down the stack frame" },
 			f = { "<cmd>Telescope dap frames<cr>", "Telescope frames" },
 			r = { "<cmd>lua  require('dapui').float_element('repl', { width = 100, height = 20, enter = true, position = 'center' })<cr>", "Toggle Repl" },

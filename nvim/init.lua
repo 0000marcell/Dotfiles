@@ -174,7 +174,6 @@ return require('packer').startup(function(use)
     end,
   }
 
-
   -- Debugging
   use {
     "mfussenegger/nvim-dap",
@@ -190,14 +189,18 @@ return require('packer').startup(function(use)
       "telescope.nvim",
       "telescope-dap.nvim",
       "which-key.nvim",
+      "one-small-step-for-vimkind",
+      "nvim-nio"
     },
     requires = {
+      'jbyuki/one-small-step-for-vimkind',
       "0000marcell/nvim-dap-ruby",
       "leoluz/nvim-dap-go",
       'mfussenegger/nvim-dap-python',
       "theHamsta/nvim-dap-virtual-text",
       "rcarriga/nvim-dap-ui",
-      "nvim-telescope/telescope-dap.nvim",
+      "nvim-neotest/nvim-nio",
+      "nvim-telescope/telescope-dap.nvim"
     },
     config = function()
       require("dapconfig").setup()

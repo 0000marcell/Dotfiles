@@ -1,3 +1,4 @@
+-- I intend to use this in the future
 -- require('gen').setup({
 --   model = "mistral", -- The default model to use.
 --   display_mode = "float", -- The display mode. Can be "float" or "split".
