@@ -83,6 +83,9 @@ bindsym $mod+t exec $term -f "RobotoMono Nerd Font Mono-16" -e bash -c 'nvim /ho
 # pavucontrol
 bindsym $mod+Shift+p exec pavucontrol
 
+# pricing
+bindsym $mod+Shift+d exec $term -f "RobotoMono Nerd Font Mono-16" -e bash -c 'cd /home/mmc/Decisiv/pricing && nvim .'
+
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
