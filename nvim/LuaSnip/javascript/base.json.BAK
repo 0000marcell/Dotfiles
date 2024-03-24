@@ -133,7 +133,7 @@
     "prefix": "get",
     "body": [
       "try {",
-      "  const response = await fetch('/todos', {",
+      "  const response = await fetch('/${1:url}', {",
       "    method: 'GET',",
       "    headers: {",
       "      \"Content-Type\": \"application/json\",",

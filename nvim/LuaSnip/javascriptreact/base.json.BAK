@@ -16,9 +16,7 @@
   "button": {
     "prefix": "button",
     "body": [
-      "<button onClick={() => {",
-      "  ${1:console.log('button')}",
-      "}}>${2:name}</button>"
+      "<button onClick={${1:handleClick}}>${2:clickme}</button>"
     ]
   },
   "form": {
@@ -63,7 +61,10 @@
     ]
   },
   "exp": {
-    "prefix": "exp",
+    "prefix": [
+      "exp",
+      "export"
+    ],
     "body": [
       "export default function ${1}() {",
       "  ${2}",
@@ -182,6 +183,24 @@
       "const ${1:function} = (${2:params}) => {",
       "  ${3:body}",
       "}"
+    ]
+  },
+  "comment": {
+    "prefix": "comment",
+    "body": [
+      "{/**/}"
+    ]
+  },
+  "usestate": {
+    "prefix": "usestate",
+    "body": [
+      "const [${1:state}, ${2:function}] = useState(${3:initialValue});"
+    ]
+  },
+  "h2": {
+    "prefix": "h2",
+    "body": [
+      "<h2>${1:value}</h2>"
     ]
   }
 }
