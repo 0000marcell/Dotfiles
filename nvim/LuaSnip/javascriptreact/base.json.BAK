@@ -48,6 +48,7 @@
     "prefix": "div",
     "body": [
       "<div>",
+      "  ${1:}",
       "</div>"
     ]
   },
@@ -205,8 +206,8 @@
   "fun": {
     "prefix": "fun",
     "body": [
-      "function ${1:name}(${2:params}) {",
-      "  ${3:body}",
+      "function ${1:}(${2:}) {",
+      "  ${3:}",
       "}"
     ]
   }
