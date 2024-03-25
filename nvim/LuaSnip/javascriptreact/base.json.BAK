@@ -47,8 +47,7 @@
   "div": {
     "prefix": "div",
     "body": [
-      "<div className='${1}' >",
-      "  ${2}",
+      "<div>",
       "</div>"
     ]
   },
@@ -180,8 +179,8 @@
   "afun": {
     "prefix": "afun",
     "body": [
-      "const ${1:function} = (${2:params}) => {",
-      "  ${3:body}",
+      "(${1:params}) => {",
+      "  ${2:body}",
       "}"
     ]
   },
@@ -201,6 +200,14 @@
     "prefix": "h2",
     "body": [
       "<h2>${1:value}</h2>"
+    ]
+  },
+  "fun": {
+    "prefix": "fun",
+    "body": [
+      "function ${1:name}(${2:params}) {",
+      "  ${3:body}",
+      "}"
     ]
   }
 }
