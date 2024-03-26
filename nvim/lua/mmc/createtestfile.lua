@@ -1,9 +1,24 @@
 local M = {}
 
+function M.copyFile(source_path, destination_path)
+  -- Build the shell command to copy the file
+  local command = "cp " .. source_path .. " " .. destination_path
+
+  -- Execute the shell command
+  local success, error_message, error_code = os.execute(command)
+
+  -- Check if the command executed successfully
+  if success then
+      print("File copied successfully")
+  else
+      print("Error:", error_message, "Error code:", error_code)
+  end
+end
+
 function M.createtestfile()
   local current_buffer = vim.api.nvim_get_current_buf()
   local current_file_path = vim.api.nvim_buf_get_name(current_buffer)
-  if !string.match(current_file_path, "%.jsx$") then
+  if not string.match(current_file_path, "%.jsx$") then
     print("path does not contain .jsx extension")
     return
   end
@@ -12,16 +27,11 @@ function M.createtestfile()
 
   print(new_path)
 
-  local file = io.open(new_path, "w")
+  local configDir = vim.fn.stdpath('config')
 
-  if file then
-    file:write("This is some content written to the file.\n")
-    file:write("Another line of content.\n")
-    file:close()
-    print("File created successfully.")
-  else
-    print("Error: Unable to create file.")
-  end
+  print("Neovim configuration directory:", configDir)
+
+  M.copyFile(configDir .. "/testtemplates/test.jsx", new_path)
 end
 
 function M.setup()

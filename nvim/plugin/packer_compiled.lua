@@ -110,14 +110,14 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-dap"] = {
-    after = { "telescope-dap.nvim", "nvim-dap-python", "nvim-dap-virtual-text", "nvim-dap-ui", "nvim-dap-ruby", "nvim-dap-go" },
+    after = { "nvim-dap-ui", "nvim-dap-ruby", "telescope-dap.nvim", "one-small-step-for-vimkind", "nvim-nio", "nvim-dap-virtual-text", "nvim-dap-python", "nvim-dap-go" },
     config = { "\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14dapconfig\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
     path = "/home/mmc/.local/share/nvim/site/pack/packer/opt/nvim-dap",
     url = "https://github.com/mfussenegger/nvim-dap",
-    wants = { "nvim-dap-virtual-text", "nvim-dap-ui", "nvim-dap-ruby", "nvim-dap-go", "nvim-dap-python", "telescope.nvim", "telescope-dap.nvim", "which-key.nvim" }
+    wants = { "nvim-dap-virtual-text", "nvim-dap-ui", "nvim-dap-ruby", "nvim-dap-go", "nvim-dap-python", "telescope.nvim", "telescope-dap.nvim", "which-key.nvim", "one-small-step-for-vimkind", "nvim-nio" }
   },
   ["nvim-dap-go"] = {
     load_after = {
@@ -169,10 +169,28 @@ _G.packer_plugins = {
     path = "/home/mmc/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-nio"] = {
+    load_after = {
+      ["nvim-dap"] = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/mmc/.local/share/nvim/site/pack/packer/opt/nvim-nio",
+    url = "https://github.com/nvim-neotest/nvim-nio"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/mmc/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["one-small-step-for-vimkind"] = {
+    load_after = {
+      ["nvim-dap"] = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/mmc/.local/share/nvim/site/pack/packer/opt/one-small-step-for-vimkind",
+    url = "https://github.com/jbyuki/one-small-step-for-vimkind"
   },
   ["openingh.nvim"] = {
     loaded = true,
@@ -212,6 +230,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mmc/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
+  },
+  ["vim-dadbod"] = {
+    loaded = true,
+    path = "/home/mmc/.local/share/nvim/site/pack/packer/start/vim-dadbod",
+    url = "https://github.com/tpope/vim-dadbod"
+  },
+  ["vim-dadbod-ui"] = {
+    loaded = true,
+    path = "/home/mmc/.local/share/nvim/site/pack/packer/start/vim-dadbod-ui",
+    url = "https://github.com/kristijanhusak/vim-dadbod-ui",
+    wants = { "tpope/vim-dadbod" }
   },
   ["vim-fugitive"] = {
     loaded = true,

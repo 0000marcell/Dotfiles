@@ -9,6 +9,7 @@ function M.setup()
   -- require("mmc.showtestinfo")
   -- require("mmc.execfile")
   require("mmc.currentfileclipboard").setup()
+  require("mmc.createtestfile").setup()
 end
 
 return M
