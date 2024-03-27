@@ -10,6 +10,7 @@ function M.setup()
   -- require("mmc.execfile")
   require("mmc.currentfileclipboard").setup()
   require("mmc.createtestfile").setup()
+  require("mmc.inserttodo").setup()
 end
 
 return M

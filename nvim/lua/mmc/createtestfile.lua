@@ -1,13 +1,25 @@
 local M = {}
 
+function fileExists(filePath)
+  local file = io.open(filePath, "r")
+  if file then
+    io.close(file)
+    return true
+  else
+    return false
+  end
+end
+
 function M.copyFile(source_path, destination_path)
-  -- Build the shell command to copy the file
+  if fileExists(destination_path) then
+    print("File exists")
+    return
+  end
+
   local command = "cp " .. source_path .. " " .. destination_path
 
-  -- Execute the shell command
   local success, error_message, error_code = os.execute(command)
 
-  -- Check if the command executed successfully
   if success then
       print("File copied successfully")
   else

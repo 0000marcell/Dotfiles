@@ -57,7 +57,7 @@ floating_modifier $mod
 bindsym $mod+Return exec $term -f "RobotoMono Nerd Font Mono-16"
 
 # open clipboard path to file content in vim 
-bindsym $mod+o exec $term -f "RobotoMono Nerd Font Mono-16" -e bash -c 'nvim $(xclip -o)'
+bindsym $mod+o exec $term -f "RobotoMono Nerd Font Mono-16" -e bash -c 'openorsearch $(xclip -o)'
 
 # open dev documentation
 bindsym $mod+Shift+u exec brave "https://devdocs.io/"
