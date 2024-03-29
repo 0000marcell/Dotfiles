@@ -30,12 +30,20 @@ end
 function M.createtestfile()
   local current_buffer = vim.api.nvim_get_current_buf()
   local current_file_path = vim.api.nvim_buf_get_name(current_buffer)
-  if not string.match(current_file_path, "%.jsx$") then
-    print("path does not contain .jsx extension")
+  local extention
+  local test_file_replace
+  if string.match(current_file_path, "%.jsx$") then
+    extention = "jsx"
+    test_file_replace = ".test.jsx"
+  else if string.match(current_file_path, "%.rb$") then
+    test_file_replace = "_spec.rb"
+    extention = "rb"
+  else
+    print("path does not contain .jsx or .rb extension")
     return
   end
 
-  local new_path = string.gsub(current_file_path, ".jsx", ".test.jsx")
+  local new_path = string.gsub(current_file_path, extention, test_file_replace)
 
   print(new_path)
 
@@ -43,7 +51,7 @@ function M.createtestfile()
 
   print("Neovim configuration directory:", configDir)
 
-  M.copyFile(configDir .. "/testtemplates/test.jsx", new_path)
+  M.copyFile(configDir .. "/testtemplates/test." .. extention, new_path)
 end
 
 function M.setup()
