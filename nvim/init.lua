@@ -10,6 +10,9 @@ vim.cmd([[
   augroup end
 ]])
 
+-- dadbod ui configuration
+vim.g.db_ui_save_location = '~/Dropbox/db_ui_queries'
+
 function MMCUtilsExecAndPrint(command)
   local output = vim.fn.system(command)
   print(output)
