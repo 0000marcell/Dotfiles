@@ -43,7 +43,7 @@ function M.createtestfile()
     return
   end
 
-  local new_path = string.gsub(current_file_path, extention, test_file_replace)
+  local new_path = string.gsub(current_file_path, "." .. extention, test_file_replace)
 
   print(new_path)
 
