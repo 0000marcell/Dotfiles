@@ -210,5 +210,20 @@
       "  ${3:}",
       "}"
     ]
+  },
+  "usetransition": {
+    "prefix": "usetransition",
+    "body": [
+      "const [isPending, startTransition] = useTransition({",
+      "  timeoutMs: 3000,",
+      "});",
+      "",
+      "const addItem = () => {",
+      "  startTransition(() => {",
+      "    setItems([...items, text]);",
+      "  });",
+      "  setText('');",
+      "};"
+    ]
   }
 }
