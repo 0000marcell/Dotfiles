@@ -203,11 +203,50 @@
       "<h2>${1:value}</h2>"
     ]
   },
+  "h1": {
+    "prefix": "h1",
+    "body": [
+      "<h1>${1:value}</h1>"
+    ]
+  },
+  "h3": {
+    "prefix": "h3",
+    "body": [
+      "<h3>${1:value}</h3>"
+    ]
+  },
   "fun": {
     "prefix": "fun",
     "body": [
       "function ${1:}(${2:}) {",
       "  ${3:}",
+      "}"
+    ]
+  },
+  "usetransition": {
+    "prefix": "usetransition",
+    "body": [
+      "const [isPending, startTransition] = useTransition({",
+      "  timeoutMs: 3000,",
+      "});",
+      "",
+      "const addItem = () => {",
+      "  startTransition(() => {",
+      "    setItems([...items, text]);",
+      "  });",
+      "  setText('');",
+      "};"
+    ]
+  },
+  "comp": {
+    "prefix": "comp",
+    "body": [
+      "function ${1:}() {",
+      "  return (",
+      "    <div>",
+      "      ${2:}",
+      "    </div>",
+      "  );",
       "}"
     ]
   }
