@@ -1,20 +1,28 @@
 {
-    "keybind": {
-        "prefix": "key",
-        "body": "vim.keymap.set('n', '<leader>a', mark.add_file)\n$0",
-        "description" : "Adds a new neovim keybind"
-    },
-    "function": {
-        "prefix": [
-          "func",
-          "fun"
-        ],
-        "body": [
-          "function MMCUtilsExecAndPrint(command)",
-          "\tlocal output = vim.fn.system(command)",
-          "\tprint(output)",
-          "end\n$0"
-        ],
-        "description" : "Adds a new lua function"
-    }
+  "keybind": {
+    "prefix": "key",
+    "body": "vim.keymap.set('n', '<leader>a', mark.add_file)\n$0",
+    "description": "Adds a new neovim keybind"
+  },
+  "function": {
+    "prefix": [
+      "func",
+      "fun"
+    ],
+    "body": [
+      "function MMCUtilsExecAndPrint(command)",
+      "\tlocal output = vim.fn.system(command)",
+      "\tprint(output)",
+      "end\n$0"
+    ],
+    "description": "Adds a new lua function"
+  },
+  "fun": {
+    "prefix": "fun",
+    "body": [
+      "function ${1}(${2})",
+      "  ${3}",
+      "end"
+    ]
+  }
 }
