@@ -22,7 +22,7 @@ end
 
 function M.setup()
   vim.keymap.set("n", "<leader>cb", M.inserttodo, { silent = true })
-  vim.keymap.set("i", "<leader>cb", M.inserttodo, { silent = true })
+  -- vim.keymap.set("i", "<leader>cb", M.inserttodo, { silent = true })
 end
 
 return M

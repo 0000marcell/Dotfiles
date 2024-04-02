@@ -274,5 +274,15 @@
       "  ${2:rbody}",
       "end"
     ]
+  },
+  "case": {
+    "prefix": "case",
+    "body": [
+      "case ${1:} ",
+      "when ${2:}",
+      "  ${3:}",
+      "else",
+      "end"
+    ]
   }
 }
