@@ -1,5 +1,12 @@
 local M = {}
 
+function M.set_cursor_pos_end()
+  local line = vim.api.nvim_get_current_line()
+  local col = string.len(line)
+  local current_line_number = vim.api.nvim_win_get_cursor(0)[1]
+  vim.api.nvim_win_set_cursor(0, {current_line_number, col})
+end
+
 function M.inserttodo(command)
   local line = vim.api.nvim_get_current_line() -- Get the current line
   local col = vim.api.nvim_win_get_cursor(0)[2] -- Get the column position of the cursor
@@ -10,10 +17,7 @@ function M.inserttodo(command)
   local line_number = vim.api.nvim_win_get_cursor(0)[1]
   print(modified_line)
   vim.api.nvim_buf_set_lines(0, line_number - 1, line_number, false, {modified_line})
-  -- vim.api.nvim_set_current_line(modified_line)
-
-  -- Move the cursor to the right by 3 positions to position it between the brackets
-  --vim.api.nvim_win_set_cursor(0, {0, col + 3})
+  M.set_cursor_pos_end()
 end
 
 function M.setup()
