@@ -32,5 +32,17 @@
       "  ${2}",
       "end"
     ]
+  },
+  "mod": {
+    "prefix": "mod",
+    "body": [
+      "local M = {}",
+      "",
+      "function M.${1}()",
+      "  ${2}",
+      "end",
+      "",
+      "return M"
+    ]
   }
 }

@@ -24,5 +24,13 @@
       "  ${3}",
       "end"
     ]
+  },
+  "met": {
+    "prefix": "met",
+    "body": [
+      "function M.${1}()",
+      "  ${2}",
+      "end"
+    ]
   }
 }
