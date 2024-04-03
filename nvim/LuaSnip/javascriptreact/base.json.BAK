@@ -241,10 +241,11 @@
   "comp": {
     "prefix": "comp",
     "body": [
-      "function ${1:}() {",
+      "export default function ${1}() {",
+      "  ${2}",
       "  return (",
       "    <div>",
-      "      ${2:}",
+      "      ${3}",
       "    </div>",
       "  );",
       "}"
