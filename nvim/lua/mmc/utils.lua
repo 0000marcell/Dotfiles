@@ -1,6 +1,6 @@
-local M = {}
+local U = {}
 
-function M.list_buffers()
+function U.list_buffers()
   local buffer_list = vim.api.nvim_list_bufs()
 
   for _, buf in ipairs(buffer_list) do
@@ -9,9 +9,10 @@ function M.list_buffers()
   end
 end
 
-function M.exec_and_print(command)
-  local output = vim.fn.system(command)
-  print(output)
+function U.exec_and_print(command)
+  --print(command)
+  local c = "ruby /home/mmc/tmp.rb"
+  print(vim.fn.system(c))
 end
 
-return M
+return U

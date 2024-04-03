@@ -19,10 +19,6 @@ function M.setup()
   -- execute selected python 
   vim.keymap.set("v", "<leader>p", ":w !python<CR>")
 
-  -- execute code 
-  vim.keymap.set("i", "<C-b>", '<cmd>lua MMCExecFile()<CR>')
-  vim.keymap.set("n", "<C-b>", '<cmd>lua MMCExecFile()<CR>')
-
   -- show information about current ruby test in new split buffer
   vim.keymap.set("n", "<leader>ti", "<cmd>lua ShowTestInfo()<CR>")
 
