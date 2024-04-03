@@ -25,7 +25,8 @@ st.font: Monospace-16;
 !! could not find:
 *.color5: #b16286
 !! vim-browser select color background
-*.color6: #ED7D3A
+*.color6: #C8C8C8
+!! *.color6: #ED7D3A
 *.color7: #a89984
 *.color8: #928374
 *.color9: #fb4934
