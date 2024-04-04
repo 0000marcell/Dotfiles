@@ -258,5 +258,11 @@
       "  ${2:}",
       "});"
     ]
+  },
+  "getbytest": {
+    "prefix": "getbytest",
+    "body": [
+      "const ${1} = getByTestId('${2}');"
+    ]
   }
 }
