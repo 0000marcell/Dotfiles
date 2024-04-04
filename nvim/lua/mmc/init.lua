@@ -11,6 +11,7 @@ function M.setup()
   require("mmc.currentfileclipboard").setup()
   require("mmc.createtestfile").setup()
   require("mmc.inserttodo").setup()
+  require("mmc.makeexecutable").setup()
 end
 
 return M
