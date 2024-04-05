@@ -273,5 +273,11 @@
       "  ${3}",
       "</${1}.Provider>"
     ]
+  },
+  "testid": {
+    "prefix": "testid",
+    "body": [
+      "data-testid=\"${1}\""
+    ]
   }
 }
