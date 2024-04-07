@@ -285,5 +285,12 @@
     "body": [
       "{${1}}"
     ]
+  },
+  "useref": {
+    "prefix": "useref",
+    "body": [
+      "const ref = useRef(0);",
+      "ref.current += ref.current++"
+    ]
   }
 }
