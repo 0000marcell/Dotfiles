@@ -127,9 +127,12 @@ return require('packer').startup(function(use)
   use('tpope/vim-surround')
   use('tpope/vim-dadbod')
 
-
   use('tpope/vim-commentary')
   use('tpope/vim-markdown')
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
 
   use {
     "folke/which-key.nvim",
