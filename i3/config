@@ -19,7 +19,7 @@ bindsym $mod+Shift+q exec togglescreenkey
 bindsym $mod+Shift+w exec brave 
 
 # volume with alsa mixer 
-bindsym $mod+Shift+a exec $term -e alsamixer
+bindsym $mod+Shift+a exec $term -e anki 
 
 # Setting the background:
 exec --no-startup-id feh --bg-scale ~/.config/i3/background.jpg
