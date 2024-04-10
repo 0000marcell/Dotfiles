@@ -13,6 +13,15 @@
       "}"
     ]
   },
+  "cont": {
+    "prefix": "cont",
+    "body": [
+      "export const ${1} = createContext();",
+      "<${1}.Provider value={${2}}>",
+      "  ${3}",
+      "</${1}.Provider>"
+    ]
+  },
   "usecallback": {
     "prefix": "usecallback",
     "body": [
