@@ -100,8 +100,8 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# joplin
-bindsym $mod+Shift+o exec $term -f "RobotoMono Nerd Font Mono-16" -e bash -c 'joplin'
+# obsidian 
+bindsym $mod+Shift+o exec obsidian
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left

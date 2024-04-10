@@ -1,2 +1,11 @@
 {
+  "mermaid": {
+    "prefix": "mermaid",
+    "body": [
+      "```mermaid",
+      "flowchart TD",
+      "    ${1}",
+      "```"
+    ]
+  }
 }
