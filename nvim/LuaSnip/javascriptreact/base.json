@@ -14,7 +14,7 @@
     ]
   },
   "button": {
-    "prefix": "button",
+    "prefix": "but",
     "body": [
       "<button onClick={${1:handleClick}}>${2:clickme}</button>"
     ]
@@ -108,7 +108,7 @@
     ]
   },
   "action": {
-    "prefix": "action",
+    "prefix": "act",
     "body": [
       "export async function action() {",
       "  const ${1} = await create${1}();",
@@ -291,6 +291,27 @@
     "body": [
       "const ref = useRef(0);",
       "ref.current += ref.current++"
+    ]
+  },
+  "fire": {
+    "prefix": "fire",
+    "body": [
+      "const ${1} = screen.getByTestId('${2}') ",
+      "fireEvent.click(${1})"
+    ]
+  },
+  "expect": {
+    "prefix": "expect",
+    "body": [
+      "expect(screen.getByText(/Hello World/i)).toBeInTheDocument();"
+    ]
+  },
+  "useeffect": {
+    "prefix": "useeffect",
+    "body": [
+      "useEffect(() => {",
+      "  ${2}",
+      "}, [${3}]);"
     ]
   }
 }
