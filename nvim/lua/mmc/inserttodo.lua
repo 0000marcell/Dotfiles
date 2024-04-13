@@ -12,7 +12,7 @@ function M.inserttodo(command)
   local col = vim.api.nvim_win_get_cursor(0)[2] -- Get the column position of the cursor
 
   -- Insert '[] - ' at the beggining of the line 
-  local modified_line = '[] - ' .. line
+  local modified_line = '[  ] - ' .. line
 
   local line_number = vim.api.nvim_win_get_cursor(0)[1]
   print(modified_line)
