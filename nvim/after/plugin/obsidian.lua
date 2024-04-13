@@ -1,0 +1,5 @@
+vim.keymap.set("n", "<leader>on", ":ObsidianNew<CR>")
+vim.keymap.set("n", "<leader>oo", ":ObsidianSearch<CR>")
+vim.keymap.set("n", "<leader>os", ":ObsidianQuickSwitch<CR>")
+vim.keymap.set("n", "<leader>ob", ":ObsidianBacklinks<CR>")
+vim.keymap.set("n", "<leader>of", ":ObsidianFollowLink<CR>")

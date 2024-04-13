@@ -3,6 +3,9 @@ vim.api.nvim_create_autocmd(
   { pattern = "*.md", command = [[syn match htmlBoldUnderline /`.*[^`]*`/]] }
 )
 
+-- set conceal level to work with obsidian.nvim
+vim.opt.conceallevel = 1
+
 vim.cmd([[
   augroup packer_user_config
     autocmd!
