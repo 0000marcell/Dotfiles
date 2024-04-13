@@ -34,7 +34,9 @@
       "  aria-label=\"Last name\"",
       "  type=\"text\"",
       "  name=\"last\"",
-      "  defaultValue={contact.last}",
+      "  onChange={(e) => {",
+      "    setText(e.target.value)  ",
+      "  }}",
       "/>"
     ]
   },

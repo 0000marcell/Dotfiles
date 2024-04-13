@@ -180,6 +180,20 @@ return require('packer').startup(function(use)
     end,
   }
 
+  use {
+    'epwalsh/obsidian.nvim',
+    config = function()
+      require("obsidian").setup({
+        workspaces = {
+          {
+            name = "Notes",
+            path = "/home/mmc/Dropbox/joplin-markdown-export"
+          },
+        }
+      })
+    end,
+  }
+
   -- Debugging
   use {
     "mfussenegger/nvim-dap",

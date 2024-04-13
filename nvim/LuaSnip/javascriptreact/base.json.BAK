@@ -305,5 +305,13 @@
     "body": [
       "expect(screen.getByText(/Hello World/i)).toBeInTheDocument();"
     ]
+  },
+  "useeffect": {
+    "prefix": "useeffect",
+    "body": [
+      "useEffect(() => {",
+      "  ${2}",
+      "}, [${3}]);"
+    ]
   }
 }
