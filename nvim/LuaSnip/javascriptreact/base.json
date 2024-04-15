@@ -330,5 +330,12 @@
       "  expect(renderedValue).toBeInTheDocument();",
       "});"
     ]
+  },
+  "addtext": {
+    "prefix": "addtext",
+    "body": [
+      "const ${1} = screen.getByTestId('${2}');",
+      "fireEvent.change(${1}, { target: { value: 'New Item' } });"
+    ]
   }
 }

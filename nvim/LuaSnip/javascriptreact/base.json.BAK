@@ -315,5 +315,20 @@
       "  ${2}",
       "}, [${3}]);"
     ]
+  },
+  "test": {
+    "prefix": "test",
+    "body": [
+      "import React from 'react';",
+      "import { render } from '@testing-library/react';",
+      "import App from './App';",
+      "",
+      "test('Renders the component', () => {",
+      "  const { getByText } = render(<App />); ",
+      "",
+      "  const renderedValue = getByText(/Hello World/i);",
+      "  expect(renderedValue).toBeInTheDocument();",
+      "});"
+    ]
   }
 }
