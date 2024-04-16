@@ -63,13 +63,10 @@
     ]
   },
   "exp": {
-    "prefix": [
-      "exp",
-      "export"
-    ],
+    "prefix": "exp",
     "body": [
-      "export default function ${1}() {",
-      "  ${2}",
+      "export const ${1} = (${2}) => {",
+      "  ${3}",
       "}"
     ]
   },
@@ -336,6 +333,58 @@
     "body": [
       "const ${1} = screen.getByTestId('${2}');",
       "fireEvent.change(${1}, { target: { value: 'New Item' } });"
+    ]
+  },
+  "list": {
+    "prefix": "list",
+    "body": [
+      "<ul>",
+      "  {items.map((item, index) => {",
+      "    return (",
+      "      <li key={index}>",
+      "        {item}",
+      "      </li>",
+      "    )",
+      "  })}",
+      "</ul>"
+    ]
+  },
+  "reactrouterdom": {
+    "prefix": "reactrouterdom",
+    "body": [
+      "import * as React from \"react\";",
+      "import * as ReactDOM from \"react-dom/client\";",
+      "import \"./index.css\";",
+      "import {",
+      "  createBrowserRouter,",
+      "  RouterProvider,",
+      "} from \"react-router-dom\";",
+      "import ErrorPage from \"./error-page\";",
+      "import Root from \"./routes/root\";",
+      "",
+      "const router = createBrowserRouter([",
+      "  {",
+      "    path: \"/\",",
+      "    element: <Root />,",
+      "    errorElement: <ErrorPage />,",
+      "  },",
+      "]);",
+      "",
+      "ReactDOM.createRoot(document.getElementById(\"root\")).render(",
+      "  <React.StrictMode>",
+      "    <RouterProvider router={router} />",
+      "  </React.StrictMode>",
+      ");"
+    ]
+  },
+  "route": {
+    "prefix": "route",
+    "body": [
+      "{",
+      "  path: '/${1}',",
+      "  element: ${2},",
+      "  loader: ${3}",
+      "}"
     ]
   }
 }
