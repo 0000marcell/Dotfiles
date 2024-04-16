@@ -386,5 +386,18 @@
       "  loader: ${3}",
       "}"
     ]
+  },
+  "navlink": {
+    "prefix": "navlink",
+    "body": [
+      "<NavLink",
+      "  to=\"/contacts\"",
+      "  className={({ isActive, isPending }) =>",
+      "    isPending ? \"pending\" : isActive ? \"active\" : \"\"",
+      "  }",
+      ">",
+      "  Contacts",
+      "</NavLink>"
+    ]
   }
 }

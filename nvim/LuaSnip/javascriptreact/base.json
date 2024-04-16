@@ -399,5 +399,16 @@
       "  Contacts",
       "</NavLink>"
     ]
+  },
+  "postaction": {
+    "prefix": "postaction",
+    "body": [
+      "export const action = async ({ request, params }) => {",
+      "  const formData = await request.formData();",
+      "  const data = Object.fromEntries(formData);",
+      "  console.log(\"data: \", data);",
+      "  return redirect('/');",
+      "}"
+    ]
   }
 }
