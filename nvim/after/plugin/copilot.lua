@@ -1,1 +1,1 @@
-vim.api.nvim_command("Copilot disable")
+--vim.api.nvim_command("Copilot disable")
