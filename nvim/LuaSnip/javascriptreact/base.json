@@ -411,5 +411,33 @@
       "  return redirect('/');",
       "}"
     ]
+  },
+  "usedebugvalue": {
+    "prefix": "usedebugvalue",
+    "body": [
+      "import { useState, useEffect, useDebugValue } from 'react';",
+      "",
+      "const CustomHook = (val) => {",
+      "  useEffect(() => {",
+      "    const sum = val + val;",
+      "    console.log(sum);",
+      "  }, [val]);",
+      "  useDebugValue(`val: ${val}`);",
+      "}",
+      "",
+      "export default function App() {",
+      "  const [val, setVal] = useState(0);",
+      "",
+      "  CustomHook(val);",
+      "",
+      "  return (",
+      "    <div>",
+      "      <button onClick={() => {",
+      "        setVal(val + 1);",
+      "      }}>change val</button>",
+      "    </div>",
+      "  );",
+      "}"
+    ]
   }
 }
