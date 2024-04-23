@@ -316,5 +316,11 @@
       "  ${1}",
       "end"
     ]
+  },
+  "frozen": {
+    "prefix": "frozen",
+    "body": [
+      "# frozen_string_literal: true"
+    ]
   }
 }

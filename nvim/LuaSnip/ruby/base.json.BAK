@@ -308,5 +308,13 @@
       "  result = 1 + 2",
       "}.not_to raise_error"
     ]
+  },
+  "classmethods": {
+    "prefix": "classmethods",
+    "body": [
+      "class << self",
+      "  ${1}",
+      "end"
+    ]
   }
 }
