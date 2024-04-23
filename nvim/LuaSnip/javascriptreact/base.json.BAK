@@ -31,13 +31,13 @@
     "prefix": "input",
     "body": [
       "<input",
-      "  placeholder=\"Last\"",
-      "  aria-label=\"Last name\"",
-      "  type=\"text\"",
-      "  name=\"last\"",
-      "  onChange={(e) => {",
-      "    setText(e.target.value)  ",
-      "  }}",
+      " placeholder=\"name\"",
+      " aria-label=\"name\"",
+      " type=\"text\"",
+      " name=\"name\"",
+      " onChange={(e) => {",
+      "   setText(e.target.value)  ",
+      " }}",
       "/>"
     ]
   },
@@ -410,6 +410,62 @@
       "  console.log(\"data: \", data);",
       "  return redirect('/');",
       "}"
+    ]
+  },
+  "usedebugvalue": {
+    "prefix": "usedebugvalue",
+    "body": [
+      "import { useState, useEffect, useDebugValue } from 'react';",
+      "",
+      "const CustomHook = (val) => {",
+      "  useEffect(() => {",
+      "    const sum = val + val;",
+      "    console.log(sum);",
+      "  }, [val]);",
+      "  useDebugValue(`val: ${val}`);",
+      "}",
+      "",
+      "export default function App() {",
+      "  const [val, setVal] = useState(0);",
+      "",
+      "  CustomHook(val);",
+      "",
+      "  return (",
+      "    <div>",
+      "      <button onClick={() => {",
+      "        setVal(val + 1);",
+      "      }}>change val</button>",
+      "    </div>",
+      "  );",
+      "}"
+    ]
+  },
+  "snapshot": {
+    "prefix": "snapshot",
+    "body": [
+      "import React from 'react';",
+      "import renderer from 'react-test-renderer';",
+      "import App from './App';",
+      "",
+      "describe('App', () => {",
+      "  it('renders correctly', () => {",
+      "    const tree = renderer.create(<App />).toJSON();",
+      "    expect(tree).toMatchSnapshot();",
+      "  });",
+      "});"
+    ]
+  },
+  "ter": {
+    "prefix": "ter",
+    "body": [
+      "{${1} ? ${2} : ${3}}"
+    ]
+  },
+  "textarea": {
+    "prefix": "textarea",
+    "body": [
+      "<textarea value={text} onChange={(e) => setText(e.target.value)}>",
+      "</textarea>"
     ]
   }
 }

@@ -31,13 +31,13 @@
     "prefix": "input",
     "body": [
       "<input",
-      "  placeholder=\"Last\"",
-      "  aria-label=\"Last name\"",
-      "  type=\"text\"",
-      "  name=\"last\"",
-      "  onChange={(e) => {",
-      "    setText(e.target.value)  ",
-      "  }}",
+      " placeholder=\"name\"",
+      " aria-label=\"name\"",
+      " type=\"text\"",
+      " name=\"name\"",
+      " onChange={(e) => {",
+      "   setText(e.target.value)  ",
+      " }}",
       "/>"
     ]
   },
@@ -438,6 +438,46 @@
       "    </div>",
       "  );",
       "}"
+    ]
+  },
+  "snapshot": {
+    "prefix": "snapshot",
+    "body": [
+      "import React from 'react';",
+      "import renderer from 'react-test-renderer';",
+      "import App from './App';",
+      "",
+      "describe('App', () => {",
+      "  it('renders correctly', () => {",
+      "    const tree = renderer.create(<App />).toJSON();",
+      "    expect(tree).toMatchSnapshot();",
+      "  });",
+      "});"
+    ]
+  },
+  "ter": {
+    "prefix": "ter",
+    "body": [
+      "{${1} ? ${2} : ${3}}"
+    ]
+  },
+  "textarea": {
+    "prefix": "textarea",
+    "body": [
+      "<textarea value={text} onChange={(e) => setText(e.target.value)}>",
+      "</textarea>"
+    ]
+  },
+  "sel": {
+    "prefix": "sel",
+    "body": [
+      "<select>",
+      "  {items.map((item) => {",
+      "    return (",
+      "      <option value={item.value}>{item.label}</option>",
+      "    )",
+      "  })}",
+      "</select>"
     ]
   }
 }

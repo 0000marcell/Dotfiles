@@ -284,5 +284,29 @@
       "else",
       "end"
     ]
+  },
+  "attr": {
+    "prefix": "attr",
+    "body": [
+      "attr_reader :${1}"
+    ]
+  },
+  "expectoutput": {
+    "prefix": "expectoutput",
+    "body": [
+      "expect {",
+      "    described_class.handle(event: multiple_vehicles_sqs_message, context: context)",
+      "}.to output(",
+      "    /Error fetching trip data/",
+      ").to_stdout_from_any_process"
+    ]
+  },
+  "expectraise": {
+    "prefix": "expectraise",
+    "body": [
+      "expect {",
+      "  result = 1 + 2",
+      "}.not_to raise_error"
+    ]
   }
 }
