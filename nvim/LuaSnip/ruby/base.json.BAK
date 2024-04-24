@@ -316,5 +316,19 @@
       "  ${1}",
       "end"
     ]
+  },
+  "frozen": {
+    "prefix": "frozen",
+    "body": [
+      "# frozen_string_literal: true"
+    ]
+  },
+  "railsloggermock": {
+    "prefix": "railsloggermock",
+    "body": [
+      "logger = instance_double('logger', info: 'asdf')",
+      "class_double('Rails', logger:).as_stubbed_const",
+      "expect(logger).to receive(:info).with(/This/)"
+    ]
   }
 }

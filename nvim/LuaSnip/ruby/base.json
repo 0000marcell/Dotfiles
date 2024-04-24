@@ -322,5 +322,13 @@
     "body": [
       "# frozen_string_literal: true"
     ]
+  },
+  "railsloggermock": {
+    "prefix": "railsloggermock",
+    "body": [
+      "logger = instance_double('logger', info: 'asdf')",
+      "allow(Rails).to receive(:logger).and_return(logger)",
+      "expect(logger).to receive(:info).with(/That/)"
+    ]
   }
 }
