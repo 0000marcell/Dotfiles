@@ -24,6 +24,13 @@ bindsym $mod+Shift+a exec $term -e anki
 # Setting the background:
 exec --no-startup-id feh --bg-scale ~/.config/i3/background.jpg
 
+# make webcam float
+for_window [title="mpvfloat"] floating enable
+for_window [title="mpvfloat"] sticky enable
+for_window [title="mpvfloat"] border pixel 0 
+for_window [title="mpvfloat"] move scratchpad 
+for_window [title="mpvfloat"] scratchpad show 
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # font pango 20
