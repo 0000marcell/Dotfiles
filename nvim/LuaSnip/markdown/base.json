@@ -62,5 +62,11 @@
       "    Note right of DB Server: Now the balance is 200 instead of 300",
       "```"
     ]
+  },
+  "note": {
+    "prefix": "note",
+    "body": [
+      "Note right of DB Server: Now the balance is 200 instead of 300"
+    ]
   }
 }

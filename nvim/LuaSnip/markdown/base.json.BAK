@@ -53,16 +53,13 @@
     "body": [
       "```mermaid",
       "sequenceDiagram",
-      "    Alice->>Bob: Hello Bob, how are you ?",
-      "    Bob->>Alice: Fine, thank you. And you?",
-      "    create participant Carl",
-      "    Alice->>Carl: Hi Carl!",
-      "    create actor D as Donald",
-      "    Carl->>D: Hi!",
-      "    destroy Carl",
-      "    Alice-xCarl: We are too many",
-      "    destroy Bob",
-      "    Bob->>Alice: I agree",
+      "    ProcessA->>+DB Server: Get bank account balance",
+      "    DB Server-->>-ProcessA: Your balance is 100 dolars",
+      "    ProcessB->>+DB Server: Get bank account balance ",
+      "    DB Server-->>-ProcessB: Your balance is 100 dolars",
+      "    ProcessA->>+DB Server: Put 100 dolars",
+      "    ProcessB->>+DB Server: Put 100 dolars",
+      "    Note right of DB Server: Now the balance is 200 instead of 300",
       "```"
     ]
   }
