@@ -1,6 +1,6 @@
 {
   "keybind": {
-    "prefix": "key",
+    "prefix": ["key", "keymap", "keybind"],
     "body": "vim.keymap.set('n', '<leader>a', mark.add_file)\n$0",
     "description": "Adds a new neovim keybind"
   },
