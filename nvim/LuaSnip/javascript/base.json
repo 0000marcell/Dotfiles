@@ -14,7 +14,7 @@
     ]
   },
   "cont": {
-    "prefix": "cont",
+    "prefix": ["usecontext", "cont"],
     "body": [
       "export const ${1} = createContext();",
       "<${1}.Provider value={${2}}>",

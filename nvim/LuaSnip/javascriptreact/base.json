@@ -322,9 +322,9 @@
       "import App from './App';",
       "",
       "test('Renders the component', () => {",
-      "  const { getByText } = render(<App />); ",
+      "  const screen = render(<App />); ",
       "",
-      "  const renderedValue = getByText(/Hello World/i);",
+      "  const renderedValue = screen.getByText(/Hello World/i);",
       "  expect(renderedValue).toBeInTheDocument();",
       "});"
     ]
@@ -478,6 +478,80 @@
       "    )",
       "  })}",
       "</select>"
+    ]
+  },
+  "useexternalstore": {
+    "prefix": "useexternalstore",
+    "body": [
+      "import { useSyncExternalStore } from 'react';",
+      "",
+      "function getSnapshot() {",
+      "  return navigator.onLine;",
+      "}",
+      "",
+      "function subscribe(callback) {",
+      "  window.addEventListener('online', callback);",
+      "  window.addEventListener('offline', callback);",
+      "  return () => {",
+      "    window.removeEventListener('online', callback);",
+      "    window.removeEventListener('offline', callback);",
+      "  };",
+      "}",
+      "",
+      "export default function App() {",
+      "  const isOnline = useSyncExternalStore(subscribe, getSnapshot);",
+      "",
+      "  return (",
+      "    <div>",
+      "      {isOnline ? \"online\" : \"offline\"}    ",
+      "    </div>",
+      "  )",
+      "}"
+    ]
+  },
+  "testasync": {
+    "prefix": "testasync",
+    "body": [
+      "const userEmail = await screen.findByText(/george/);",
+      "  expect(userEmail).toBeInTheDocument();"
+    ]
+  },
+  "mockfetch": {
+    "prefix": "mockfetch",
+    "body": [
+      "global.fetch = async function() {",
+      "  return {",
+      "    ok: true,",
+      "    status: 200,",
+      "    json: () => mockData ",
+      "  }",
+      "}"
+    ]
+  },
+  "usereducer": {
+    "prefix": "usereducer",
+    "body": [
+      "function reducer(state, action) {",
+      "  if (action.type === \"increment\") {",
+      "    return { count: state.count + 1 };",
+      "  } else if (action.type === \"decrement\") {",
+      "    return { count: state.count - 1 };",
+      "  }",
+      "}",
+      "",
+      "const [state, dispatch] = useReducer(reducer, { count: 0 });",
+      "",
+      "<button onClick={() => dispatch({ type: \"increment\" })}>Increment</button>"
+    ]
+  },
+  "usecontext": {
+    "prefix": "usecontext",
+    "body": [
+      "export const UserContext= createContext();",
+      "",
+      "<UserContext.Provider value={'marcell'}>",
+      "  <App />",
+      "</UserContext.Provider>"
     ]
   }
 }
