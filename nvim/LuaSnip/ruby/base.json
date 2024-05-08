@@ -330,5 +330,24 @@
       "allow(Rails).to receive(:logger).and_return(logger)",
       "expect(logger).to receive(:info).with(/That/)"
     ]
+  },
+  "sharedexamples": {
+    "prefix": "sharedexamples",
+    "body": [
+      "shared_examples \"creates a new vehicle\" do",
+      "  it \"creates a new vehicle\" do",
+      "    expect(new_dealer_vehicle[:display_year]).to eq(\"2017\")",
+      "  end",
+      "end",
+      "",
+      "context 'when on only_insert rule is set' do",
+      "  let(:rules) { { 'only_insert' => true } }",
+      "  include_examples \"creates a new vehicle\"",
+      "end",
+      "",
+      "context 'when on only_insert rule is not set' do",
+      "  include_examples \"creates a new vehicle\"",
+      "end"
+    ]
   }
 }

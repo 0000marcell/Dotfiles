@@ -327,8 +327,8 @@
     "prefix": "railsloggermock",
     "body": [
       "logger = instance_double('logger', info: 'asdf')",
-      "class_double('Rails', logger:).as_stubbed_const",
-      "expect(logger).to receive(:info).with(/This/)"
+      "allow(Rails).to receive(:logger).and_return(logger)",
+      "expect(logger).to receive(:info).with(/That/)"
     ]
   }
 }
