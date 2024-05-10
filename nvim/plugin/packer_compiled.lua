@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/mmc/.cache/nvim/packer_hererocks/2.1.1702233742/share/lua/5.1/?.lua;/home/mmc/.cache/nvim/packer_hererocks/2.1.1702233742/share/lua/5.1/?/init.lua;/home/mmc/.cache/nvim/packer_hererocks/2.1.1702233742/lib/luarocks/rocks-5.1/?.lua;/home/mmc/.cache/nvim/packer_hererocks/2.1.1702233742/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/mmc/.cache/nvim/packer_hererocks/2.1.1702233742/lib/lua/5.1/?.so"
+local package_path_str = "/home/mmc/.cache/nvim/packer_hererocks/2.1.1713773202/share/lua/5.1/?.lua;/home/mmc/.cache/nvim/packer_hererocks/2.1.1713773202/share/lua/5.1/?/init.lua;/home/mmc/.cache/nvim/packer_hererocks/2.1.1713773202/lib/luarocks/rocks-5.1/?.lua;/home/mmc/.cache/nvim/packer_hererocks/2.1.1713773202/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/mmc/.cache/nvim/packer_hererocks/2.1.1713773202/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/home/mmc/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
+  ["csv.vim"] = {
+    loaded = true,
+    path = "/home/mmc/.local/share/nvim/site/pack/packer/start/csv.vim",
+    url = "https://github.com/chrisbra/csv.vim"
+  },
   harpoon = {
     loaded = true,
     path = "/home/mmc/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -115,7 +120,7 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-dap"] = {
-    after = { "nvim-dap-ui", "nvim-dap-virtual-text", "nvim-dap-go", "telescope-dap.nvim", "one-small-step-for-vimkind", "nvim-nio", "nvim-dap-python", "nvim-dap-ruby" },
+    after = { "nvim-dap-virtual-text", "nvim-dap-ui", "nvim-dap-ruby", "nvim-dap-go", "telescope-dap.nvim", "one-small-step-for-vimkind", "nvim-nio", "nvim-dap-python" },
     config = { "\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14dapconfig\frequire\0" },
     loaded = false,
     needs_bufread = false,
@@ -189,7 +194,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["obsidian.nvim"] = {
-    config = { "\27LJ\2\nj\0\1\4\0\6\0\n6\1\0\0'\3\1\0B\1\2\0016\1\2\0009\1\3\0019\1\4\0015\3\5\0>\0\2\3B\1\2\1K\0\1\0\1\2\0\0\rxdg-open\rjobstart\afn\bvim\28testing>>>>>>>>>>>>>>>>\nprint­\1\1\0\5\0\b\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0004\3\3\0005\4\3\0>\4\1\3=\3\5\0023\3\6\0=\3\a\2B\0\2\1K\0\1\0\20follow_url_func\0\15workspaces\1\0\0\1\0\2\tname\nNotes\tpath-/home/mmc/Dropbox/joplin-markdown-export\nsetup\robsidian\frequire\0" },
+    config = { "\27LJ\2\n@\0\1\4\0\4\0\a6\1\0\0009\1\1\0019\1\2\0015\3\3\0>\0\2\3B\1\2\1K\0\1\0\1\2\0\0\rxdg-open\rjobstart\afn\bvimÊ\1\1\0\5\0\b\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0004\3\3\0005\4\3\0>\4\1\3=\3\5\0023\3\6\0=\3\a\2B\0\2\1K\0\1\0\20follow_url_func\0\15workspaces\1\0\2\20follow_url_func\0\15workspaces\0\1\0\2\tpath-/home/mmc/Dropbox/joplin-markdown-export\tname\nNotes\nsetup\robsidian\frequire\0" },
     loaded = true,
     path = "/home/mmc/.local/share/nvim/site/pack/packer/start/obsidian.nvim",
     url = "https://github.com/epwalsh/obsidian.nvim"
@@ -308,14 +313,14 @@ end
 
 -- Config for: obsidian.nvim
 time([[Config for obsidian.nvim]], true)
-try_loadstring("\27LJ\2\nj\0\1\4\0\6\0\n6\1\0\0'\3\1\0B\1\2\0016\1\2\0009\1\3\0019\1\4\0015\3\5\0>\0\2\3B\1\2\1K\0\1\0\1\2\0\0\rxdg-open\rjobstart\afn\bvim\28testing>>>>>>>>>>>>>>>>\nprint­\1\1\0\5\0\b\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0004\3\3\0005\4\3\0>\4\1\3=\3\5\0023\3\6\0=\3\a\2B\0\2\1K\0\1\0\20follow_url_func\0\15workspaces\1\0\0\1\0\2\tname\nNotes\tpath-/home/mmc/Dropbox/joplin-markdown-export\nsetup\robsidian\frequire\0", "config", "obsidian.nvim")
+try_loadstring("\27LJ\2\n@\0\1\4\0\4\0\a6\1\0\0009\1\1\0019\1\2\0015\3\3\0>\0\2\3B\1\2\1K\0\1\0\1\2\0\0\rxdg-open\rjobstart\afn\bvimÊ\1\1\0\5\0\b\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0004\3\3\0005\4\3\0>\4\1\3=\3\5\0023\3\6\0=\3\a\2B\0\2\1K\0\1\0\20follow_url_func\0\15workspaces\1\0\2\20follow_url_func\0\15workspaces\0\1\0\2\tpath-/home/mmc/Dropbox/joplin-markdown-export\tname\nNotes\nsetup\robsidian\frequire\0", "config", "obsidian.nvim")
 time([[Config for obsidian.nvim]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au VimEnter * ++once lua require("packer.load")({'which-key.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'nvim-dap'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'which-key.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 
