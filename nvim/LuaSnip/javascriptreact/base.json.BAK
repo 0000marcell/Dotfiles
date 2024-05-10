@@ -543,5 +543,15 @@
       "",
       "<button onClick={() => dispatch({ type: \"increment\" })}>Increment</button>"
     ]
+  },
+  "usecontext": {
+    "prefix": "usecontext",
+    "body": [
+      "export const UserContext= createContext();",
+      "",
+      "<UserContext.Provider value={'marcell'}>",
+      "  <App />",
+      "</UserContext.Provider>"
+    ]
   }
 }
