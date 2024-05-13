@@ -330,5 +330,44 @@
       "allow(Rails).to receive(:logger).and_return(logger)",
       "expect(logger).to receive(:info).with(/That/)"
     ]
+  },
+  "sharedexamples": {
+    "prefix": "sharedexamples",
+    "body": [
+      "shared_examples \"creates a new vehicle\" do",
+      "  it \"creates a new vehicle\" do",
+      "    expect(new_dealer_vehicle[:display_year]).to eq(\"2017\")",
+      "  end",
+      "end",
+      "",
+      "context 'when on only_insert rule is set' do",
+      "  let(:rules) { { 'only_insert' => true } }",
+      "  include_examples \"creates a new vehicle\"",
+      "end",
+      "",
+      "context 'when on only_insert rule is not set' do",
+      "  include_examples \"creates a new vehicle\"",
+      "end"
+    ]
+  },
+  "csv": {
+    "prefix": "csv",
+    "body": [
+      "require 'csv'",
+      "",
+      "# Define the path to your CSV file",
+      "csv_file = 'your_file.csv'",
+      "",
+      "# Open and read the CSV file with headers",
+      "CSV.foreach(csv_file, headers: true) do |row|",
+      "  # Access columns by header names",
+      "  name = row['Name']",
+      "  age = row['Age']",
+      "  email = row['Email']",
+      "",
+      "  # Process data as needed",
+      "  puts \"Name: #{name}, Age: #{age}, Email: #{email}\"",
+      "end"
+    ]
   }
 }

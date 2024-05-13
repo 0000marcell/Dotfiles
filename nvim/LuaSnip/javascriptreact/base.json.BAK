@@ -553,5 +553,13 @@
       "  <App />",
       "</UserContext.Provider>"
     ]
+  },
+  "jestenvironment": {
+    "prefix": "jestenvironment",
+    "body": [
+      "/**",
+      " * @jest-environment jsdom",
+      " */"
+    ]
   }
 }
