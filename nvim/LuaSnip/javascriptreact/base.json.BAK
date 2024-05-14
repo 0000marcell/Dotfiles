@@ -107,15 +107,6 @@
       "}"
     ]
   },
-  "action": {
-    "prefix": "act",
-    "body": [
-      "export async function action() {",
-      "  const ${1} = await create${1}();",
-      "  return redirect(`${3}`);",
-      "}"
-    ]
-  },
   "li": {
     "prefix": "li",
     "body": [
@@ -283,7 +274,7 @@
   "con": {
     "prefix": "con",
     "body": [
-      "{${1}}"
+      "${${1}}"
     ]
   },
   "useref": {
@@ -560,6 +551,17 @@
       "/**",
       " * @jest-environment jsdom",
       " */"
+    ]
+  },
+  "act": {
+    "prefix": "act",
+    "body": [
+      "export const editContactAction = async ({ request, params }) => {",
+      "  const formData = await request.formData()",
+      "  const data = Object.fromEntries(formData);",
+      "  console.log(\"data: \", data);",
+      "  return redirect(\"/\");",
+      "}"
     ]
   }
 }

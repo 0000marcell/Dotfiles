@@ -23,7 +23,7 @@
   "form": {
     "prefix": "form",
     "body": [
-      "<Form method=\"post\">",
+      "<Form method=\"delete\" action={`/api/v1/users/${user.id}`}>",
       "</Form>"
     ]
   },
