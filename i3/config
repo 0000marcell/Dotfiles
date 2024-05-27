@@ -114,7 +114,7 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # obsidian 
-bindsym $mod+Shift+o exec $term -f "RobotoMono Nerd Font Mono-16" -e bash -c 'cd $HOME/Dropbox/joplin-markdown-export && nvim .'
+bindsym $mod+Shift+o exec $term -f "RobotoMono Nerd Font Mono-16" -e bash -c 'cd /home/mmc/Dropbox/obsidian-vaults/current && nvim .'
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left

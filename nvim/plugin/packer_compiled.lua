@@ -120,7 +120,7 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-dap"] = {
-    after = { "nvim-dap-virtual-text", "nvim-dap-ui", "nvim-dap-ruby", "nvim-dap-go", "telescope-dap.nvim", "one-small-step-for-vimkind", "nvim-nio", "nvim-dap-python" },
+    after = { "nvim-dap-virtual-text", "nvim-dap-ui", "nvim-dap-ruby", "nvim-dap-go", "nvim-dap-python", "telescope-dap.nvim", "one-small-step-for-vimkind", "nvim-nio" },
     config = { "\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14dapconfig\frequire\0" },
     loaded = false,
     needs_bufread = false,
@@ -194,7 +194,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["obsidian.nvim"] = {
-    config = { "\27LJ\2\n@\0\1\4\0\4\0\a6\1\0\0009\1\1\0019\1\2\0015\3\3\0>\0\2\3B\1\2\1K\0\1\0\1\2\0\0\rxdg-open\rjobstart\afn\bvimÊ\1\1\0\5\0\b\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0004\3\3\0005\4\3\0>\4\1\3=\3\5\0023\3\6\0=\3\a\2B\0\2\1K\0\1\0\20follow_url_func\0\15workspaces\1\0\2\20follow_url_func\0\15workspaces\0\1\0\2\tpath-/home/mmc/Dropbox/joplin-markdown-export\tname\nNotes\nsetup\robsidian\frequire\0" },
+    config = { "\27LJ\2\n@\0\1\4\0\4\0\a6\1\0\0009\1\1\0019\1\2\0015\3\3\0>\0\2\3B\1\2\1K\0\1\0\1\2\0\0\rxdg-open\rjobstart\afn\bvimŒ\2\1\0\5\0\t\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\5\0004\3\3\0005\4\3\0>\4\1\0035\4\4\0>\4\2\3=\3\6\0023\3\a\0=\3\b\2B\0\2\1K\0\1\0\20follow_url_func\0\15workspaces\1\0\2\15workspaces\0\20follow_url_func\0\1\0\2\tpath*/home/mmc/Dropbox/obsidian-vaults/old\tname\bOld\1\0\2\tpath./home/mmc/Dropbox/obsidian-vaults/current\tname\fCurrent\nsetup\robsidian\frequire\0" },
     loaded = true,
     path = "/home/mmc/.local/share/nvim/site/pack/packer/start/obsidian.nvim",
     url = "https://github.com/epwalsh/obsidian.nvim"
@@ -313,14 +313,14 @@ end
 
 -- Config for: obsidian.nvim
 time([[Config for obsidian.nvim]], true)
-try_loadstring("\27LJ\2\n@\0\1\4\0\4\0\a6\1\0\0009\1\1\0019\1\2\0015\3\3\0>\0\2\3B\1\2\1K\0\1\0\1\2\0\0\rxdg-open\rjobstart\afn\bvimÊ\1\1\0\5\0\b\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0004\3\3\0005\4\3\0>\4\1\3=\3\5\0023\3\6\0=\3\a\2B\0\2\1K\0\1\0\20follow_url_func\0\15workspaces\1\0\2\20follow_url_func\0\15workspaces\0\1\0\2\tpath-/home/mmc/Dropbox/joplin-markdown-export\tname\nNotes\nsetup\robsidian\frequire\0", "config", "obsidian.nvim")
+try_loadstring("\27LJ\2\n@\0\1\4\0\4\0\a6\1\0\0009\1\1\0019\1\2\0015\3\3\0>\0\2\3B\1\2\1K\0\1\0\1\2\0\0\rxdg-open\rjobstart\afn\bvimŒ\2\1\0\5\0\t\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\5\0004\3\3\0005\4\3\0>\4\1\0035\4\4\0>\4\2\3=\3\6\0023\3\a\0=\3\b\2B\0\2\1K\0\1\0\20follow_url_func\0\15workspaces\1\0\2\15workspaces\0\20follow_url_func\0\1\0\2\tpath*/home/mmc/Dropbox/obsidian-vaults/old\tname\bOld\1\0\2\tpath./home/mmc/Dropbox/obsidian-vaults/current\tname\fCurrent\nsetup\robsidian\frequire\0", "config", "obsidian.nvim")
 time([[Config for obsidian.nvim]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'nvim-dap'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
 vim.cmd [[au VimEnter * ++once lua require("packer.load")({'which-key.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'nvim-dap'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 

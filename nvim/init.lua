@@ -190,9 +190,13 @@ return require('packer').startup(function(use)
       require("obsidian").setup({
         workspaces = {
           {
-            name = "Notes",
-            path = "/home/mmc/Dropbox/joplin-markdown-export"
+            name = "Current",
+            path = "/home/mmc/Dropbox/obsidian-vaults/current"
           },
+          {
+            name = "Old",
+            path = "/home/mmc/Dropbox/obsidian-vaults/old"
+          }
         },
         follow_url_func = function(url)
           -- Open the URL in the default web browser.
