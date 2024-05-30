@@ -115,26 +115,26 @@
       "#{${1}}"
     ]
   },
-  "get": {
-    "prefix": "get",
+  "rget": {
+    "prefix": "rget",
     "body": [
       "get '/${1}', to: '${2}#${3}'"
     ]
   },
-  "put": {
-    "prefix": "put",
+  "rput": {
+    "prefix": "rput",
     "body": [
       "put '/${1}/:id', to: '${2}#${3}'"
     ]
   },
-  "post": {
-    "prefix": "post",
+  "rpost": {
+    "prefix": "rpost",
     "body": [
       "post '/${1}', to: '${2}#${3}'"
     ]
   },
-  "delete": {
-    "prefix": "delete",
+  "rdelete": {
+    "prefix": "rdelete",
     "body": [
       "delete '/${1}', to: ${2}#${3}"
     ]
@@ -450,6 +450,30 @@
       "    params.require(:todo).permit(:title, :description, :user_id)",
       "  end",
       "end"
+    ]
+  },
+  "readfolder": {
+    "prefix": "readfolder",
+    "body": [
+      "Dir.entries(input_dir)"
+    ]
+  },
+  "callback": {
+    "prefix": "callback",
+    "body": [
+      "before_action :set_user, only: %i[show edit update destroy]"
+    ]
+  },
+  "get": {
+    "prefix": "get",
+    "body": [
+      "require 'httparty'",
+      "        response = HTTParty.get('https://jsonplaceholder.typicode.com/posts')",
+      "        if response.code == 200",
+      "          puts \"Response body: #{response.body}\"",
+      "        else",
+      "          puts \"HTTP Request failed with code: #{response.code}\"",
+      "        end"
     ]
   }
 }
