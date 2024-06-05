@@ -156,3 +156,5 @@ _nvmrc_hook() {
 if ! [[ "${PROMPT_COMMAND:-}" =~ _nvmrc_hook ]]; then
   PROMPT_COMMAND="_nvmrc_hook${PROMPT_COMMAND:+;$PROMPT_COMMAND}"
 fi
+
+RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
