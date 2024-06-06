@@ -165,10 +165,8 @@
   "afun": {
     "prefix": "afun",
     "body": [
-      "const ${1:name} = (${2:params}) => {",
-      "  return (",
-      "    ${3:body}",
-      "  )",
+      "(${1:params}) => {",
+      "  ${2:body}",
       "}"
     ]
   },

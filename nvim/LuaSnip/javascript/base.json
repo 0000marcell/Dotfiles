@@ -184,5 +184,13 @@
       "  debounce(() => console.log(\"debounce\"));",
       "}"
     ]
+  },
+  "setint": {
+    "prefix": "setint",
+    "body": [
+      "setInterval((${1:params}) => {",
+      "  ${2:body}",
+      "}, 100)"
+    ]
   }
 }
