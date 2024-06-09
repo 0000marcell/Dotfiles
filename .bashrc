@@ -1,13 +1,6 @@
-# check battery capacity
-# the following start a new process everytime I run a new terminal
-
-#bash git branch
-#export PS1="\\w:\$(git branch 2>/dev/null | grep '^*' | colrm 1 2)\$ "
-
 export PS1='\[\e]0;\w\a\]\[\033[01;34m\]\W\[\033[00m\]\$ '
 
 #export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]:\[\033[01;31m\]\!$(git branch 2>/dev/null | grep '^*' | colrm 1 2)\$ '
-
 
 #mmc 
 # use single tap to click
@@ -19,6 +12,12 @@ cdd() {
   echo /home/mmc/ghp
   cd /home/mmc/ghp
 }
+
+if ! [ -z $ST_PATH ]; then  
+    cd "$ST_PATH"
+else
+    cd /home/mmc/ghp
+fi
 
 export GPG_TTY=$(tty)
 
@@ -106,7 +105,6 @@ sudo sysctl -w kernel.unprivileged_userns_clone=1 > /dev/null
 #rust things
 export PATH="$PATH:$HOME/.cargo/bin"
 
-cd /home/mmc/ghp
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
@@ -158,3 +156,8 @@ if ! [[ "${PROMPT_COMMAND:-}" =~ _nvmrc_hook ]]; then
 fi
 
 RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+#eval "$(atuin init bash)"
+
+

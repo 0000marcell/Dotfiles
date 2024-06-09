@@ -37,6 +37,12 @@ for_window [title="Volume Control"] sticky enable
 for_window [title="Volume Control"] move scratchpad 
 for_window [title="Volume Control"] scratchpad show
 
+# float terminal window
+for_window [title="~/float"] floating enable
+for_window [title="~/float"] sticky enable
+for_window [title="~/float"] move scratchpad 
+for_window [title="~/float"] scratchpad show
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # font pango 20
@@ -68,6 +74,9 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec $term -f "RobotoMono Nerd Font Mono-16"
+
+# start floating terminal 
+bindsym $mod+Shift+Return exec ST_PATH='/home/mmc/float' $term -f "RobotoMono Nerd Font Mono-16"
 
 # open clipboard path to file content in vim 
 bindsym $mod+o exec $term -f "RobotoMono Nerd Font Mono-16" -e bash -c 'openorsearch $(xclip -o)'

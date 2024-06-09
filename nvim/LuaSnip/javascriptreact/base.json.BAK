@@ -23,7 +23,7 @@
   "form": {
     "prefix": "form",
     "body": [
-      "<Form method=\"post\">",
+      "<Form method=\"delete\" action={`/api/v1/users/${user.id}`}>",
       "</Form>"
     ]
   },
@@ -561,6 +561,23 @@
       "  const data = Object.fromEntries(formData);",
       "  console.log(\"data: \", data);",
       "  return redirect(\"/\");",
+      "}"
+    ]
+  },
+  "prom": {
+    "prefix": "prom",
+    "body": [
+      "let fetchData = new Promise((resolve, reject) => {",
+      "  resolve(\"Data fetched successfully!\");",
+      "  reject(\"Error fetching data.\");",
+      "});"
+    ]
+  },
+  "if": {
+    "prefix": "if",
+    "body": [
+      "if(${1}) {",
+      "  ${2}",
       "}"
     ]
   }

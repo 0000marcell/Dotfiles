@@ -33,8 +33,8 @@
   "if": {
     "prefix": "if",
     "body": [
-      "if(${1:}) {",
-      "    ${2:}",
+      "if(${1}) {",
+      "  ${2}",
       "}"
     ]
   },
@@ -165,8 +165,8 @@
   "afun": {
     "prefix": "afun",
     "body": [
-      "(${1:params}) => {",
-      "  ${2:body}",
+      "(${1:}) => {",
+      "  ${2:}",
       "}"
     ]
   },
@@ -183,6 +183,58 @@
       "for (let i = 0; i < 100; i++) {",
       "  debounce(() => console.log(\"debounce\"));",
       "}"
+    ]
+  },
+  "setint": {
+    "prefix": "setint",
+    "body": [
+      "setInterval((${1:params}) => {",
+      "  ${2:body}",
+      "}, 100)"
+    ]
+  },
+  "log": {
+    "prefix": "log",
+    "body": [
+      "console.log(\"finish!\");"
+    ]
+  },
+  "prom": {
+    "prefix": "prom",
+    "body": [
+      "let fetchData = new Promise((resolve, reject) => {",
+      "  resolve(\"Data fetched successfully!\");",
+      "  reject(\"Error fetching data.\");",
+      "});"
+    ]
+  },
+  "ife": {
+    "prefix": "ife",
+    "body": [
+      "if(${1}) {",
+      "  ${2}",
+      "} else(${3}) {",
+      "  ${4}",
+      "}"
+    ]
+  },
+  "esbuilddev": {
+    "prefix": "esbuilddev",
+    "body": [
+      "import * as esbuild from \"esbuild\";",
+      "let ctx = await esbuild.context({",
+      "  entryPoints: [\"src/*.*\"],",
+      "  bundle: true,",
+      "  minify: false,",
+      "  loader: {",
+      "    '.js': 'jsx'",
+      "  },",
+      "  format: 'esm',",
+      "  sourcemap: true,",
+      "  outdir: \"dist\",",
+      "  publicPath: \"/assets\"",
+      "});",
+      "await ctx.watch();"
     ]
   }
 }
