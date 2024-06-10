@@ -308,5 +308,12 @@
       "        connection.close()",
       "        print(\"PostgreSQL connection closed.\")"
     ]
+  },
+  "trace": {
+    "prefix": "trace",
+    "body": [
+      "import traceback",
+      "    traceback.print_stack()"
+    ]
   }
 }
