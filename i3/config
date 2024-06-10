@@ -41,6 +41,7 @@ for_window [title="Volume Control"] scratchpad show
 for_window [title="~/float"] floating enable
 for_window [title="~/float"] sticky enable
 for_window [title="~/float"] move scratchpad 
+for_window [title="~/float"] border pixel 0 
 for_window [title="~/float"] scratchpad show
 
 # Font for window titles. Will also be used by the bar unless a different font
