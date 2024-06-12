@@ -101,7 +101,6 @@ require('mmc').setup()
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-  use 'chrisbra/csv.vim'
 
   --use 'David-Kunz/gen.nvim'
 
