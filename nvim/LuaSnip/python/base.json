@@ -316,5 +316,11 @@
       "import traceback",
       "    traceback.print_stack()"
     ]
+  },
+  "con": {
+    "prefix": "con",
+    "body": [
+      "{$1:}"
+    ]
   }
 }
