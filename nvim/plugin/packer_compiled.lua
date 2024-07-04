@@ -115,7 +115,7 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-dap"] = {
-    after = { "one-small-step-for-vimkind", "telescope-dap.nvim", "nvim-nio", "nvim-dap-virtual-text", "nvim-dap-ui", "nvim-dap-ruby", "nvim-dap-go", "nvim-dap-python" },
+    after = { "nvim-dap-virtual-text", "nvim-dap-ui", "nvim-dap-go", "telescope-dap.nvim", "one-small-step-for-vimkind", "nvim-nio", "nvim-dap-ruby", "nvim-dap-python" },
     config = { "\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14dapconfig\frequire\0" },
     loaded = false,
     needs_bufread = false,
