@@ -38,5 +38,13 @@
       "  exit 1",
       "fi"
     ]
+  },
+  "fun": {
+    "prefix": "fun",
+    "body": [
+      "function ${1:name} {",
+      "  ${2:body}",
+      "}"
+    ]
   }
 }
