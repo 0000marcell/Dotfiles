@@ -46,5 +46,17 @@
       "  ${2:body}",
       "}"
     ]
+  },
+  "elif": {
+    "prefix": "elif",
+    "body": [
+      "elif [[ \"val\" == \"marcell\" ]]; then"
+    ]
+  },
+  "match": {
+    "prefix": "match",
+    "body": [
+      "if [[ \"$file\" == *\"Entry Point\"* ]]; then"
+    ]
   }
 }

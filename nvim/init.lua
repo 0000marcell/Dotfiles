@@ -77,6 +77,7 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 
 vim.g.mapleader = " "
+vim.opt.ignorecase = true
 vim.keymap.set("v", "<C-c>", '"*y :let @+=@*<CR>', { silent = true })
 vim.keymap.set("n", "<C-v>", '"+p', { silent = true })
 vim.keymap.set("n", "<C-h>", '<c-w>h', {})

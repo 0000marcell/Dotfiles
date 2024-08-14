@@ -12,6 +12,7 @@ function M.setup()
   require("mmc.createtestfile").setup()
   require("mmc.inserttodo").setup()
   require("mmc.makeexecutable").setup()
+  require("mmc.capitalize").setup()
 end
 
 return M
