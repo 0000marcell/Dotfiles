@@ -1,6 +1,8 @@
 local M = {}
 
 function M.setup()
+  print("dap setup!")
+  return
 	require('dap-go').setup()
   require('dap-ruby').setup()
   require('dap-python').test_runner = 'pytest'
@@ -71,33 +73,30 @@ function M.setup()
 
 	local whichkey = require "which-key"
 
-	local keymap = {
-		d = {
-			name = "Debug",
-			a = { "<cmd>lua require'dap'.restart()<cr>", "Restart" },
-			b = { "<cmd>Telescope dap list_breakpoints<cr>", "Telescope list breakpoints" },
-			c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
-			C = { "<cmd>lua require'dap'.set_breakpoint(vim.fn.input '[Condition] > ')<cr>", 
-			"Conditional Breakpoint" },
-			d = { "<cmd>lua require'dap'.focus_frame()<cr>", "Focus current frame" },
-			e = { "<cmd>lua require'dapui'.eval()<cr>", "Evaluate" },
-			i = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
-			o = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
-			j = { "<cmd>lua require'dap'.up()<cr>", "Go up the stack frame" },
-			l = { "<cmd>lua require'osv'.launch({port = 8086})<cr>", "Debug lua code" },
-			k = { "<cmd>lua require'dap'.down()<cr>", "Go down the stack frame" },
-			f = { "<cmd>Telescope dap frames<cr>", "Telescope frames" },
-			r = { "<cmd>lua  require('dapui').float_element('repl', { width = 100, height = 20, enter = true, position = 'center' })<cr>", "Toggle Repl" },
-			w = { "<cmd>lua  require('dapui').float_element('watches', { width = 100, height = 20, enter = true, position = 'bottom' })<cr>", "Toggle Watch" },
-			v = { "<cmd>lua require'telescope'.extensions.dap.variables{}<cr>", "Toggle Repl" },
-			s = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
-			t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
-			x = { "<cmd>lua require'dap'.terminate()<cr>", "Terminate" },
-			u = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
-			h = { "<cmd>lua require'dap.ui.widgets'.hover()<cr>", "Hover Variables" },
-			U = { "<cmd>lua require'dapui'.toggle()<cr>", "Toggle UI" },
-		},
-	}
+  local keymap = {
+    { "<leader>", "<leader>do", desc = "<cmd>lua require'dap'.step_over()<cr>", nowait = false, remap = false },
+    { "<leader>", "<leader>dd", desc = "<cmd>lua require'dap'.focus_frame()<cr>", nowait = false, remap = false },
+    { "<leader>", "<leader>dc", desc = "<cmd>lua require'dap'.continue()<cr>", nowait = false, remap = false },
+    { "<leader>", "<leader>db", desc = "<cmd>Telescope dap list_breakpoints<cr>", nowait = false, remap = false },
+    { "<leader>", "<leader>da", desc = "<cmd>lua require'dap'.restart()<cr>", nowait = false, remap = false },
+    { "<leader>", "<leader>de", desc = "<cmd>lua require'dapui'.eval()<cr>", nowait = false, remap = false },
+    { "<leader>", "<leader>dh", desc = "<cmd>lua require'dap.ui.widgets'.hover()<cr>", nowait = false, remap = false },
+    { "<leader>", "<leader>df", desc = "<cmd>Telescope dap frames<cr>", nowait = false, remap = false },
+    { "<leader>", "<leader>dj", desc = "<cmd>lua require'dap'.up()<cr>", nowait = false, remap = false },
+    { "<leader>", "<leader>di", desc = "<cmd>lua require'dap'.step_into()<cr>", nowait = false, remap = false },
+    { "<leader>", "<leader>dk", desc = "<cmd>lua require'dap'.down()<cr>", nowait = false, remap = false },
+    { "<leader>", "<leader>dU", desc = "<cmd>lua require'dapui'.toggle()<cr>", nowait = false, remap = false },
+    { "<leader>", group = "Debug", nowait = false, remap = false },
+    { "<leader>", "<leader>dt", desc = "<cmd>lua require'dap'.toggle_breakpoint()<cr>", nowait = false, remap = false },
+    { "<leader>", "<leader>ds", desc = "<cmd>lua require'dap'.continue()<cr>", nowait = false, remap = false },
+    { "<leader>", "<leader>dr", desc = "<cmd>lua require('dapui').float_element('repl', { width = 100, height = 20, enter = true, position = 'center' })<cr>", nowait = false, remap = false },
+    { "<leader>", "<leader>dC", desc = "<cmd>lua require'dap'.set_breakpoint(vim.fn.input '[Condition] > ')<cr>", nowait = false, remap = false },
+    { "<leader>", "<leader>du", desc = "<cmd>lua require'dap'.step_out()<cr>", nowait = false, remap = false },
+    { "<leader>", "<leader>dw", desc = "<cmd>lua require('dapui').float_element('watches', { width = 100, height = 20, enter = true, position = 'bottom' })<cr>", nowait = false, remap = false },
+    { "<leader>", "<leader>dv", desc = "<cmd>lua require'telescope'.extensions.dap.variables{}<cr>", nowait = false, remap = false },
+    { "<leader>", "<leader>dx", desc = "<cmd>lua require'dap'.terminate()<cr>", nowait = false, remap = false },
+    { "<leader>", "<leader>dl", desc = "<cmd>lua require'osv'.launch({port = 8086})<cr>", nowait = false, remap = false },
+  }
 
 	whichkey.register(keymap, {
 		mode = "n",
@@ -108,10 +107,12 @@ function M.setup()
 		nowait = false,
 	})
 
-	local keymap_v = {
-		name = "Debug",
-		e = { "<cmd>lua require'dapui'.eval()<cr>", "Evaluate" },
-	}
+  local keymap_v = {
+    { "<leader>", group = "Debug", mode = "v", nowait = false, remap = false },
+    { "<leader>e", "<cmd>lua require'dapui'.eval()<cr>", desc = "Evaluate", mode = "v", nowait = false, remap = false },
+  }
+
+
 	whichkey.register(keymap_v, {
 		mode = "v",
 		prefix = "<leader>",

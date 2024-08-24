@@ -51,15 +51,6 @@ function MMCExecFile()
   end
 end
 
-function ToggleCMDHeight()
-  local cmdheight = vim.api.nvim_get_option("cmdheight")
-  if cmdheight < 10 then
-    vim.opt.cmdheight = 10
-  else
-    vim.opt.cmdheight = 1
-  end
-end
-
 vim.opt.foldmethod = 'indent'
 vim.opt.foldlevel = 1
 vim.opt.foldlevelstart = 99
@@ -87,7 +78,6 @@ vim.keymap.set("n", "<C-l>", '<c-w>l', {})
 vim.keymap.set("n", "<C-n>", vim.cmd.NERDTreeToggle)
 vim.keymap.set("i", "<C-b>", '<cmd>lua MMCExecFile()<CR>')
 vim.keymap.set("n", "<C-b>", '<cmd>lua MMCExecFile()<CR>')
-vim.keymap.set("n", "<leader>tc", '<cmd>lua ToggleCMDHeight()<CR>')
 vim.g["NERDTreeShowHidden"] = 1
 vim.keymap.set("v", "<Tab>", ">gv")
 vim.keymap.set("v", "<S-Tab>", "<gv")
@@ -103,8 +93,6 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  --use 'David-Kunz/gen.nvim'
-
   use('preservim/nerdtree')
   use('tpope/vim-fugitive')
 
@@ -114,10 +102,6 @@ return require('packer').startup(function(use)
   use "almo7aya/openingh.nvim"
 
   use('github/copilot.vim')
-
-  -- use 'folke/tokyonight.nvim'
-
-  -- vim.cmd("colorscheme tokyonight")
 
   vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
   vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
@@ -140,10 +124,15 @@ return require('packer').startup(function(use)
 
   use {
     "folke/which-key.nvim",
+    requires = { { 
+      "echasnovski/mini.icons",
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+    } },
     event = "VimEnter",
   }
 
-  use "nvim-lua/plenary.nvim" -- don't forget to add this one if you don't have it yet!
+  -- use "nvim-lua/plenary.nvim" -- don't forget to add this one if you don't have it yet!
   use {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",

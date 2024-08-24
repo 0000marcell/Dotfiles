@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/mmc/.cache/nvim/packer_hererocks/2.1.1716656478/share/lua/5.1/?.lua;/home/mmc/.cache/nvim/packer_hererocks/2.1.1716656478/share/lua/5.1/?/init.lua;/home/mmc/.cache/nvim/packer_hererocks/2.1.1716656478/lib/luarocks/rocks-5.1/?.lua;/home/mmc/.cache/nvim/packer_hererocks/2.1.1716656478/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/mmc/.cache/nvim/packer_hererocks/2.1.1716656478/lib/lua/5.1/?.so"
+local package_path_str = "/home/mmc/.cache/nvim/packer_hererocks/2.1.1720049189/share/lua/5.1/?.lua;/home/mmc/.cache/nvim/packer_hererocks/2.1.1720049189/share/lua/5.1/?/init.lua;/home/mmc/.cache/nvim/packer_hererocks/2.1.1720049189/lib/luarocks/rocks-5.1/?.lua;/home/mmc/.cache/nvim/packer_hererocks/2.1.1720049189/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/mmc/.cache/nvim/packer_hererocks/2.1.1720049189/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/home/mmc/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
     url = "https://github.com/iamcco/markdown-preview.nvim"
   },
+  ["mini.icons"] = {
+    loaded = true,
+    path = "/home/mmc/.local/share/nvim/site/pack/packer/start/mini.icons",
+    url = "https://github.com/echasnovski/mini.icons"
+  },
   nerdtree = {
     loaded = true,
     path = "/home/mmc/.local/share/nvim/site/pack/packer/start/nerdtree",
@@ -115,7 +120,7 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-dap"] = {
-    after = { "nvim-dap-virtual-text", "nvim-dap-ui", "nvim-dap-go", "telescope-dap.nvim", "one-small-step-for-vimkind", "nvim-nio", "nvim-dap-ruby", "nvim-dap-python" },
+    after = { "nvim-dap-virtual-text", "nvim-dap-ui", "nvim-dap-ruby", "nvim-dap-go", "telescope-dap.nvim", "one-small-step-for-vimkind", "nvim-nio", "nvim-dap-python" },
     config = { "\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14dapconfig\frequire\0" },
     loaded = false,
     needs_bufread = false,
@@ -188,8 +193,13 @@ _G.packer_plugins = {
     path = "/home/mmc/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/mmc/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
+  },
   ["obsidian.nvim"] = {
-    config = { "\27LJ\2\n@\0\1\4\0\4\0\a6\1\0\0009\1\1\0019\1\2\0015\3\3\0>\0\2\3B\1\2\1K\0\1\0\1\2\0\0\rxdg-open\rjobstart\afn\bvimŒ\2\1\0\5\0\t\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\5\0004\3\3\0005\4\3\0>\4\1\0035\4\4\0>\4\2\3=\3\6\0023\3\a\0=\3\b\2B\0\2\1K\0\1\0\20follow_url_func\0\15workspaces\1\0\2\20follow_url_func\0\15workspaces\0\1\0\2\tpath*/home/mmc/Dropbox/obsidian-vaults/old\tname\bOld\1\0\2\tpath./home/mmc/Dropbox/obsidian-vaults/current\tname\fCurrent\nsetup\robsidian\frequire\0" },
+    config = { "\27LJ\2\n@\0\1\4\0\4\0\a6\1\0\0009\1\1\0019\1\2\0015\3\3\0>\0\2\3B\1\2\1K\0\1\0\1\2\0\0\rxdg-open\rjobstart\afn\bvimŒ\2\1\0\5\0\t\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\5\0004\3\3\0005\4\3\0>\4\1\0035\4\4\0>\4\2\3=\3\6\0023\3\a\0=\3\b\2B\0\2\1K\0\1\0\20follow_url_func\0\15workspaces\1\0\2\20follow_url_func\0\15workspaces\0\1\0\2\tname\bOld\tpath*/home/mmc/Dropbox/obsidian-vaults/old\1\0\2\tname\fCurrent\tpath./home/mmc/Dropbox/obsidian-vaults/current\nsetup\robsidian\frequire\0" },
     loaded = true,
     path = "/home/mmc/.local/share/nvim/site/pack/packer/start/obsidian.nvim",
     url = "https://github.com/epwalsh/obsidian.nvim"
@@ -308,7 +318,7 @@ end
 
 -- Config for: obsidian.nvim
 time([[Config for obsidian.nvim]], true)
-try_loadstring("\27LJ\2\n@\0\1\4\0\4\0\a6\1\0\0009\1\1\0019\1\2\0015\3\3\0>\0\2\3B\1\2\1K\0\1\0\1\2\0\0\rxdg-open\rjobstart\afn\bvimŒ\2\1\0\5\0\t\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\5\0004\3\3\0005\4\3\0>\4\1\0035\4\4\0>\4\2\3=\3\6\0023\3\a\0=\3\b\2B\0\2\1K\0\1\0\20follow_url_func\0\15workspaces\1\0\2\20follow_url_func\0\15workspaces\0\1\0\2\tpath*/home/mmc/Dropbox/obsidian-vaults/old\tname\bOld\1\0\2\tpath./home/mmc/Dropbox/obsidian-vaults/current\tname\fCurrent\nsetup\robsidian\frequire\0", "config", "obsidian.nvim")
+try_loadstring("\27LJ\2\n@\0\1\4\0\4\0\a6\1\0\0009\1\1\0019\1\2\0015\3\3\0>\0\2\3B\1\2\1K\0\1\0\1\2\0\0\rxdg-open\rjobstart\afn\bvimŒ\2\1\0\5\0\t\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\5\0004\3\3\0005\4\3\0>\4\1\0035\4\4\0>\4\2\3=\3\6\0023\3\a\0=\3\b\2B\0\2\1K\0\1\0\20follow_url_func\0\15workspaces\1\0\2\20follow_url_func\0\15workspaces\0\1\0\2\tname\bOld\tpath*/home/mmc/Dropbox/obsidian-vaults/old\1\0\2\tname\fCurrent\tpath./home/mmc/Dropbox/obsidian-vaults/current\nsetup\robsidian\frequire\0", "config", "obsidian.nvim")
 time([[Config for obsidian.nvim]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]

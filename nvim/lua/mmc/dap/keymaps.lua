@@ -2,10 +2,6 @@ local M = {}
 
 local whichkey = require "which-key"
 
--- local function keymap(lhs, rhs, desc)
---   vim.keymap.set("n", lhs, rhs, { silent = true, desc = desc })
--- end
-
 function M.setup()
   local keymap = {
     d = {
@@ -24,7 +20,6 @@ function M.setup()
       f = { "<cmd>Telescope dap frames<cr>", "Telescope frames" },
       b = { "<cmd>Telescope dap list_breakpoints<cr>", "Telescope list breakpoints" },
       q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
-      --r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
       r = { "<cmd>lua  require('dapui').float_element('repl', { width = 100, height = 20, enter = true, position = 'center' })<cr>", "Toggle Repl" },
       v = { "<cmd>lua require'telescope'.extensions.dap.variables{}<cr>", "Toggle Repl" },
       s = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
