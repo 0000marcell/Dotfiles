@@ -475,5 +475,43 @@
       "          puts \"HTTP Request failed with code: #{response.code}\"",
       "        end"
     ]
+  },
+  "post": {
+    "prefix": "post",
+    "body": [
+      "require 'httparty'",
+      "",
+      "url = 'https://jsonplaceholder.typicode.com/posts'",
+      "body = {",
+      "  title: 'foo',",
+      "  body: 'bar',",
+      "  userId: 1",
+      "}.to_json",
+      "",
+      "headers = {",
+      "  'Content-Type' => 'application/json'",
+      "}",
+      "",
+      "response = HTTParty.post(url, body: body, headers: headers)",
+      "",
+      "if response.code == 201",
+      "  puts \"Post created: #{response.body}\"",
+      "else",
+      "  puts \"HTTP Request failed with code: #{response.code}\"",
+      "end"
+    ]
+  },
+  "assert": {
+    "prefix": "assert",
+    "body": [
+      "assert_equal ${1: }, ${2: }"
+    ]
+  },
+  "stub": {
+    "prefix": "stub",
+    "body": [
+      "${1: class}.stub :${2: method}, ${3: response} do",
+      "end"
+    ]
   }
 }

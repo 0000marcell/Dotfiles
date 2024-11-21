@@ -500,5 +500,25 @@
       "  puts \"HTTP Request failed with code: #{response.code}\"",
       "end"
     ]
+  },
+  "assert": {
+    "prefix": "assert",
+    "body": [
+      "assert_equal ${1: }, ${2: }"
+    ]
+  },
+  "stub": {
+    "prefix": "stub",
+    "body": [
+      "${1: class}.stub :${2: method}, ${3: response} do",
+      "end"
+    ]
+  },
+  "mmock": {
+    "prefix": "mmock",
+    "body": [
+      "${1}_mock = Minitest::Mock.new",
+      "${1}_mock.expect(:${2: key}, ${3: return_value}, ${4: parameters})"
+    ]
   }
 }

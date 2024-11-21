@@ -68,5 +68,15 @@
     "body": [
       "Note right of DB Server: Now the balance is 200 instead of 300"
     ]
+  },
+  "table": {
+    "prefix": "table",
+    "body": [
+      "| Environment    | URL                                                                      |",
+      "|----------------|--------------------------------------------------------------------------|",
+      "| qa             | <http://garage.qa.decisivapps.com> target=\"_blank\">Garage QA</a> |",
+      "| prod           | <a href=\"http://garage.qa.decisivapps.com\" target=\"_blank\">Garage PROD</a> |",
+      "| studebaker     | <http://garage.staging.decisivapps.com>     |"
+    ]
   }
 }

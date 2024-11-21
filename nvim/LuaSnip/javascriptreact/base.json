@@ -101,6 +101,7 @@
   "loader": {
     "prefix": "loader",
     "body": [
+      "import { useLoaderData} from 'react-router-dom';",
       "export async function loader() {",
       "  const ${1} = await get${2}();",
       "  return { ${1} };",
