@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/mmc/.cache/nvim/packer_hererocks/2.1.1720049189/share/lua/5.1/?.lua;/home/mmc/.cache/nvim/packer_hererocks/2.1.1720049189/share/lua/5.1/?/init.lua;/home/mmc/.cache/nvim/packer_hererocks/2.1.1720049189/lib/luarocks/rocks-5.1/?.lua;/home/mmc/.cache/nvim/packer_hererocks/2.1.1720049189/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/mmc/.cache/nvim/packer_hererocks/2.1.1720049189/lib/lua/5.1/?.so"
+local package_path_str = "/home/mmc/.cache/nvim/packer_hererocks/2.1.1727870382/share/lua/5.1/?.lua;/home/mmc/.cache/nvim/packer_hererocks/2.1.1727870382/share/lua/5.1/?/init.lua;/home/mmc/.cache/nvim/packer_hererocks/2.1.1727870382/lib/luarocks/rocks-5.1/?.lua;/home/mmc/.cache/nvim/packer_hererocks/2.1.1727870382/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/mmc/.cache/nvim/packer_hererocks/2.1.1727870382/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -84,20 +84,46 @@ _G.packer_plugins = {
     path = "/home/mmc/.local/share/nvim/site/pack/packer/start/auto-pairs",
     url = "https://github.com/jiangmiao/auto-pairs"
   },
+  ["avante.nvim"] = {
+    config = { "\27LJ\2\n8\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\vavante\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/mmc/.local/share/nvim/site/pack/packer/opt/avante.nvim",
+    url = "https://github.com/yetone/avante.nvim"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/mmc/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["copilot.lua"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/mmc/.local/share/nvim/site/pack/packer/opt/copilot.lua",
+    url = "https://github.com/zbirenbaum/copilot.lua"
   },
   ["copilot.vim"] = {
     loaded = true,
     path = "/home/mmc/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
+  ["dressing.nvim"] = {
+    loaded = true,
+    path = "/home/mmc/.local/share/nvim/site/pack/packer/start/dressing.nvim",
+    url = "https://github.com/stevearc/dressing.nvim"
+  },
   harpoon = {
     loaded = true,
     path = "/home/mmc/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
+  },
+  ["img-clip.nvim"] = {
+    config = { "\27LJ\2\nÎ\1\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\fdefault\1\0\1\fdefault\0\18drag_and_drop\1\0\1\16insert_mode\2\1\0\4\26embed_image_as_base64\1\22use_absolute_path\2\18drag_and_drop\0\25prompt_for_file_name\1\nsetup\rimg-clip\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/mmc/.local/share/nvim/site/pack/packer/opt/img-clip.nvim",
+    url = "https://github.com/HakonHarnes/img-clip.nvim"
   },
   ["markdown-preview.nvim"] = {
     loaded = true,
@@ -114,13 +140,18 @@ _G.packer_plugins = {
     path = "/home/mmc/.local/share/nvim/site/pack/packer/start/nerdtree",
     url = "https://github.com/preservim/nerdtree"
   },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/home/mmc/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/mmc/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-dap"] = {
-    after = { "nvim-dap-virtual-text", "nvim-dap-ui", "nvim-dap-ruby", "nvim-dap-go", "telescope-dap.nvim", "one-small-step-for-vimkind", "nvim-nio", "nvim-dap-python" },
+    after = { "nvim-dap-python", "one-small-step-for-vimkind", "nvim-dap-ruby", "nvim-dap-virtual-text", "nvim-nio", "telescope-dap.nvim", "nvim-dap-go", "nvim-dap-ui" },
     config = { "\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14dapconfig\frequire\0" },
     loaded = false,
     needs_bufread = false,
@@ -188,11 +219,6 @@ _G.packer_plugins = {
     path = "/home/mmc/.local/share/nvim/site/pack/packer/opt/nvim-nio",
     url = "https://github.com/nvim-neotest/nvim-nio"
   },
-  ["nvim-treesitter"] = {
-    loaded = true,
-    path = "/home/mmc/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
-    url = "https://github.com/nvim-treesitter/nvim-treesitter"
-  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/mmc/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -227,6 +253,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mmc/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["render-markdown.nvim"] = {
+    config = { "\27LJ\2\nw\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\15file_types\1\0\1\15file_types\0\1\3\0\0\rmarkdown\vAvante\nsetup\20render-markdown\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/mmc/.local/share/nvim/site/pack/packer/opt/render-markdown.nvim",
+    url = "https://github.com/MeanderingProgrammer/render-markdown.nvim"
   },
   ["telescope-dap.nvim"] = {
     load_after = {
@@ -322,8 +356,14 @@ try_loadstring("\27LJ\2\n@\0\1\4\0\4\0\a6\1\0\0009\1\1\0019\1\2\0015\3\3\0>\0\2\
 time([[Config for obsidian.nvim]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
+  -- Filetype lazy-loads
+time([[Defining lazy-load filetype autocommands]], true)
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'render-markdown.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
+vim.cmd [[au FileType Avante ++once lua require("packer.load")({'render-markdown.nvim'}, { ft = "Avante" }, _G.packer_plugins)]]
+time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'avante.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
 vim.cmd [[au VimEnter * ++once lua require("packer.load")({'which-key.nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'nvim-dap'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)

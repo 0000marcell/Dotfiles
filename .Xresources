@@ -40,6 +40,9 @@ st.font: Monospace-16;
 *.color257: #00ff00
 *.color258: #0000ff
 !! cursor color:
-*.background: #fbf1c7 
-*.foreground: #282828
-*.cursorColor: #282828
+*.background: #ff00ff
+*.foreground: #ff00ff
+*.cursorColor: #ff00ff
+XTerm*cursorTheme: cursor-theme
+XTerm*cursorBlink: true
+XTerm*cursorWidth: 2

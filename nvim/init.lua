@@ -1,17 +1,13 @@
+require('mmc').setup()
+
 vim.api.nvim_create_autocmd(
-  { "BufEnter", "BufRead", "BufNewFile" },
-  { pattern = "*.md", command = [[syn match htmlBoldUnderline /`.*[^`]*`/]] }
+{ "BufEnter", "BufRead", "BufNewFile" },
+{ pattern = "*.md", command = [[syn match htmlBoldUnderline /`.*[^`]*`/]] }
 )
 
 -- set conceal level to work with obsidian.nvim
 vim.opt.conceallevel = 1
 
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-  augroup end
-]])
 
 -- dadbod ui configuration
 vim.g.db_ui_save_location = '~/Dropbox/db_ui_queries'
@@ -85,146 +81,183 @@ vim.keymap.set("v", "<S-Tab>", "<gv")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.cmd [[packadd packer.nvim]]
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
+end
+vim.opt.rtp:prepend(lazypath)
 
-require('mmc').setup()
+require("lazy").setup({
+  spec = {
+    -- Lazy.nvim can manage itself
+    "folke/lazy.nvim",
 
-return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+    -- Core Plugins
+    { "preservim/nerdtree" },
+    { "tpope/vim-fugitive" },
+    { "jiangmiao/auto-pairs" },
 
-  use('preservim/nerdtree')
-  use('tpope/vim-fugitive')
+    -- Open current file on GitHub
+    { "almo7aya/openingh.nvim" },
 
-  use('jiangmiao/auto-pairs')
+    { "neovimhaskell/haskell-vim" },
 
-  -- open current file on github
-  use "almo7aya/openingh.nvim"
+    -- GitHub Copilot
+    { "github/copilot.vim" },
 
-  use('github/copilot.vim')
+    -- LSP and Completion
+    { "neovim/nvim-lspconfig" },
+    { "hrsh7th/nvim-cmp" },
+    { "hrsh7th/cmp-nvim-lsp" },
+    { "L3MON4D3/LuaSnip" },
 
-  vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+    -- Text Manipulation
+    { "tpope/vim-surround" },
+    { "tpope/vim-dadbod" },
+    { "tpope/vim-commentary" },
+    { "tpope/vim-markdown" },
 
-  use('neovim/nvim-lspconfig')
-  use('hrsh7th/nvim-cmp')
-  use('hrsh7th/cmp-nvim-lsp')
+    -- Markdown Preview
+    {
+      "iamcco/markdown-preview.nvim",
+      build = function() vim.fn["mkdp#util#install"]() end,
+    },
 
-  use("L3MON4D3/LuaSnip")
+    -- Which-Key
+    {
+      "folke/which-key.nvim",
+      dependencies = {
+        "echasnovski/mini.icons",
+        "nvim-lua/plenary.nvim",
+        "nvim-tree/nvim-web-devicons",
+      },
+      event = "VeryLazy",
+    },
 
-  use('tpope/vim-surround')
-  use('tpope/vim-dadbod')
+    -- Harpoon
+    {
+      "ThePrimeagen/harpoon",
+      branch = "harpoon2",
+      dependencies = { "nvim-lua/plenary.nvim" },
+    },
 
-  use('tpope/vim-commentary')
-  use('tpope/vim-markdown')
-  use({
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-  })
+    -- Dadbod UI
+    {
+      "kristijanhusak/vim-dadbod-ui",
+      dependencies = { "tpope/vim-dadbod" },
+    },
 
-  use {
-    "folke/which-key.nvim",
-    requires = { { 
-      "echasnovski/mini.icons",
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons",
-    } },
-    event = "VimEnter",
-  }
-
-  -- use "nvim-lua/plenary.nvim" -- don't forget to add this one if you don't have it yet!
-  use {
-    "ThePrimeagen/harpoon",
-    branch = "harpoon2",
-    requires = { { "nvim-lua/plenary.nvim" } }
-  }
-
-  use {
-    'kristijanhusak/vim-dadbod-ui',
-    wants = {
-      'tpope/vim-dadbod',
-    }
-  }
-
-  use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.2',
-    requires = {
-      { 'nvim-lua/plenary.nvim' },
-      { "nvim-telescope/telescope-live-grep-args.nvim" },
+    -- Telescope
+    {
+      "nvim-telescope/telescope.nvim",
+      tag = "0.1.2",
+      dependencies = {
+        "nvim-lua/plenary.nvim",
+        "nvim-telescope/telescope-live-grep-args.nvim",
+      },
       config = function()
-        require("telescope").setup{
+        require("telescope").setup({
           defaults = {
-            file_ignore_patterns = {
-              "node_modules"
-            }
-          }
-        }
-        require("telescope").load_extension("live_grep_args")
-      end
-    }
-
-  }
-
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = function()
-      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-      ts_update()
-    end,
-  }
-
-  use {
-    'epwalsh/obsidian.nvim',
-    config = function()
-      require("obsidian").setup({
-        workspaces = {
-          {
-            name = "Current",
-            path = "/home/mmc/Dropbox/obsidian-vaults/current"
+            file_ignore_patterns = { "node_modules" },
           },
-          {
-            name = "Old",
-            path = "/home/mmc/Dropbox/obsidian-vaults/old"
-          }
-        },
-        follow_url_func = function(url)
-          -- Open the URL in the default web browser.
-          vim.fn.jobstart({"xdg-open", url})  -- linux
-        end,
-      })
-    end,
-  }
+        })
+        require("telescope").load_extension("live_grep_args")
+      end,
+    },
 
-  -- Debugging
-  use {
-    "mfussenegger/nvim-dap",
-    opt = true,
-    event = "BufReadPre",
-    module = { "dap" },
-    wants = {
-      "nvim-dap-virtual-text",
-      "nvim-dap-ui",
-      "nvim-dap-ruby",
-      "nvim-dap-go",
-      'nvim-dap-python',
-      "telescope.nvim",
-      "telescope-dap.nvim",
-      "which-key.nvim",
-      "one-small-step-for-vimkind",
-      "nvim-nio"
+    -- Obsidian
+    {
+      "epwalsh/obsidian.nvim",
+      config = function()
+        require("obsidian").setup({
+          workspaces = {
+            { name = "Current", path = "/home/mmc/Dropbox/obsidian-vaults/current" },
+            { name = "Old", path = "/home/mmc/Dropbox/obsidian-vaults/old" },
+          },
+          follow_url_func = function(url)
+            vim.fn.jobstart({ "xdg-open", url }) -- Linux
+          end,
+        })
+      end,
     },
-    requires = {
-      'jbyuki/one-small-step-for-vimkind',
-      "0000marcell/nvim-dap-ruby",
-      "leoluz/nvim-dap-go",
-      'mfussenegger/nvim-dap-python',
-      "theHamsta/nvim-dap-virtual-text",
-      "rcarriga/nvim-dap-ui",
-      "nvim-neotest/nvim-nio",
-      "nvim-telescope/telescope-dap.nvim"
+
+    -- Avante.nvim
+    {
+      "yetone/avante.nvim",
+      event = "BufRead",
+      build = "make",
+      config = function()
+        require("avante").setup({
+          provider='copilot'
+        })
+      end,
+      dependencies = {
+        "stevearc/dressing.nvim",
+        "nvim-lua/plenary.nvim",
+        "MunifTanjim/nui.nvim",
+        { "hrsh7th/nvim-cmp", lazy = true },
+        { "nvim-tree/nvim-web-devicons", lazy = true },
+        { "zbirenbaum/copilot.lua", lazy = true },
+        {
+          "HakonHarnes/img-clip.nvim",
+          config = function()
+            require("img-clip").setup({
+              default = {
+                embed_image_as_base64 = false,
+                prompt_for_file_name = false,
+                drag_and_drop = { insert_mode = true },
+                use_absolute_path = true,
+              },
+            })
+          end,
+        },
+        {
+          "MeanderingProgrammer/render-markdown.nvim",
+          ft = { "markdown", "Avante" },
+          config = function()
+            require("render-markdown").setup({ file_types = { "markdown", "Avante" } })
+          end,
+        },
+      },
     },
-    config = function()
-      require("dapconfig").setup()
-    end,
-  }
-end)
+
+    -- Debugging (nvim-dap)
+    {
+      "mfussenegger/nvim-dap",
+      lazy = true,
+      event = "BufReadPre",
+      module = { "dap" },
+      dependencies = {
+        "jbyuki/one-small-step-for-vimkind",
+        "0000marcell/nvim-dap-ruby",
+        "leoluz/nvim-dap-go",
+        "mfussenegger/nvim-dap-python",
+        "theHamsta/nvim-dap-virtual-text",
+        "rcarriga/nvim-dap-ui",
+        "nvim-neotest/nvim-nio",
+        "nvim-telescope/telescope-dap.nvim",
+      },
+      config = function()
+        require("dapconfig").setup()
+      end,
+    },
+  },
+  -- Configure any other settings here. See the documentation for more details.
+  -- colorscheme that will be used when installing plugins.
+  install = { colorscheme = { "habamax" } },
+  -- automatically check for plugin updates
+  checker = { enabled = false },
+})
+
+

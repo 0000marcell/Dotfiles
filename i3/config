@@ -12,6 +12,8 @@
 set $mod Mod4
 set $term st
 
+default_orientation horizontal
+
 # open browser 
 bindsym $mod+Shift+q exec togglescreenkey 
 
@@ -152,6 +154,8 @@ bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
+
+workspace_layout stacking
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking

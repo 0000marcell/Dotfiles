@@ -9,7 +9,7 @@ function M.capitalize()
 end
 
 function M.setup()
-  vim.keymap.set("n", "<leader>ac", M.capitalize, { silent = true })
+  vim.keymap.set("n", "<space>ac", M.capitalize, { silent = true })
 end
 
 return M

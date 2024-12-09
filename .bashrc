@@ -1,3 +1,5 @@
+source $HOME/new_secrets.sh
+
 export PS1='\[\e]0;\w\a\]\[\033[01;34m\]\W\[\033[00m\]\$ '
 
 #export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]:\[\033[01;31m\]\!$(git branch 2>/dev/null | grep '^*' | colrm 1 2)\$ '
@@ -132,6 +134,8 @@ export PATH="$PATH:$HOME/ghp/mastering-python/cli-exercices-app/bin"
 
 SYSTEMD_EDITOR="nvim"
 
+THOR_SILENCE_DEPRECATION=true
+
 # py env
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
@@ -161,3 +165,5 @@ RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 #eval "$(atuin init bash)"
 
 
+
+[ -f "/home/mmc/.ghcup/env" ] && . "/home/mmc/.ghcup/env" # ghcup-env
