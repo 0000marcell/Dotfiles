@@ -1,7 +1,7 @@
 local M = {}
 
 -- Constants for resize amount
-local RESIZE_AMOUNT = 15
+local RESIZE_AMOUNT = 40
 
 function M.resize_panel(direction)
     -- Get the current window number
