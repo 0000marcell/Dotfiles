@@ -467,13 +467,14 @@
   "get": {
     "prefix": "get",
     "body": [
-      "require 'httparty'",
-      "        response = HTTParty.get('https://jsonplaceholder.typicode.com/posts')",
-      "        if response.code == 200",
-      "          puts \"Response body: #{response.body}\"",
-      "        else",
-      "          puts \"HTTP Request failed with code: #{response.code}\"",
-      "        end"
+      "require 'net/http'",
+      "",
+      "uri = URI.parse(${1})",
+      "http = Net::HTTP.new(uri.host, uri.port)",
+      "http.use_ssl = (uri.scheme == 'https')",
+      "request = Net::HTTP::Get.new(uri.path)",
+      "response = http.request(request)",
+      "${2}"
     ]
   },
   "post": {
@@ -519,6 +520,37 @@
     "body": [
       "${1}_mock = Minitest::Mock.new",
       "${1}_mock.expect(:${2: key}, ${3: return_value}, ${4: parameters})"
+    ]
+  },
+  "ser": {
+    "prefix": "ser",
+    "body": [
+      "require 'socket'",
+      "",
+      "server = TCPServer.new(${1}, ${2})",
+      "",
+      "loop do",
+      "  client = server.accept",
+      "  request_line = client.gets",
+      "  next if request_line.empty?",
+      "  _, path = request_line.split",
+      "",
+      "  response = if path == ${3}",
+      "    ${4}  ",
+      "  else",
+      "    ${5}",
+      "  end",
+      "  puts response",
+      "",
+      "  headers = [",
+      "    'HTTP/1.1 200 OK',",
+      "    'Content-Type: text/html'",
+      "  ]",
+      "  client.puts headers.join(\"\\r\\n\")",
+      "  client.puts \"\\r\\n\"",
+      "  client.puts response",
+      "  client.close",
+      "end"
     ]
   }
 }

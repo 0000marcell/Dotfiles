@@ -467,13 +467,14 @@
   "get": {
     "prefix": "get",
     "body": [
-      "require 'httparty'",
-      "        response = HTTParty.get('https://jsonplaceholder.typicode.com/posts')",
-      "        if response.code == 200",
-      "          puts \"Response body: #{response.body}\"",
-      "        else",
-      "          puts \"HTTP Request failed with code: #{response.code}\"",
-      "        end"
+      "require 'net/http'",
+      "",
+      "uri = URI.parse(${1})",
+      "http = Net::HTTP.new(uri.host, uri.port)",
+      "http.use_ssl = (uri.scheme == 'https')",
+      "request = Net::HTTP::Get.new(uri.path)",
+      "response = http.request(request)",
+      "${2}"
     ]
   },
   "post": {
@@ -512,6 +513,13 @@
     "body": [
       "${1: class}.stub :${2: method}, ${3: response} do",
       "end"
+    ]
+  },
+  "mmock": {
+    "prefix": "mmock",
+    "body": [
+      "${1}_mock = Minitest::Mock.new",
+      "${1}_mock.expect(:${2: key}, ${3: return_value}, ${4: parameters})"
     ]
   }
 }
