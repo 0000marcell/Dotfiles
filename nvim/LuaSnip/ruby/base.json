@@ -568,5 +568,53 @@
       "  ${3:}",
       "end"
     ]
+  },
+  "dbconnect": {
+    "prefix": "dbconnect",
+    "body": [
+      "require 'pg'",
+      "",
+      "config = {",
+      "  host: 'localhost',",
+      "  port: 5432,",
+      "  user: 'postgres',",
+      "  password: 'password',",
+      "  dbname: 'test'",
+      "}",
+      "",
+      "conn = PG.connect(config)",
+      "conn.exec(\"select * from users\")",
+      "conn&.close"
+    ]
+  },
+  "server": {
+    "prefix": "server",
+    "body": [
+      "require 'socket'",
+      "",
+      "server = TCPServer.new('localhost', 9090)",
+      "",
+      "loop do",
+      "  client = server.accept",
+      "  request_string = client.gets",
+      "  next unless request_string",
+      "  method, path = request_string.split",
+      "  response = if path == '/get'",
+      "             'get'",
+      "           else",
+      "             '404'",
+      "           end",
+      "",
+      "  headers = [",
+      "    'HTTP/1.1 400',",
+      "    'Content-Type: text/html'",
+      "  ]",
+      "",
+      "  client.puts headers.join(\"\\r\\n\")",
+      "  client.puts \"\\r\\n\"",
+      "  client.puts response",
+      "  client.close",
+      "end"
+    ]
   }
 }

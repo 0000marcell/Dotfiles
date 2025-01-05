@@ -560,5 +560,31 @@
       "  ${2:}",
       "end"
     ]
+  },
+  "each": {
+    "prefix": "each",
+    "body": [
+      "${1:}.each do |${2:}|",
+      "  ${3:}",
+      "end"
+    ]
+  },
+  "dbconnect": {
+    "prefix": "dbconnect",
+    "body": [
+      "require 'pg'",
+      "",
+      "config = {",
+      "  host: 'localhost',",
+      "  port: 5432,",
+      "  user: 'postgres',",
+      "  password: 'password',",
+      "  dbname: 'test'",
+      "}",
+      "",
+      "conn = PG.connect(config)",
+      "conn.exec(\"select * from users\")",
+      "conn&.close"
+    ]
   }
 }
