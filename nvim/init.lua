@@ -133,12 +133,12 @@ require("lazy").setup({
     { "neovimhaskell/haskell-vim" },
 
     -- GitHub Copilot
-    { "github/copilot.vim" },
+    -- { "github/copilot.vim" },
 
     -- LSP and Completion
-    { "neovim/nvim-lspconfig" },
-    { "hrsh7th/nvim-cmp" },
-    { "hrsh7th/cmp-nvim-lsp" },
+    -- { "neovim/nvim-lspconfig" },
+    -- { "hrsh7th/nvim-cmp" },
+    -- { "hrsh7th/cmp-nvim-lsp" },
     { "L3MON4D3/LuaSnip" },
 
     -- Text Manipulation

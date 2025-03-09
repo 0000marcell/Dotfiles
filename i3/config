@@ -108,9 +108,6 @@ bindsym $mod+t exec $term -e bash -c 'nvim /home/mmc/tmp'
 # pavucontrol
 bindsym $mod+Shift+p exec pavucontrol
 
-# pricing
-bindsym $mod+Shift+d exec $term -e bash -c 'cd /home/mmc/Decisiv/pricing && nvim .'
-
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
@@ -146,8 +143,9 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-bindsym $mod+Shift+i split h
+# adjust brightness
+bindsym $mod+Shift+i exec "ruby /home/mmc/scripts/adjust_brightness.rb increase"
+bindsym $mod+Shift+d exec "ruby /home/mmc/scripts/adjust_brightness.rb decrease"
 
 # split in vertical orientation
 bindsym $mod+v split v
