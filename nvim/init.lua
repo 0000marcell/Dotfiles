@@ -218,7 +218,10 @@ require("lazy").setup({
       build = "make",
       config = function()
         require("avante").setup({
-          provider='copilot'
+          provider='copilot',
+          windows = {
+            width = 80,
+          },
         })
       end,
       dependencies = {
