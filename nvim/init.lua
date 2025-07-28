@@ -77,8 +77,10 @@ vim.keymap.set("n", "<C-b>", '<cmd>lua MMCExecFile()<CR>')
 vim.g["NERDTreeShowHidden"] = 1
 vim.keymap.set("v", "<Tab>", ">gv")
 vim.keymap.set("v", "<S-Tab>", "<gv")
+vim.keymap.set("n", "J", "<C-d>")
+vim.keymap.set("n", "K", "<C-b>")
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+-- vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Bootstrap lazy.nvim
@@ -189,6 +191,22 @@ require("lazy").setup({
         require("telescope").setup({
           defaults = {
             file_ignore_patterns = { "node_modules" },
+            layout_strategy = "horizontal",
+            layout_config = {
+              horizontal = {
+                prompt_position = "top",
+                preview_width = 0.6,
+              },
+              vertical = {
+                preview_height = 0.5,
+              },
+              -- Enable this to show the preview at the bottom
+              bottom_pane = {
+                height = 0.4,
+                preview_cutoff = 120,
+              },
+            },
+            sorting_strategy = "ascending",
           },
         })
         require("telescope").load_extension("live_grep_args")
