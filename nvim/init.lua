@@ -191,20 +191,19 @@ require("lazy").setup({
         require("telescope").setup({
           defaults = {
             file_ignore_patterns = { "node_modules" },
-            layout_strategy = "horizontal",
+            layout_strategy = "vertical",
             layout_config = {
-              horizontal = {
-                prompt_position = "top",
-                preview_width = 0.6,
-              },
-              vertical = {
-                preview_height = 0.5,
-              },
-              -- Enable this to show the preview at the bottom
               bottom_pane = {
-                height = 0.4,
+                height = 0.1,
                 preview_cutoff = 120,
               },
+              -- horizontal = {
+              --   prompt_position = "top",
+              --   preview_width = 0.8,
+              -- },
+              -- vertical = {
+              --   preview_height = 0.7,
+              -- },
             },
             sorting_strategy = "ascending",
           },
