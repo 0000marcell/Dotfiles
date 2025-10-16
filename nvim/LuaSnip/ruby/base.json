@@ -561,7 +561,7 @@
       "end"
     ]
   },
-  "each": {
+  "e": {
     "prefix": "each",
     "body": [
       "${1:}.each do |${2:}|",
@@ -614,6 +614,14 @@
       "  client.puts \"\\r\\n\"",
       "  client.puts response",
       "  client.close",
+      "end"
+    ]
+  },
+  "map": {
+    "prefix": "map",
+    "body": [
+      "${1:}.map do |${2:}",
+      "  ${3:}",
       "end"
     ]
   }
