@@ -25,6 +25,9 @@ export GPG_TTY=$(tty)
 
 export BROWSER="brave"
 
+# Avante Zen Mode
+alias avante='nvim -c "lua vim.defer_fn(function()require(\"avante.api\").zen_mode()end, 100)"'
+
 # System Maintainence
 alias mw="~/.config/mutt/mutt-wizard.sh"
 alias muttwizard="~/.config/mutt/mutt-wizard.sh"
