@@ -103,7 +103,7 @@ bindsym $mod+q kill
 bindsym $mod+p exec togglekb
 
 # open tmp file
-bindsym $mod+t exec $term -e bash -c 'nvim /home/mmc/tmp'
+bindsym $mod+t exec $term -e bash -c 'nvim /home/mmc/tmp.md'
 
 # pavucontrol
 bindsym $mod+Shift+p exec pavucontrol

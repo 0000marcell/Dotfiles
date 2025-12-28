@@ -237,7 +237,7 @@ require("lazy").setup({
         require("avante").setup({
           provider='copilot',
           windows = {
-            width = 50,
+            width = 100,
           },
         })
       end,
