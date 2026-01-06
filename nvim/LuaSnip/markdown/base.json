@@ -8,16 +8,28 @@
       "```"
     ]
   },
-  "mermaid node": {
-    "prefix": "ma",
+  "mermaid connection": {
+    "prefix": "mc",
     "body": [
-      "${1:}[${2:}] -->|${3:}| ${4:}[${5:}]"
+      "${1:}[${2:}] --> ${3:}[${4:}]"
     ]
   },
   "mermaid detail": {
     "prefix": "md",
     "body": [
       "|${1:}|"
+    ]
+  },
+  "mermaid arrow": {
+    "prefix": "ma",
+    "body": [
+      "-->"
+    ]
+  },
+  "mermaid node": {
+    "prefix": "mn",
+    "body": [
+      "${1:} --> ${2:}[${3:}]"
     ]
   },
   "table": {
