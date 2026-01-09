@@ -123,7 +123,7 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # obsidian 
-bindsym $mod+Shift+o exec $term -e bash -c 'cd /home/mmc/Dropbox/obsidian-vaults/current && nvim .'
+bindsym $mod+Shift+o exec $term -e bash -c 'nvim /home/mmc/Obsidian-Vaults/current/Active.md'
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left

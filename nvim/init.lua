@@ -218,7 +218,7 @@ require("lazy").setup({
       config = function()
         require("obsidian").setup({
           workspaces = {
-            { name = "Current", path = "/home/mmc/Dropbox/obsidian-vaults/current" },
+            { name = "Current", path = "/home/mmc/Obsidian-Vaults/current" },
             { name = "Old", path = "/home/mmc/Dropbox/obsidian-vaults/old" },
           },
           follow_url_func = function(url)
