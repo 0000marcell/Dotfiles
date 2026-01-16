@@ -1,6 +1,6 @@
 {
   "before": {
-    "prefix": "before",
+    "prefix": "rbe",
     "body": [
       "before do",
       "end"
@@ -8,14 +8,14 @@
     "description": "before"
   },
   "let": {
-    "prefix": "let",
+    "prefix": "rl",
     "body": [
-      "let(:context) { double }"
+      "let(:${1:}) { ${2:} }"
     ],
     "description": "let"
   },
   "struct": {
-    "prefix": "struct",
+    "prefix": "rs",
     "body": [
       "authentication = Struct.new(:param1, :param2) do",
       "      def success?",
@@ -35,7 +35,7 @@
   },
   "begin rescue": {
     "prefix": [
-      "beg",
+      "rb",
       "begin"
     ],
     "body": [
@@ -47,7 +47,7 @@
     "description": "begin and rescue"
   },
   "write": {
-    "prefix": "write",
+    "prefix": "rw",
     "body": [
       "File.open(snippet_path, 'w') do |file|",
       "  file.write(JSON.generate(parsed_data))",
@@ -55,14 +55,14 @@
     ]
   },
   "input": {
-    "prefix": "input",
+    "prefix": "ri",
     "body": [
       "puts \"Language you want to create the snippet for:\"",
       "language_name = gets.chomp"
     ]
   },
   "csvread": {
-    "prefix": "csvread",
+    "prefix": "rcr",
     "body": [
       "require 'csv'",
       "",
@@ -74,7 +74,7 @@
     ]
   },
   "read": {
-    "prefix": "read",
+    "prefix": "rr",
     "body": [
       "file_path = 'path/to/your/example.txt'",
       "lines_array = File.readlines(file_path, chomp: true)",
@@ -83,28 +83,14 @@
       "end"
     ]
   },
-  "around": {
-    "prefix": "around",
-    "body": [
-      "around do |example|",
-      "    ENV['SERVICE_PROVIDER_ID'] = service_provider.id",
-      "    ENV['CUSTOMER_CSV_FILE'] = \"spec/fixtures/data/elsa_customer_file.csv\"",
-      "    ENV['DECISIV_USERNAME'] = user.username",
-      "    example.run",
-      "    ENV.delete('SERVICE_PROVIDER_ID')",
-      "    ENV.delete('CUSTOMER_CSV_FILE')",
-      "    ENV.delete('DECISIV_USERNAME')",
-      "  end"
-    ]
-  },
   "expect": {
-    "prefix": "expect",
+    "prefix": "re",
     "body": [
       "expect(1).to eq(1)"
     ]
   },
   "query": {
-    "prefix": "query",
+    "prefix": "rq",
     "body": [
       "ActiveRecord::Base.connection.exec_query(%Q{select * from ..})"
     ]
@@ -116,50 +102,50 @@
     ]
   },
   "rget": {
-    "prefix": "rget",
+    "prefix": "rg",
     "body": [
       "get '/${1}', to: '${2}#${3}'"
     ]
   },
   "rput": {
-    "prefix": "rput",
+    "prefix": "rp",
     "body": [
       "put '/${1}/:id', to: '${2}#${3}'"
     ]
   },
   "rpost": {
-    "prefix": "rpost",
+    "prefix": "rp",
     "body": [
       "post '/${1}', to: '${2}#${3}'"
     ]
   },
   "rdelete": {
-    "prefix": "rdelete",
+    "prefix": "rde",
     "body": [
       "delete '/${1}', to: ${2}#${3}"
     ]
   },
   "deletefile": {
-    "prefix": "deletefile",
+    "prefix": "rd",
     "body": [
       "File.delete('./duplicates_test')"
     ]
   },
   "jsonread": {
-    "prefix": "jsonread",
+    "prefix": "rjr",
     "body": [
       "require 'json'",
       "parsed = JSON.parse(File.read(file_path))"
     ]
   },
   "redirect": {
-    "prefix": "redirect",
+    "prefix": "rre",
     "body": [
       "redirect_to ${1:todos_path}, alert: \"Not authorized to edit this todo\""
     ]
   },
   "format": {
-    "prefix": "format",
+    "prefix": "rfo",
     "body": [
       "format.${1:} do",
       "  ${2:}",
@@ -167,7 +153,7 @@
     ]
   },
   "respond": {
-    "prefix": "respond",
+    "prefix": "rres",
     "body": [
       "respond_to do |format|",
       "  ${1:}",
@@ -175,7 +161,7 @@
     ]
   },
   "test": {
-    "prefix": "test",
+    "prefix": "rt",
     "body": [
       "require 'rails_helper'",
       "",
@@ -207,7 +193,7 @@
     ]
   },
   "db": {
-    "prefix": "db",
+    "prefix": "rdb",
     "body": [
       "require 'pg'",
       "",
@@ -614,6 +600,51 @@
       "  client.puts \"\\r\\n\"",
       "  client.puts response",
       "  client.close",
+      "end"
+    ]
+  },
+  "map": {
+    "prefix": "rma",
+    "body": [
+      "${1:}.map do |${2:}",
+      "  ${3:}",
+      "end"
+    ]
+  },
+  "rm": {
+    "prefix": "rm",
+    "body": [
+      "module ${1:}",
+      "  ${2:}",
+      "end"
+    ]
+  },
+  "rc": {
+    "prefix": "rc",
+    "body": [
+      "class ${1:}",
+      "  ${2:}",
+      "end"
+    ]
+  },
+  "rme": {
+    "prefix": "rme",
+    "body": [
+      "def ${1} ",
+      "end"
+    ]
+  },
+  "rar": {
+    "prefix": "rar",
+    "body": [
+      "attr_reader ${1:}"
+    ]
+  },
+  "rco": {
+    "prefix": "rco",
+    "body": [
+      "context '${1:}' do",
+      "  ${2:}",
       "end"
     ]
   }
