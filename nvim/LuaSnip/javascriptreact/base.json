@@ -15,20 +15,20 @@
     ]
   },
   "button": {
-    "prefix": "but",
+    "prefix": "jb",
     "body": [
-      "<button onClick={${1:handleClick}}>${2:clickme}</button>"
+      "<button onClick={${1:}}>${2:}</button>"
     ]
   },
   "form": {
-    "prefix": "form",
+    "prefix": "jf",
     "body": [
-      "<Form method=\"delete\" action={`/api/v1/users/${user.id}`}>",
+      "<Form method=\"${1:}\" action={`/api/v1/${2:}`}>",
       "</Form>"
     ]
   },
   "input": {
-    "prefix": "input",
+    "prefix": "ji",
     "body": [
       "<input",
       " placeholder=\"name\"",
@@ -589,6 +589,30 @@
       "  ${2}",
       "} else {",
       "  ${3}",
+      "}"
+    ]
+  },
+  "jco": {
+    "prefix": "jco",
+    "body": [
+      "import React from 'react';",
+      "",
+      "export default function ${1:}(${2:}) {",
+      "  ${3:}",
+      "}"
+    ]
+  },
+  "jim": {
+    "prefix": "jim",
+    "body": [
+      "import ${1:} from '${2:}';"
+    ]
+  },
+  "ja": {
+    "prefix": "ja",
+    "body": [
+      "(${1:}) => {",
+      "  ${2:}",
       "}"
     ]
   }
