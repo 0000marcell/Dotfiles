@@ -607,5 +607,33 @@
     "body": [
       "import ${1:} from '${2:}';"
     ]
+  },
+  "ja": {
+    "prefix": "ja",
+    "body": [
+      "(${1:}) => {",
+      "  ${2:}",
+      "}"
+    ]
+  },
+  "ju": {
+    "prefix": "ju",
+    "body": [
+      "const [${1:}, ${2:}] = useState(${3:});"
+    ]
+  },
+  "jue": {
+    "prefix": "jue",
+    "body": [
+      "useEffect(() => {",
+      "  ${1:}",
+      "}, [${2:}]);"
+    ]
+  },
+  "jg": {
+    "prefix": "jg",
+    "body": [
+      "get(${1: data}, ${2: path}, ${3: fallback})"
+    ]
   }
 }

@@ -218,5 +218,11 @@
     "body": [
       "/* eslint-disable */"
     ]
+  },
+  "ka": {
+    "prefix": "ka",
+    "body": [
+      "<Alert intent=\"${1:information|success|warning}\" title=\"${2}\" />"
+    ]
   }
 }

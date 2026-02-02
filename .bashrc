@@ -1,10 +1,4 @@
-rm -rf /home/mmc/Decisiv/pricing/case-ui-components/src/lib/Calendar/TechnicianPanelButton.js
-rm -rf /home/mmc/Decisiv/pricing/case-ui-components/src/lib/Calendar/TechnicianPanel.js
-rm -rf /home/mmc/Decisiv/pricing/case-ui-components/src/lib/Calendar/getTechnicianPanelData.js
-rm -rf /home/mmc/Decisiv/pricing/app/service/calendar/get_technician_panel_data.rb
-rm -rf /home/mmc/Decisiv/pricing/app/service/calendar/adapters/create.rb
-rm -rf /home/mmc/Decisiv/pricing/app/service/calendar/adapters/iqmotive/get_technician_data.rb
-rm -rf /home/mmc/Decisiv/pricing/app/models/calendar_adapter_config.rb
+THOR_SILENCE_DEPRECATION=true
 
 source $HOME/new_secrets.sh
 
