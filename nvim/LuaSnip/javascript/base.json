@@ -232,5 +232,11 @@
       "  ${2:}",
       "}"
     ]
+  },
+  "jin": {
+    "prefix": "jin",
+    "body": [
+      "// eslint-disable-next-line"
+    ]
   }
 }

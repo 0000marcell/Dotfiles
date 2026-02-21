@@ -1,6 +1,8 @@
 THOR_SILENCE_DEPRECATION=true
 
-source $HOME/new_secrets.sh
+# set -a
+# source $HOME/new_secrets.sh
+# set +a
 
 export PS1='\[\e]0;\w\a\]\[\033[01;34m\]\W\[\033[00m\]\$ '
 
@@ -141,6 +143,7 @@ SYSTEMD_EDITOR="nvim"
 
 THOR_SILENCE_DEPRECATION=true
 
+
 # py env
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
@@ -172,3 +175,6 @@ RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 
 [ -f "/home/mmc/.ghcup/env" ] && . "/home/mmc/.ghcup/env" # ghcup-env
+
+# opencode
+export PATH=/home/mmc/.opencode/bin:$PATH
