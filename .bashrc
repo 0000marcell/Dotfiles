@@ -178,3 +178,5 @@ RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 # opencode
 export PATH=/home/mmc/.opencode/bin:$PATH
+
+export ANTHROPIC_API_KEY=""
