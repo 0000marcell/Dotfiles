@@ -1,7 +1,7 @@
 THOR_SILENCE_DEPRECATION=true
 
 # set -a
-# source $HOME/new_secrets.sh
+source $HOME/new_secrets.sh
 # set +a
 
 export PS1='\[\e]0;\w\a\]\[\033[01;34m\]\W\[\033[00m\]\$ '
@@ -62,7 +62,7 @@ alias yta="yt -x -f bestaudio/best" # Download only audio
 alias YT="youtube-viewer"
 
 shdl() { curl -O $(curl -s http://sci-hub.tw/"$@" | grep location.href | grep -o http.*pdf) ;}
-vf() { $EDITOR $(fzf) ;}
+# vf() { $EDITOR $(fzf) ;}
 source /home/mmc/.shortcuts
 
 source /home/mmc/.functions
@@ -140,6 +140,7 @@ export PATH="$PATH:$HOME/ghp/mastering-python/cli-exercices-app/bin"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 SYSTEMD_EDITOR="nvim"
+export EDITOR='nvim'
 
 THOR_SILENCE_DEPRECATION=true
 
@@ -169,14 +170,8 @@ fi
 
 RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
-[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
-#eval "$(atuin init bash)"
-
-
-
 [ -f "/home/mmc/.ghcup/env" ] && . "/home/mmc/.ghcup/env" # ghcup-env
 
-# opencode
 export PATH=/home/mmc/.opencode/bin:$PATH
 
-export ANTHROPIC_API_KEY=""
+[ -r ~/.config/shell/docker-env.sh ] && source ~/.config/shell/docker-env.sh

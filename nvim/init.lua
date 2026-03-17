@@ -153,11 +153,11 @@ require("lazy").setup({
           ruby = {'rubocop'},
           -- Add more file types and linters as needed
         }
-        vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-          callback = function()
-            require("lint").try_lint()
-          end,
-        })
+        -- vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+        --   callback = function()
+        --     require("lint").try_lint()
+        --   end,
+        -- })
       end,
     },
 

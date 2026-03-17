@@ -2,13 +2,12 @@ local harpoon = require("harpoon")
 
 -- REQUIRED
 require("harpoon").setup({
-    menu = {
-        width = vim.api.nvim_win_get_width(0) - 20,
-        formatter = function(mark)
-            -- Extract the file name from the full path
-            return vim.fn.fnamemodify(mark.filename, ":t")
+    default = {
+        display = function(list_item)
+            -- Extract just the filename from the full path
+            return vim.fn.fnamemodify(list_item.value, ":t")
         end,
-    }
+    },
 })
 -- REQUIRED
 
