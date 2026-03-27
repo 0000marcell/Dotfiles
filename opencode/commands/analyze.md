@@ -1,0 +1,1 @@
+/home/mmc/ghp/opencode-extras/commands/analyze.md

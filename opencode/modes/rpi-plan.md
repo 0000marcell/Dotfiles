@@ -1,0 +1,1 @@
+/home/mmc/ghp/opencode-extras/modes/rpi-plan.md
