@@ -1,7 +1,7 @@
 local M = {}
 
 function M.setup()
-  -- require("mmc.remap").setup()
+  require("mmc.remap").setup()
   -- require("mmc.set").setup()
   -- require("mmc.openproject")
   -- require("mmc.openprojectfile")
