@@ -4,9 +4,12 @@ THOR_SILENCE_DEPRECATION=true
 source $HOME/new_secrets.sh
 # set +a
 
-export PS1='\[\e]0;\w\a\]\[\033[01;34m\]\W\[\033[00m\]\$ '
+# Function to get git branch name
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
 
-#export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]:\[\033[01;31m\]\!$(git branch 2>/dev/null | grep '^*' | colrm 1 2)\$ '
+export PS1='\[\e]0;\w\a\]\[\033[01;34m\]\W\[\033[00m\]\[\033[01;32m\]$(parse_git_branch)\[\033[00m\]\$ '
 
 #mmc 
 # use single tap to click
@@ -175,3 +178,4 @@ RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 export PATH=/home/mmc/.opencode/bin:$PATH
 
 [ -r ~/.config/shell/docker-env.sh ] && source ~/.config/shell/docker-env.sh
+export PATH="/opt/crystal/bin:$PATH"

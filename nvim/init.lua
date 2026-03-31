@@ -208,7 +208,7 @@ require("lazy").setup({
       config = function()
         require("telescope").setup({
           defaults = {
-            file_ignore_patterns = { "node_modules" },
+            file_ignore_patterns = { "node_modules", "tags" },
             layout_strategy = "vertical",
             layout_config = {
               bottom_pane = {
