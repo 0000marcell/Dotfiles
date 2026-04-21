@@ -236,8 +236,7 @@ require("lazy").setup({
       config = function()
         require("obsidian").setup({
           workspaces = {
-            { name = "Current", path = "/home/mmc/Obsidian-Vaults/current" },
-            { name = "Old", path = "/home/mmc/Dropbox/obsidian-vaults/old" },
+            { name = "Current", path = "/home/mmc/obsidian-vault-new" },
           },
           follow_url_func = function(url)
             vim.fn.jobstart({ "xdg-open", url }) -- Linux
