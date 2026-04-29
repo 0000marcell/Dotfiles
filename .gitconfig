@@ -1,0 +1,13 @@
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+[pull]
+	rebase = true
+[init]
+	defaultBranch = master
+# Add your user info:
+# [user]
+# 	name = Your Name
+# 	email = your@email.com
