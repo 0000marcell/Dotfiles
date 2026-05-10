@@ -3,7 +3,11 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        herb_ls = {},
+        herb_ls = {
+          init_options = {
+            formatter = "auto",
+          },
+        },
       },
     },
   },
