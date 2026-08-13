@@ -45,3 +45,19 @@ vim.keymap.set("n", "<leader>go", function()
   local url = string.format("%s/blob/%s/%s#L%d", github_url, branch, rel_path, line)
   vim.ui.open(url)
 end, { desc = "Open file on GitHub" })
+
+-- Show keymap definition in a new buffer
+local function show_keymap(keymap)
+  local output = vim.fn.execute("map " .. keymap)
+  local tmpfile = vim.fn.tempname()
+  local file = io.open(tmpfile, "w")
+  if file then
+    file:write(output)
+    file:close()
+    vim.cmd("split " .. tmpfile)
+  end
+end
+
+vim.api.nvim_create_user_command("ShowKeymap", function(opts)
+  show_keymap(opts.args)
+end, { nargs = 1, desc = "Show keymap definition in new buffer" })
