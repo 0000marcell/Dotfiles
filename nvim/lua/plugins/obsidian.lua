@@ -26,5 +26,16 @@ return {
         path = "~/Main-01-2026/",
       },
     },
+    ui = {
+      enable = true,
+      checkboxes = {},
+      bullets = {},
+      external_link_icon = {},
+      reference_text = {},
+      highlight_text = {},
+      tags = {},
+      block_ids = {},
+      hl_groups = {},
+    },
   },
 }

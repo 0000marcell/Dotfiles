@@ -31,9 +31,12 @@
 -- Close window with Super+Q instead of Super+W
 hl.unbind("SUPER + W")
 o.bind("SUPER + Q", "Close window", hl.dsp.window.close())
+o.bind("SUPER + W", "Browser", "brave")
 
 -- Vim-style window navigation (hjkl)
 hl.unbind("SUPER + L")  -- was "Toggle workspace layout"
+hl.unbind("SUPER + K")  -- was "Keybindings"
+hl.unbind("SUPER + J")  -- was "Toggle window split"
 o.bind("SUPER + H", "Focus on left window", hl.dsp.focus({ direction = "l" }))
 o.bind("SUPER + L", "Focus on right window", hl.dsp.focus({ direction = "r" }))
 o.bind("SUPER + K", "Focus on above window", hl.dsp.focus({ direction = "u" }))

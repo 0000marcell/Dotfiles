@@ -1,4 +1,7 @@
 
+# Font size
+font-size = 14
+
 # Slowdown mouse scrolling
 mouse-scroll-multiplier = 0.95
 
