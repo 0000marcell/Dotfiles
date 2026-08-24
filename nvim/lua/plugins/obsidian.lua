@@ -26,9 +26,21 @@ return {
         path = "~/Main-01-2026/",
       },
     },
+    mappings = {
+      -- Toggle check-boxes with Enter in normal mode
+      ["<cr>"] = {
+        action = function()
+          return require("obsidian").util.smart_action()
+        end,
+        opts = { buffer = true, expr = true },
+      },
+    },
     ui = {
       enable = true,
-      checkboxes = {},
+      checkboxes = {
+        [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
+        ["x"] = { char = "", hl_group = "ObsidianDone" },
+      },
       bullets = {},
       external_link_icon = {},
       reference_text = {},
