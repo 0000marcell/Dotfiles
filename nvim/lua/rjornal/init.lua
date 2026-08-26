@@ -151,92 +151,112 @@ function M.run_prompt()
   end
 
   local file_path = vim.fn.expand("%:p")
-  local cmd = string.format("rjornal prompt '%s'", file_path)
+  local file_dir = vim.fn.fnamemodify(file_path, ":h")
   local buf = vim.api.nvim_get_current_buf()
-  local line = vim.api.nvim_win_get_cursor(0)[1] - 1
+  local line = vim.api.nvim_win_get_cursor(0)[1]
 
-  local messages = {
-    "Running prompt...",
-    "Sending to AI...",
-    "Waiting for response...",
-    "Processing...",
-    "Generating output...",
-    "Almost there...",
-    "Still working...",
-    "Thinking deeply...",
-    "Crafting response...",
-  }
-  local message_index = 1
-  local message_timer = nil
-  local stdout_lines = {}
-  local output_ns = vim.api.nvim_create_namespace("rjornal_output")
+  -- Create prompts directory if it doesn't exist
+  local prompts_dir = file_dir .. "/prompts"
+  vim.fn.mkdir(prompts_dir, "p")
 
-  local function update_output()
-    vim.api.nvim_buf_clear_namespace(buf, output_ns, 0, -1)
-    if #stdout_lines > 0 then
-      local virt_lines = {}
-      for _, l in ipairs(stdout_lines) do
-        table.insert(virt_lines, { { l, "Comment" } })
-      end
-      vim.api.nvim_buf_set_extmark(buf, output_ns, line, 0, {
-        virt_lines = virt_lines,
-        virt_lines_above = false,
-      })
-    end
+  -- Generate output file name with date and descriptive name
+  local date_str = os.date("%Y-%m-%d")
+  local time_str = os.date("%H%M%S")
+  local output_file = string.format("%s/prompt-output-%s-%s.md", prompts_dir, date_str, time_str)
+
+  -- Create the output file
+  local f = io.open(output_file, "w")
+  if f then
+    f:close()
   end
 
-  -- Start with first message
-  start_loading(buf, line, messages[1])
+  local cmd = string.format("rjornal prompt '%s:%d' '%s'", file_path, line, output_file)
+  line = line - 1
 
-  -- Rotate messages every 3 seconds
-  message_timer = vim.loop.new_timer()
-  message_timer:start(3000, 3000, vim.schedule_wrap(function()
-    message_index = (message_index % #messages) + 1
-    -- Update the loading message by restarting with new text
-    stop_loading(buf)
-    start_loading(buf, line, messages[message_index])
+  start_loading(buf, line, "Running prompt...")
+
+  -- Open the output file in a new buffer (read-only, auto-reload)
+  vim.cmd("vsplit " .. output_file)
+  local output_buf = vim.api.nvim_get_current_buf()
+  vim.bo[output_buf].readonly = true
+  vim.bo[output_buf].modifiable = false
+
+  -- Set up auto-reload for the output buffer
+  local reload_timer = vim.loop.new_timer()
+  reload_timer:start(500, 500, vim.schedule_wrap(function()
+    if vim.api.nvim_buf_is_valid(output_buf) then
+      vim.bo[output_buf].readonly = false
+      vim.bo[output_buf].modifiable = true
+      vim.api.nvim_buf_call(output_buf, function()
+        vim.cmd("silent! checktime")
+      end)
+      vim.bo[output_buf].readonly = true
+      vim.bo[output_buf].modifiable = false
+    end
   end))
 
+  local stderr_output = {}
+  local stdout_output = {}
+
   vim.fn.jobstart(cmd, {
-    stdout_buffered = false,
-    on_stdout = function(_, data)
-      if data then
-        vim.schedule(function()
-          for _, l in ipairs(data) do
-            if l ~= "" then
-              table.insert(stdout_lines, l)
-              vim.api.nvim_echo({ { l, "Normal" } }, true, {})
-              -- Keep only last 10 lines
-              if #stdout_lines > 10 then
-                table.remove(stdout_lines, 1)
-              end
-            end
-          end
-          update_output()
-        end)
-      end
-    end,
     on_exit = function(_, exit_code)
       vim.schedule(function()
-        if message_timer then
-          message_timer:stop()
-          message_timer:close()
-        end
+        reload_timer:stop()
+        reload_timer:close()
         stop_loading(buf)
-        vim.api.nvim_buf_clear_namespace(buf, output_ns, 0, -1)
+        -- Final reload of output buffer
+        if vim.api.nvim_buf_is_valid(output_buf) then
+          vim.bo[output_buf].readonly = false
+          vim.bo[output_buf].modifiable = true
+          vim.api.nvim_buf_call(output_buf, function()
+            vim.cmd("silent! edit!")
+          end)
+          vim.bo[output_buf].readonly = true
+          vim.bo[output_buf].modifiable = false
+        end
+        -- Reload the original note buffer to pick up link changes
+        if vim.api.nvim_buf_is_valid(buf) then
+          vim.api.nvim_buf_call(buf, function()
+            vim.cmd("silent! edit!")
+          end)
+        end
         if exit_code == 0 then
-          vim.cmd("edit!")
-          vim.notify("Prompt executed successfully", vim.log.levels.INFO)
+          local success_msg = "Prompt executed successfully"
+          if #stderr_output > 0 then
+            success_msg = success_msg .. "\n" .. table.concat(stderr_output, "\n")
+          end
+          if #stdout_output > 0 then
+            success_msg = success_msg .. "\n" .. table.concat(stdout_output, "\n")
+          end
+          vim.notify(success_msg, vim.log.levels.INFO)
         else
-          vim.notify("Failed to execute prompt", vim.log.levels.ERROR)
+          local error_msg = "Failed to execute prompt (exit code: " .. exit_code .. ")"
+          if #stderr_output > 0 then
+            error_msg = error_msg .. "\nstderr: " .. table.concat(stderr_output, "\n")
+          end
+          if #stdout_output > 0 then
+            error_msg = error_msg .. "\nstdout: " .. table.concat(stdout_output, "\n")
+          end
+          vim.notify(error_msg, vim.log.levels.ERROR)
         end
       end)
     end,
     on_stderr = function(_, data)
-      if data and data[1] ~= "" then
-        vim.schedule(function()
-          vim.notify(table.concat(data, "\n"), vim.log.levels.ERROR)
-        end)
+      if data then
+        for _, line in ipairs(data) do
+          if line ~= "" then
+            table.insert(stderr_output, line)
+          end
+        end
+      end
+    end,
+    on_stdout = function(_, data)
+      if data then
+        for _, line in ipairs(data) do
+          if line ~= "" then
+            table.insert(stdout_output, line)
+          end
+        end
       end
     end,
   })

@@ -6,6 +6,14 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
+  init = function()
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = "markdown",
+      callback = function()
+        vim.opt_local.conceallevel = 2
+      end,
+    })
+  end,
   keys = {
     { "<leader>oo", "<cmd>ObsidianOpen<cr>", desc = "Open in Obsidian" },
     { "<leader>on", "<cmd>ObsidianNew<cr>", desc = "New note" },

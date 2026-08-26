@@ -51,3 +51,7 @@ o.bind("SUPER + SHIFT + H", "Swap window to the left", hl.dsp.window.swap({ dire
 o.bind("SUPER + SHIFT + L", "Swap window to the right", hl.dsp.window.swap({ direction = "r" }))
 o.bind("SUPER + SHIFT + K", "Swap window up", hl.dsp.window.swap({ direction = "u" }))
 o.bind("SUPER + SHIFT + J", "Swap window down", hl.dsp.window.swap({ direction = "d" }))
+
+-- Caps Lock (remapped to Super) + Tab for previous workspace
+hl.unbind("SUPER + TAB")  -- was: Next workspace
+o.bind("SUPER + TAB", "Previous workspace", hl.dsp.focus({ workspace = "e-1" }))
