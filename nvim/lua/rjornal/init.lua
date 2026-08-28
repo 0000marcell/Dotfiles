@@ -44,28 +44,6 @@ local function is_in_prompt_block()
   return false
 end
 
-local function is_in_code_prompt_block()
-  local cursor_line = vim.api.nvim_win_get_cursor(0)[1]
-  local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
-
-  local in_code_prompt = false
-  for i, line in ipairs(lines) do
-    if line:match("^```code%-prompt") then
-      in_code_prompt = true
-    elseif line:match("^```") and in_code_prompt then
-      if cursor_line >= i then
-        in_code_prompt = false
-      else
-        return true
-      end
-    end
-    if i == cursor_line and in_code_prompt then
-      return true
-    end
-  end
-  return false
-end
-
 local spinner_frames = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }
 local spinner_index = 1
 local spinner_timer = nil
@@ -303,8 +281,8 @@ function M.run_prompt()
 end
 
 function M.run_code_prompt()
-  if not is_in_code_prompt_block() then
-    vim.notify("Cursor is not in a code-prompt block", vim.log.levels.WARN)
+  if not is_in_prompt_block() then
+    vim.notify("Cursor is not in a prompt block", vim.log.levels.WARN)
     return
   end
 
