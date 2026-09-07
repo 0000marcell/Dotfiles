@@ -10,7 +10,7 @@ return {
     vim.api.nvim_create_autocmd("FileType", {
       pattern = "markdown",
       callback = function()
-        vim.opt_local.conceallevel = 2
+        vim.opt_local.conceallevel = 0
       end,
     })
   end,
@@ -34,6 +34,14 @@ return {
         path = "~/Main-01-2026/",
       },
     },
+    new_notes_location = "current_dir",
+    note_id_func = function(title)
+      return title
+    end,
+    note_path_func = function(spec)
+      local path = spec.dir / tostring(spec.id)
+      return path:with_suffix(".md")
+    end,
     mappings = {
       -- Toggle check-boxes with Enter in normal mode
       ["<cr>"] = {
@@ -44,7 +52,7 @@ return {
       },
     },
     ui = {
-      enable = true,
+      enable = false,
       checkboxes = {
         [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
         ["x"] = { char = "", hl_group = "ObsidianDone" },
