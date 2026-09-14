@@ -4,6 +4,10 @@ require("config.remote_clipboard").setup()
 -- Add any additional options here
 vim.opt.relativenumber = false
 
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.breakindent = true
+
 -- Use Vim's built-in Ruby indentation instead of treesitter's
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "ruby",

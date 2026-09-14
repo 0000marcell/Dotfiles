@@ -55,3 +55,7 @@ o.bind("SUPER + SHIFT + J", "Swap window down", hl.dsp.window.swap({ direction =
 -- Caps Lock (remapped to Super) + Tab for previous workspace
 hl.unbind("SUPER + TAB")  -- was: Next workspace
 o.bind("SUPER + TAB", "Previous workspace", hl.dsp.focus({ workspace = "e-1" }))
+
+-- Clipboard to ~/tmp.md, then edit in nvim
+hl.unbind("SUPER + T")  -- was: Toggle window floating/tiling
+o.bind("SUPER + T", "Clipboard to ~/tmp.md in nvim", { launch = "alacritty -e bash -c 'wl-paste > ~/tmp.md; nvim ~/tmp.md'" })
