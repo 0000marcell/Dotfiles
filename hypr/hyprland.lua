@@ -27,3 +27,8 @@ require("default.hypr.toggles")
 
 -- Add any other personal Hyprland configuration below.
 -- o.window("qemu", { workspace = "5" })
+
+-- Keep the Crush coding agent on its own workspace. It is launched by
+-- ~/scripts/omarchy-crush, which gives it this app-id so the window can be
+-- recognised the moment it opens, before the shell has set a title.
+o.window("^org\\.omarchy\\.crush$", { workspace = "3" })
