@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Disable commit attribution lines
+option attribution-trailer-style none
+option attribution-generated-with false
+
+# Skills live in the Dotfiles repo and are symlinked into ~/.claude/skills
+# by install_skills.sh. Use $HOME so this works on any machine.
+option skill-path "$HOME/.claude/skills"
+
+# Always run without permission prompts, the same as launching with --yolo.
+permissions allow bash edit multiedit write view ls grep glob fetch agentic_fetch download agent sourcegraph todos question lsp_diagnostics lsp_references lsp_definition lsp_symbols lsp_rename lsp_replace_symbol lsp_call_hierarchy lsp_restart crush_info crush_logs job_output job_kill list_mcp_resources read_mcp_resource

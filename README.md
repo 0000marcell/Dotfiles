@@ -2,25 +2,42 @@
 
 my dot files configuration
 
-## Skills
+## Crush
 
-My [Crush](https://github.com/charmbracelet/crush) / Claude skills live in
-[`skills/`](skills). Each folder is a skill with a `SKILL.md`.
+My [Crush](https://github.com/charmbracelet/crush) setup is fully versioned here:
 
-On this machine `~/.claude/skills/<name>` are symlinks pointing into this
-repo, so editing a skill here and running `~/ud` (or `git push`) uploads it.
+- [`crush/`](crush) — `crushrc` and `crush.json`, symlinked to `~/.config/crush`.
+- [`skills/`](skills) — one folder per skill, each symlinked into `~/.claude/skills`.
 
-### Installing the skills on a new computer
+No secrets live in this repo. `crush.json` only references environment variable
+names (e.g. `$FIGMA_API_KEY`); the actual values stay in your shell environment.
+Crush's local state (`~/.local/share/crush`: database, sessions, provider
+credentials) is machine-owned and deliberately not tracked.
+
+### Installing on a new computer
 
 ```sh
 git clone git@github.com:0000marcell/Dotfiles.git ~/Dotfiles
 cd ~/Dotfiles
+./install.sh         # links crush/ and the other app configs into ~/.config
+./install_skills.sh  # links every skill into ~/.claude/skills
+```
+
+Existing config folders are backed up as `<name>.backup`. Restart Crush / start
+a new session and the skills are loaded.
+
+### Adding a new skill
+
+Create it inside this repo so it gets pushed:
+
+```sh
+mkdir -p ~/Dotfiles/skills/<name>
+$EDITOR ~/Dotfiles/skills/<name>/SKILL.md
 ./install_skills.sh
 ```
 
-The script symlinks every skill in `skills/` into `~/.claude/skills/`
-(existing folders are backed up as `<name>.backup`). Restart Crush / start a
-new session and the skills are loaded.
+Then run `~/ud` to commit and push.
 
-To add a new skill: create `skills/<name>/SKILL.md`, symlink it into
-`~/.claude/skills` (or re-run `./install_skills.sh`), commit and push.
+> Never create a skill directly in `~/.claude/skills/` — it would be a real
+> folder instead of a symlink and would never reach this repo. Run
+> `./check_skills.sh` to detect any that drifted.

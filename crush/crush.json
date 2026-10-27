@@ -1,0 +1,19 @@
+{
+  "$schema": "https://charm.land/crush.json",
+  "models": {
+    "large": {
+      "model": "claude-sonnet-4.5",
+      "provider": "copilot"
+    }
+  },
+  "mcp": {
+    "figma": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "figma-developer-mcp", "--stdio"],
+      "env": {
+        "FIGMA_API_KEY": "$FIGMA_API_KEY"
+      }
+    }
+  }
+}
