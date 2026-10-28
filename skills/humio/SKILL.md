@@ -14,12 +14,21 @@ tool cannot run `curl`, so the gem is the only working path to the API.
 |---|---|
 | Gem location | `/home/mmc/rhumio` |
 | Helper script | `~/.claude/skills/humio/scripts/humio_query.rb` |
-| Credentials | `/home/mmc/rhumio/.env` (`HUMIO_URL`, `HUMIO_REPO`, `HUMIO_TOKEN`) |
+| Token | Fetched by running `HUMIO_TOKEN_COMMAND`, defaulting to the system keyring |
+| Other config | `/home/mmc/rhumio/.env` (`HUMIO_URL`, `HUMIO_REPO`) |
 | UI | `https://cloud.humio.com/decisiv/search` |
 
 Never print the token. If a query fails with `missing_token` or
-`authentication_error`, tell the user to refresh `.env` from
-`https://cloud.humio.com/settings/tokens`.
+`authentication_error`, the token needs replacing: get a new one from
+`https://cloud.humio.com/settings/tokens` and save it with
+
+```bash
+secret-tool store --label="Humio API token" service humio username default  # Linux
+security add-generic-password -s humio -a default -w -U                     # macOS
+```
+
+To read the token from a password manager instead, set `HUMIO_TOKEN_COMMAND`
+to a command that prints it, e.g. `pass show humio/api-token`.
 
 ## Running a query
 

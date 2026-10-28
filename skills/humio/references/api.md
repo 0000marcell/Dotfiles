@@ -25,13 +25,17 @@ end
 ## Construction
 
 ```ruby
-RHumio.new                                  # .env in cwd, then ENV, then defaults
+RHumio.new                                  # token command, then ENV, then .env
 RHumio.new(dotenv: "/home/mmc/rhumio/.env") # explicit env file
 RHumio.new(repository: "decisiv")           # override HUMIO_REPO
-RHumio.new(dotenv: nil, token: "...")       # ENV only
+RHumio.new(dotenv: nil, token: "...")       # explicit token
 ```
 
-Resolution order per setting: keyword argument, `ENV`, `.env`, default.
+Resolution order: keyword argument, then for the token the command in
+`HUMIO_TOKEN_COMMAND` (defaulting to `secret-tool` on Linux and `security` on
+macOS), then `ENV`, then `.env`, then defaults. The command runs before `ENV`
+is consulted so a stale exported `HUMIO_TOKEN` cannot shadow a rotated one.
+Only the first line of the command's output is used.
 
 ## Instance methods
 
@@ -82,7 +86,7 @@ Failures are `[type_symbol, message]` pairs.
 
 | Symbol | Meaning | Action |
 |---|---|---|
-| `:missing_token` | No token configured | Ask user to populate `.env` |
+| `:missing_token` | No token configured | Check the token command (see SKILL.md) |
 | `:missing_repository` | No repo given and no default | Pass `--repo` or set `HUMIO_REPO` |
 | `:authentication_error` | HTTP 401/403 | Token expired or lacks view access |
 | `:not_found` | HTTP 404 | Repository/view name is wrong |
