@@ -1,0 +1,61 @@
+return {}
+
+-- return {
+--   {
+--     "nvim-telescope/telescope.nvim",
+--     dependencies = { "nvim-lua/plenary.nvim" },
+--     cmd = "Telescope",
+--   },
+--   {
+--     dir = "/home/mmc/ruby_lsp/nvim/rcg.nvim",
+--     name = "rcg.nvim",
+--     dependencies = { "nvim-telescope/telescope.nvim" },
+--     cmd = "Rcg",
+--     ft = "ruby",
+--     keys = {
+--       {
+--         "<leader>cg",
+--         function()
+--           require("rcg").at()
+--         end,
+--         desc = "Call graph at cursor",
+--       },
+--       {
+--         "<leader>cG",
+--         function()
+--           require("rcg").callers()
+--         end,
+--         desc = "Call graph: callers of...",
+--       },
+--       {
+--         "<leader>cs",
+--         function()
+--           require("rcg").search()
+--         end,
+--         desc = "Call graph: search definitions",
+--       },
+--       {
+--         "<leader>ci",
+--         function()
+--           require("rcg").index()
+--         end,
+--         desc = "Call graph: index project",
+--       },
+--       {
+--         "<leader>cm",
+--         function()
+--           require("rcg").graph({ depth = 2 })
+--         end,
+--         desc = "Call graph: mermaid at cursor",
+--       },
+--     },
+--     opts = {
+--       server_executable = "/home/mmc/ruby_lsp/bin/rcg-server",
+--       theme = "ivy",
+--     },
+--     config = function(_, opts)
+--       require("rcg").setup(opts)
+--       pcall(require("telescope").load_extension, "rcg")
+--     end,
+--   },
+-- }

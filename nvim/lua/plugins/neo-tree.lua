@@ -1,5 +1,6 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
+  init = function() end,
   opts = {
     filesystem = {
       filtered_items = {

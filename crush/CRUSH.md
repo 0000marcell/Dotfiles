@@ -1,5 +1,21 @@
 # Global instructions
 
+## Response brevity
+
+Be direct and brief. Answer first, stop there.
+
+- Default to 1-3 lines of prose. Prefer a single sentence or one word.
+- No preamble ("Here's...", "I'll now...", "Great question") and no postamble
+  ("Let me know...", "Hope this helps", "Feel free to ask").
+- Do not restate the request, summarize what you just did step by step, or
+  narrate your plan unless the user asks.
+- Do not list files changed, explain obvious code, or add "next steps" unless
+  the user asks.
+- Only go longer when the user explicitly asks to explain, or when reporting a
+  real blocker or a risky/destructive consequence.
+- Brevity applies to text only: still do the full work, run the tests, and
+  finish every part of the task.
+
 ## Comments in code
 
 Do not write comments. This applies to every language, every project, and
