@@ -61,3 +61,6 @@ end
 vim.api.nvim_create_user_command("ShowKeymap", function(opts)
   show_keymap(opts.args)
 end, { nargs = 1, desc = "Show keymap definition in new buffer" })
+
+vim.keymap.set("n", "<C-S-h>", "<cmd>BufferLineMovePrev<cr>", { desc = "Move buffer left" })
+vim.keymap.set("n", "<C-S-l>", "<cmd>BufferLineMoveNext<cr>", { desc = "Move buffer right" })
