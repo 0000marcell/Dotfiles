@@ -13,3 +13,5 @@ permissions allow bash edit multiedit write view ls grep glob fetch agentic_fetc
 
 # House rules that apply to every project on this machine.
 option global-context-path "$HOME/.config/crush/CRUSH.md"
+
+model large copilot/claude-haiku-5.5
